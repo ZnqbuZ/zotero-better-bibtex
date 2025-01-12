@@ -220,28 +220,28 @@ monkey.patch(Zotero.ItemFields, 'isFieldOfBase', original => function Zotero_Ite
 // because the zotero item editor does not check whether a textbox is read-only. *sigh*
 monkey.patch(Zotero.Item.prototype, 'setField', original => function Zotero_Item_prototype_setField(field: string, value: string | undefined, _loadIn: any) {
   if (field === 'citationKey') {
+    log.debug('2990: citation key set manually, BBT running:', !Zotero.BetterBibTeX.starting)
     if (Zotero.BetterBibTeX.starting) return false
 
     const citekey = Zotero.BetterBibTeX.KeyManager.get(this.id)
     if (citekey.retry) return false
 
     if (typeof value !== 'string') value = ''
-    if (!value) {
-      this.setField('extra', Extra.get(this.getField('extra') as string, 'zotero', { citationKey: true }).extra)
+
+    if ((value !== citekey.citationKey) || (value && !citekey.pinned)) {
+      log.debug('2990: citation key set manually', { to: value })
+      if (value) {
+        this.setField('extra', Extra.set(this.getField('extra'), { citationKey: value }))
+      }
+      else {
+        this.setField('extra', Extra.get(this.getField('extra') as string, 'zotero', { citationKey: true }).extra)
+      }
+      log.debug('2990: extra field now', { extra: this.getField('extra') })
       Zotero.BetterBibTeX.KeyManager.update(this)
-      Zotero.Notifier.trigger('modify', 'item', [this.id])
       return true
     }
-    else if (value !== citekey.citationKey) {
-      this.setField('extra', Extra.set(this.getField('extra'), { citationKey: value }))
-      // citekey.pinned = true
-      // citekey.citekey = value
-      // Zotero.BetterBibTeX.KeyManager.keys.update(citekey)
-      return true
-    }
-    else {
-      return false
-    }
+
+    return false
   }
   else {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
