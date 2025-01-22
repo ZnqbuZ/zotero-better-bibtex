@@ -697,6 +697,7 @@ export class BetterBibTeX {
           },
           */
         })
+        log.debug(columnDataKey, rowID)
 
         let $done: () => void
         Zotero.ItemPaneManager.registerSection({
