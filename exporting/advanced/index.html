@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.143.1">
-    <meta name="generator" content="Relearn 7.3.2+8b70bdf31acd361aacf17a0e775504551af67b83">
+    <meta name="generator" content="Hugo 0.144.2">
+    <meta name="generator" content="Relearn 7.4.0+878cd835f64ce6bec28abd02c94e374a51475e4f">
     <meta name="description" content="You are a hardcore LaTeX user If you’d really just rather hand-code your LaTeX constructs, BBT makes that possible:
 You can add literal LaTeX anywhere in your item by surrounding it with &lt;script&gt;...&lt;/script&gt; (&lt;pre&gt;...&lt;/pre&gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they’re wrapped in &lt;script&gt;...&lt;/script&gt;, so you can include LaTeX markup in your items. Recognizing initials in names In names, you can force first names like Philippe to be exported to {\relax Ph}ilippe (which causes it to get initial Ph. rather than P. in styles that do initials) capitalizing the letters you want to have used as the initials, so PHilippe.">
     <meta name="author" content="">
@@ -39,6 +39,8 @@ You can add literal LaTeX anywhere in your item by surrounding it with &lt;scrip
       window.relearn.min = `.min`;
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
+      window.relearn.enableBlockCodeWrap=true;
+      window.relearn.disableInlineCopyToClipboard=true;
       // variant stuff
       window.relearn.themevariants = [ 'green' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -99,7 +101,7 @@ You can add literal LaTeX anywhere in your item by surrounding it with &lt;scrip
 
 
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/zotero-better-bibtex/exporting/advanced/index.html">
+  <body class="mobile-support html" data-url="/zotero-better-bibtex/exporting/advanced/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -121,13 +123,13 @@ You can add literal LaTeX anywhere in your item by surrounding it with &lt;scrip
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/exporting/index.html"><span itemprop="name">Exporting</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Advanced</span><meta itemprop="position" content="3"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/zotero-better-bibtex/exporting/index.html"><span itemprop="name">Exporting</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Advanced</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/retorquere/zotero-better-bibtex/edit/master/site/content/exporting/advanced.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)"><i class="fa-fw fas fa-pen"></i></a>
+            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/retorquere/zotero-better-bibtex/edit/master/site/content/exporting/advanced.md" rel="external" target="_blank" title="Edit (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a>
             </div>
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/zotero-better-bibtex/exporting/unicode/index.html" title="Unicode (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
@@ -833,9 +835,9 @@ Better BibTeX for Zotero
         <div id="R-shortcutmenu-shortcuts" class="R-sidebarmenu">
           <div class="nav-title padding">More</div>
           <ul class="space collapsible-menu">
-            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex/releases/latest"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex/releases/latest" target="_blank"><i class='fas fa-fw fa-download'></i> Download</a></li>
+            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex/releases/latest"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex/releases/latest" rel="external" target="_blank"><i class='fas fa-fw fa-download'></i> Download</a></li>
             <li class="" data-nav-id="/zotero-better-bibtex/sponsoring"><a class="padding" href="/zotero-better-bibtex/sponsoring"><i class='fas fa-fw fa-heart'></i> Sponsorship</a></li>
-            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex" target="_blank"><i class='fab fa-fw fa-github'></i> GitHub repo</a></li>
+            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex" rel="external" target="_blank"><i class='fab fa-fw fa-github'></i> GitHub repo</a></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
