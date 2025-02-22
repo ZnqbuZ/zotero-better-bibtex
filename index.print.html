@@ -11706,7 +11706,6 @@ that yields a non-empty string. If all return a empty string, a random key will 
 <p>Below you will find a full list of functions and filters you can use, in the new format only, sorry. You can still use these in the old syntax, but they support only positional parameters, where I would recommend generally to use the new syntax with named parameters.</p>
 <p>Note: a number of functions below talk about the author&rsquo;s lastname; you can read that as &ldquo;when available&rdquo;. If you have the name as a single-field name (for entities like <code>International Business Machines</code> or <code>Aristoteles</code>), Zotero doesn&rsquo;t have a last name, and the full single-field name is taken instead.</p>
 <h4 id="functions">Functions</h4>
-<dl>
   
     <description><summary>auth(n: number = 0, m: number = 1, creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false)</summary><p>The first <code>n</code> (default: all) characters of the <code>m</code>th (default: first) author's last name.</p></description>
   
@@ -11817,9 +11816,6 @@ does. Note that this pattern inherits all the problems of the
 original Zotero citekey generation -- you should really only
 use this if you have existing papers that rely on this behavior.</p></description>
   
-</dl>
-
-(type names marked <sup>JM</sup> are only available in Juris-M).
 
 <p><strong>Note</strong>: All <code>auth...</code> functions will fall back to editors if no authors are present on the item.</p>
 <p><strong>Note</strong>: The functions above used to have the <code>clean</code> function automatically applied to them, <strong>this is no longer the case</strong>, so if you have CJK authors/titles and you want to manipulate them (using eg. <code>capitalize</code>), you could have to use <code>transliterate</code> on them first, eg. <code>authEtal2.transliterate.capitalize + year + shorttitle(3, 3)</code>.</p>
@@ -12263,7 +12259,6 @@ use this if you have existing papers that rely on this behavior.</p></descriptio
 
 <p>(fields marked <sup>Z</sup> are only available in Zotero, fields marked with <sup>JM</sup> are only available in Juris-M).</p>
 <h4 id="filters">Filters</h4>
-<dl>
   
     <description><summary>abbr(chars: number = 1)</summary><p>Abbreviates the text. Only the first character and subsequent characters following white space will be included.</p></description>
   
@@ -12339,7 +12334,6 @@ Note that this filter is always applied with <code>nopunct</code> on if you use 
   
     <description><summary>upper</summary><p>Forces the text inserted by the field marker to be in uppercase. For example, <code>auth.upper</code> expands the last name of the first author in uppercase.</p></description>
   
-</dl>
 
 <p><em>Usage note</em>: the functions <code>condense</code>, <code>skipwords</code>, <code>capitalize</code> and <code>select</code> rely on whitespaces for word handling. Most functions strip
 whitespace and thereby make these filter functions sort of useless. You will in general want to use the fields from the
@@ -13172,10 +13166,10 @@ means a lot) so I can save up for a replacement a year or so down
 the line, head on over to <a href="https://www.patreon.com/retorquere" rel="external" target="_blank">Patreon</a>,
 but mind that Patreon takes a fairly large cut of what you give.</p>
 <p>Many, many thanks, also to the existing contributors &ndash; thanks to you I&rsquo;ve hit my first target and have been able to replace my trusty macbook air with a newer macbook pro which has much more breathing room.</p>
-<p><a href="#R-image-7f50a56aeee0ade09055a8bf8f8a9a83" class="lightbox-link"><img alt="My github stats" class="lazy lightbox figure-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7f50a56aeee0ade09055a8bf8f8a9a83"><img alt="My github stats" class="lazy lightbox lightbox-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark"></a></p>
-<p><a href="#R-image-88f9af70e787715e76388713410b2715" class="lightbox-link"><img alt="Metrics" class="lazy lightbox figure-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-88f9af70e787715e76388713410b2715"><img alt="Metrics" class="lazy lightbox lightbox-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo"></a></p>
+<p><a href="#R-image-3d866e8130ce2a537658359b879c9996" class="lightbox-link"><img alt="My github stats" class="lazy lightbox figure-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3d866e8130ce2a537658359b879c9996"><img alt="My github stats" class="lazy lightbox lightbox-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark"></a></p>
+<p><a href="#R-image-b2f25f6847c6863e53f9c49e6316ad63" class="lightbox-link"><img alt="Metrics" class="lazy lightbox figure-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b2f25f6847c6863e53f9c49e6316ad63"><img alt="Metrics" class="lazy lightbox lightbox-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo"></a></p>
 
   <footer class="footline">
   </footer>
