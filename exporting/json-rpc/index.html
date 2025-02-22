@@ -4,34 +4,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.144.2">
-    <meta name="generator" content="Relearn 7.4.0+878cd835f64ce6bec28abd02c94e374a51475e4f">
+    <meta name="generator" content="Relearn 7.4.1">
     <meta name="description" content="You can call into BBT using JSON-RPC on the URL http://localhost:23119/better-bibtex/json-rpc . An example could look like:
 curl http://localhost:23119/better-bibtex/json-rpc -X POST -H &#34;Content-Type: application/json&#34; -H &#34;Accept: application/json&#34; --data-binary &#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;collection.scanAUX&#34;, &#34;params&#34;: [&#34;/My Library/thesis/article1&#34;, &#34;/Users/phantom/Downloads/output.aux&#34;] }&#39; The available methods are:
-autoexport.add(collection, translator, path, displayOptions, replace) Add an auto-export for the given collection. The target collection will be created if it does not exist
-collection: The forward-slash separated path to the collection. The first part of the path must be the library name, or empty (//); empty is your personal library. Intermediate collections that do not exist will be created as needed. translator: The name or GUID of a BBT translator path: The absolute path to which the collection will be auto-exported displayOptions: Options which you would be able to select during an interactive export; exportNotes, default false, and useJournalAbbreviation, default false replace: Replace the auto-export if it exists, default false returns: Collection ID of the target collection">
+api.ready(): { betterbibtex: string; zotero: string } Returns the Zotero and BetterBibTeX version to show the JSON-RPC API is ready.
+autoexport.add(collection: string, translator: string, path: string, displayOptions: Record&lt;string, boolean&gt; = {}, replace: boolean = false): { id: number; key: string; libraryID: number } Add an auto-export for the given collection. The target collection will be created if it does not exist">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="JSON-RPC :: Better BibTeX for Zotero">
     <meta name="twitter:description" content="You can call into BBT using JSON-RPC on the URL http://localhost:23119/better-bibtex/json-rpc . An example could look like:
 curl http://localhost:23119/better-bibtex/json-rpc -X POST -H &#34;Content-Type: application/json&#34; -H &#34;Accept: application/json&#34; --data-binary &#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;collection.scanAUX&#34;, &#34;params&#34;: [&#34;/My Library/thesis/article1&#34;, &#34;/Users/phantom/Downloads/output.aux&#34;] }&#39; The available methods are:
-autoexport.add(collection, translator, path, displayOptions, replace) Add an auto-export for the given collection. The target collection will be created if it does not exist
-collection: The forward-slash separated path to the collection. The first part of the path must be the library name, or empty (//); empty is your personal library. Intermediate collections that do not exist will be created as needed. translator: The name or GUID of a BBT translator path: The absolute path to which the collection will be auto-exported displayOptions: Options which you would be able to select during an interactive export; exportNotes, default false, and useJournalAbbreviation, default false replace: Replace the auto-export if it exists, default false returns: Collection ID of the target collection">
+api.ready(): { betterbibtex: string; zotero: string } Returns the Zotero and BetterBibTeX version to show the JSON-RPC API is ready.
+autoexport.add(collection: string, translator: string, path: string, displayOptions: Record&lt;string, boolean&gt; = {}, replace: boolean = false): { id: number; key: string; libraryID: number } Add an auto-export for the given collection. The target collection will be created if it does not exist">
     <meta property="og:url" content="/zotero-better-bibtex/exporting/json-rpc/index.html">
     <meta property="og:site_name" content="Better BibTeX for Zotero">
     <meta property="og:title" content="JSON-RPC :: Better BibTeX for Zotero">
     <meta property="og:description" content="You can call into BBT using JSON-RPC on the URL http://localhost:23119/better-bibtex/json-rpc . An example could look like:
 curl http://localhost:23119/better-bibtex/json-rpc -X POST -H &#34;Content-Type: application/json&#34; -H &#34;Accept: application/json&#34; --data-binary &#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;collection.scanAUX&#34;, &#34;params&#34;: [&#34;/My Library/thesis/article1&#34;, &#34;/Users/phantom/Downloads/output.aux&#34;] }&#39; The available methods are:
-autoexport.add(collection, translator, path, displayOptions, replace) Add an auto-export for the given collection. The target collection will be created if it does not exist
-collection: The forward-slash separated path to the collection. The first part of the path must be the library name, or empty (//); empty is your personal library. Intermediate collections that do not exist will be created as needed. translator: The name or GUID of a BBT translator path: The absolute path to which the collection will be auto-exported displayOptions: Options which you would be able to select during an interactive export; exportNotes, default false, and useJournalAbbreviation, default false replace: Replace the auto-export if it exists, default false returns: Collection ID of the target collection">
+api.ready(): { betterbibtex: string; zotero: string } Returns the Zotero and BetterBibTeX version to show the JSON-RPC API is ready.
+autoexport.add(collection: string, translator: string, path: string, displayOptions: Record&lt;string, boolean&gt; = {}, replace: boolean = false): { id: number; key: string; libraryID: number } Add an auto-export for the given collection. The target collection will be created if it does not exist">
     <meta property="og:locale" content="en">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Exporting items">
     <meta itemprop="name" content="JSON-RPC :: Better BibTeX for Zotero">
     <meta itemprop="description" content="You can call into BBT using JSON-RPC on the URL http://localhost:23119/better-bibtex/json-rpc . An example could look like:
 curl http://localhost:23119/better-bibtex/json-rpc -X POST -H &#34;Content-Type: application/json&#34; -H &#34;Accept: application/json&#34; --data-binary &#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;collection.scanAUX&#34;, &#34;params&#34;: [&#34;/My Library/thesis/article1&#34;, &#34;/Users/phantom/Downloads/output.aux&#34;] }&#39; The available methods are:
-autoexport.add(collection, translator, path, displayOptions, replace) Add an auto-export for the given collection. The target collection will be created if it does not exist
-collection: The forward-slash separated path to the collection. The first part of the path must be the library name, or empty (//); empty is your personal library. Intermediate collections that do not exist will be created as needed. translator: The name or GUID of a BBT translator path: The absolute path to which the collection will be auto-exported displayOptions: Options which you would be able to select during an interactive export; exportNotes, default false, and useJournalAbbreviation, default false replace: Replace the auto-export if it exists, default false returns: Collection ID of the target collection">
-    <meta itemprop="wordCount" content="409">
+api.ready(): { betterbibtex: string; zotero: string } Returns the Zotero and BetterBibTeX version to show the JSON-RPC API is ready.
+autoexport.add(collection: string, translator: string, path: string, displayOptions: Record&lt;string, boolean&gt; = {}, replace: boolean = false): { id: number; key: string; libraryID: number } Add an auto-export for the given collection. The target collection will be created if it does not exist">
+    <meta itemprop="wordCount" content="510">
     <title>JSON-RPC :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
     <link href="/zotero-better-bibtex/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
@@ -123,15 +123,19 @@ collection: The forward-slash separated path to the collection. The first part o
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#autoexportaddcollection-translator-path-displayoptions-replace">autoexport.add(collection, translator, path, displayOptions, replace)</a></li>
-    <li><a href="#collectionscanauxcollection-aux">collection.scanAUX(collection, aux)</a></li>
-    <li><a href="#itemattachmentscitekey">item.attachments(citekey)</a></li>
-    <li><a href="#itembibliographycitekeys-format">item.bibliography(citekeys, format)</a></li>
-    <li><a href="#itemcitationkeyitem_keys">item.citationkey(item_keys)</a></li>
-    <li><a href="#itemexportcitekeys-translator-libraryid">item.export(citekeys, translator, libraryID)</a></li>
-    <li><a href="#itemnotescitekeys">item.notes(citekeys)</a></li>
-    <li><a href="#itemsearchsearchterms">item.search(searchterms)</a></li>
-    <li><a href="#usergroups">user.groups()</a></li>
+    <li><a href="#apiready--betterbibtex-string-zotero-string-">api.ready(): { betterbibtex: string; zotero: string }</a></li>
+    <li><a href="#autoexportaddcollection-string-translator-string-path-string-displayoptions-recordstring-boolean---replace-boolean--false--id-number-key-string-libraryid-number-">autoexport.add(collection: string, translator: string, path: string, displayOptions: Record&lt;string, boolean&gt; = {}, replace: boolean = false): { id: number; key: string; libraryID: number }</a></li>
+    <li><a href="#collectionscanauxcollection-string-aux-string--key-string-libraryid-number-">collection.scanAUX(collection: string, aux: string): { key: string; libraryID: number }</a></li>
+    <li><a href="#itemattachmentscitekey-string-library-string--number-any">item.attachments(citekey: string, library?: (string | number)): any</a></li>
+    <li><a href="#itembibliographycitekeys-string-format--contenttype-text--html-id-string-locale-string-quickcopy-boolean----library-string--number-string">item.bibliography(citekeys: string[], format: { contentType: (&ldquo;text&rdquo; | &ldquo;html&rdquo;); id: string; locale: string; quickCopy: boolean } = {}, library?: (string | number)): string</a></li>
+    <li><a href="#itemcitationkeyitem_keys-string-recordstring-string">item.citationkey(item_keys: string[]): Record&lt;string, string&gt;</a></li>
+    <li><a href="#itemcollectionscitekeys-string-includeparents-boolean-recordstring--key-string-name-string-">item.collections(citekeys: string[], includeParents?: boolean): Record&lt;string, { key: string; name: string }&gt;</a></li>
+    <li><a href="#itemexportcitekeys-string-translator-string-libraryid-string--number-string">item.export(citekeys: string[], translator: string, libraryID?: (string | number)): string</a></li>
+    <li><a href="#itemnotescitekeys-string-recordstring--note-string-">item.notes(citekeys: string[]): Record&lt;string, { note: string }[]&gt;</a></li>
+    <li><a href="#itempandoc_filtercitekeys-string-ascsl-boolean-libraryid-string--number--string-style-string-locale-string-any">item.pandoc_filter(citekeys: string[], asCSL: boolean, libraryID?: (string | number | string[]), style?: string, locale?: string): any</a></li>
+    <li><a href="#itemsearchterms-string---string----string-string----string-string-string--number----string-string-string--number-boolean--library-string--number-any">item.search(terms: (string | ([ string ] | [ string, string ] | [ string, string, (string | number) ] | [ string, string, (string | number), boolean ])[]), library?: (string | number)): any</a></li>
+    <li><a href="#usergroupsincludecollections-boolean--collections-any-id-number-name-string-">user.groups(includeCollections?: boolean): { collections: any[]; id: number; name: string }[]</a></li>
+    <li><a href="#viewerviewpdfid-string-page-number">viewer.viewPDF(id: string, page: number)</a></li>
   </ul>
 </nav>
                 </div>
@@ -173,58 +177,46 @@ collection: The forward-slash separated path to the collection. The first part o
 <p>You can call into BBT using <a href="https://www.jsonrpc.org/" rel="external" target="_blank">JSON-RPC</a> on the URL http://localhost:23119/better-bibtex/json-rpc . An example could look like:</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://localhost:23119/better-bibtex/json-rpc -X POST -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -H <span style="color:#e6db74">&#34;Accept: application/json&#34;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;collection.scanAUX&#34;, &#34;params&#34;: [&#34;/My Library/thesis/article1&#34;, &#34;/Users/phantom/Downloads/output.aux&#34;] }&#39;</span></span></span></code></pre></div>
 <p>The available methods are:</p>
-<h2 id="autoexportaddcollection-translator-path-displayoptions-replace">autoexport.add(collection, translator, path, displayOptions, replace)</h2>
+<h2 id="apiready--betterbibtex-string-zotero-string-">api.ready(): { betterbibtex: string; zotero: string }</h2>
+<p>Returns the Zotero and BetterBibTeX version to show the JSON-RPC API is ready.</p>
+<h2 id="autoexportaddcollection-string-translator-string-path-string-displayoptions-recordstring-boolean---replace-boolean--false--id-number-key-string-libraryid-number-">autoexport.add(collection: string, translator: string, path: string, displayOptions: Record&lt;string, boolean&gt; = {}, replace: boolean = false): { id: number; key: string; libraryID: number }</h2>
 <p>Add an auto-export for the given collection. The target collection will be created if it does not exist</p>
-<ul>
-<li><code>collection</code>: The forward-slash separated path to the collection. The first part of the path must be the library name, or empty (<code>//</code>); empty is your personal library. Intermediate collections that do not exist will be created as needed.</li>
-<li><code>translator</code>: The name or GUID of a BBT translator</li>
-<li><code>path</code>: The absolute path to which the collection will be auto-exported</li>
-<li><code>displayOptions</code>: Options which you would be able to select during an interactive export; <code>exportNotes</code>, default <code>false</code>, and <code>useJournalAbbreviation</code>, default <code>false</code></li>
-<li><code>replace</code>: Replace the auto-export if it exists, default <code>false</code></li>
-</ul>
-<p>returns: Collection ID of the target collection</p>
-<h2 id="collectionscanauxcollection-aux">collection.scanAUX(collection, aux)</h2>
+<h2 id="collectionscanauxcollection-string-aux-string--key-string-libraryid-number-">collection.scanAUX(collection: string, aux: string): { key: string; libraryID: number }</h2>
 <p>Scan an AUX file for citekeys and populate a Zotero collection from them. The target collection will be cleared if it exists.</p>
-<ul>
-<li><code>collection</code>: The forward-slash separated path to the collection. The first part of the path must be the library name, or empty (<code>//</code>); empty is your personal library. Intermediate collections that do not exist will be created as needed.</li>
-<li><code>aux</code>: The absolute path to the AUX file on disk</li>
-</ul>
-<h2 id="itemattachmentscitekey">item.attachments(citekey)</h2>
+<h2 id="itemattachmentscitekey-string-library-string--number-any">item.attachments(citekey: string, library?: (string | number)): any</h2>
 <p>List attachments for an item with the given citekey</p>
-<ul>
-<li><code>citekey</code>: The citekey to search for</li>
-</ul>
-<h2 id="itembibliographycitekeys-format">item.bibliography(citekeys, format)</h2>
+<h2 id="itembibliographycitekeys-string-format--contenttype-text--html-id-string-locale-string-quickcopy-boolean----library-string--number-string">item.bibliography(citekeys: string[], format: { contentType: (&ldquo;text&rdquo; | &ldquo;html&rdquo;); id: string; locale: string; quickCopy: boolean } = {}, library?: (string | number)): string</h2>
 <p>Generate a bibliography for the given citekeys</p>
-<ul>
-<li><code>citekeys</code>: An array of citekeys</li>
-<li><code>format</code>: A specification of how the bibliography should be formatted</li>
-</ul>
-<p>returns: A formatted bibliography</p>
-<h2 id="itemcitationkeyitem_keys">item.citationkey(item_keys)</h2>
+<h2 id="itemcitationkeyitem_keys-string-recordstring-string">item.citationkey(item_keys: string[]): Record&lt;string, string&gt;</h2>
 <p>Fetch citationkeys given item keys</p>
-<ul>
-<li><code>item_keys</code>: A list of [libraryID]:[itemKey] strings. If [libraryID] is omitted, assume &lsquo;My Library&rsquo;</li>
-</ul>
-<h2 id="itemexportcitekeys-translator-libraryid">item.export(citekeys, translator, libraryID)</h2>
+<h2 id="itemcollectionscitekeys-string-includeparents-boolean-recordstring--key-string-name-string-">item.collections(citekeys: string[], includeParents?: boolean): Record&lt;string, { key: string; name: string }&gt;</h2>
+<p>Fetch the collections containing a range of citekeys</p>
+<h2 id="itemexportcitekeys-string-translator-string-libraryid-string--number-string">item.export(citekeys: string[], translator: string, libraryID?: (string | number)): string</h2>
 <p>Generate an export for a list of citekeys</p>
-<ul>
-<li><code>citekeys</code>: Array of citekeys</li>
-<li><code>translator</code>: BBT translator name or GUID</li>
-<li><code>libraryID</code>: ID of library to select the items from. When omitted, assume &lsquo;My Library&rsquo;</li>
-</ul>
-<h2 id="itemnotescitekeys">item.notes(citekeys)</h2>
+<h2 id="itemnotescitekeys-string-recordstring--note-string-">item.notes(citekeys: string[]): Record&lt;string, { note: string }[]&gt;</h2>
 <p>Fetch the notes for a range of citekeys</p>
+<h2 id="itempandoc_filtercitekeys-string-ascsl-boolean-libraryid-string--number--string-style-string-locale-string-any">item.pandoc_filter(citekeys: string[], asCSL: boolean, libraryID?: (string | number | string[]), style?: string, locale?: string): any</h2>
+<p>Generate an export for a list of citekeys, tailored for the pandoc zotero filter</p>
+<h2 id="itemsearchterms-string---string----string-string----string-string-string--number----string-string-string--number-boolean--library-string--number-any">item.search(terms: (string | ([ string ] | [ string, string ] | [ string, string, (string | number) ] | [ string, string, (string | number), boolean ])[]), library?: (string | number)): any</h2>
+<p>Search for items in Zotero.</p>
+<p>Examples</p>
 <ul>
-<li><code>citekeys</code>: An array of citekeys</li>
+<li>search(&rsquo;&rsquo;) or search([]): return every entries</li>
+<li>search(&lsquo;Zotero&rsquo;): quick search for &lsquo;Zotero&rsquo;</li>
+<li>search([[&rsquo;title&rsquo;, &lsquo;contains&rsquo;, &lsquo;Zotero&rsquo;]]): search for &lsquo;Zotero&rsquo; in the Title</li>
+<li>search([[&rsquo;library&rsquo;, &lsquo;is&rsquo;, &lsquo;My Library&rsquo;]]): search for entries in &lsquo;My Library&rsquo;
+(this function try to resolve the string &lsquo;My Library&rsquo; into is own libraryId number)</li>
+<li>search([[&lsquo;ignore_feeds&rsquo;]]): custom action for ignoring the feeds</li>
+<li>search([[&lsquo;ignore_feeds&rsquo;], [&lsquo;quicksearch-titleCreatorYear&rsquo;, &lsquo;contains&rsquo;, &lsquo;Zotero&rsquo;]]): quick search for &lsquo;Zotero&rsquo; ignoring the Feeds</li>
+<li>search([[&lsquo;creator&rsquo;, &lsquo;contains&rsquo;, &lsquo;Johnny&rsquo;], [&rsquo;title&rsquo;, &lsquo;contains&rsquo;, &lsquo;Zotero&rsquo;]]): search for entries with Creator &lsquo;Johnny&rsquo; AND Title &lsquo;Zotero&rsquo;</li>
+<li>search([[&lsquo;joinMode&rsquo;, &lsquo;any&rsquo;], [&lsquo;creator&rsquo;, &lsquo;contains&rsquo;, &lsquo;Johnny&rsquo;], [&rsquo;title&rsquo;, &lsquo;contains&rsquo;, &lsquo;Zotero&rsquo;]]): search for entries with Creator &lsquo;Johnny&rsquo; OR Title &lsquo;Zotero&rsquo;</li>
+<li>search([[&lsquo;joinMode&rsquo;, &lsquo;any&rsquo;], [&lsquo;creator&rsquo;, &lsquo;contains&rsquo;, &lsquo;Johnny&rsquo;], [&rsquo;title&rsquo;, &lsquo;contains&rsquo;, &lsquo;Zotero&rsquo;], [&lsquo;creator&rsquo;, &lsquo;contains&rsquo;, &lsquo;Smith&rsquo;, true]]): search for entries with (Creator &lsquo;Johnny&rsquo; OR Title &lsquo;Zotero&rsquo;) AND (Creator &lsquo;Smith&rsquo;)</li>
 </ul>
-<h2 id="itemsearchsearchterms">item.search(searchterms)</h2>
-<p>Quick-search for items in Zotero.</p>
-<ul>
-<li><code>searchterms</code>: Terms as typed into the search box in Zotero</li>
-</ul>
-<h2 id="usergroups">user.groups()</h2>
+<h2 id="usergroupsincludecollections-boolean--collections-any-id-number-name-string-">user.groups(includeCollections?: boolean): { collections: any[]; id: number; name: string }[]</h2>
 <p>List the libraries (also known as groups) the user has in Zotero</p>
+<h2 id="viewerviewpdfid-string-page-number">viewer.viewPDF(id: string, page: number)</h2>
+<p>Open the PDF associated with an entry with a given id.
+the id can be retrieve with e.g. item.search(&ldquo;mypdf&rdquo;) -&gt; result[0].id</p>
 <p>mind that the <code>items.export</code> method had a bug where it would double-wrap the JSON-RPC response; the extra layer has been removed in 6.7.143, but if you were expecting the previous result you will have to update your code.</p>
 
   <footer class="footline">
