@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.144.2">
-    <meta name="generator" content="Relearn 7.4.1">
+    <meta name="generator" content="Relearn 7.4.1+bd6eb3f5dec7ae5847af754434b19f8c9085f3cc">
     <meta name="description" content="Add-on could not be installed because it appears to be corrupt. You have downloaded the Better BibTeX plugin by clicking on the download link using Firefox. As Zotero and Firefox use the same plugin technology, Firefox think the BetterBibTeX plugin is intended for itself, tries to install it, and then finds out it won’t work. You need to download the plugin without installinging it into Firefox by right-clicking the download link, choose save-as, and then install it into Zotero using installation instructions to get started with BBT.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
@@ -310,7 +310,7 @@ Make sure the latter path is correct, as JabRef might continue finding files and
 <p>Exporting Zotero&rsquo;s <code>language</code> field to the biblatex field <code>language</code> would result in what are now merely language-dependent formatting instructions all of a sudden turned into textual output as well, breaking virtually every style on the biblatex side.</p>
 <p>If you want the <code>language</code> field filled nonetheless, you can either use a BBT postscript, or the biblatex <code>langid</code> tags can still be used to selectively generate <code>language</code> fields that produce the output when rendered, assuming the aim is to eg have only items tagged as Japanese, i.e., containing biblatex <code>langid</code> fields whose contents begin with <code>ja</code> receive the string <code>[in Japanese]</code> in the formatted output.</p>
 <p>In the following, biblatex&rsquo;s <code>\DeclareSourcemap</code> mechanism is used to generate such language fields at runtime. Details can be found in the biblatex manual.</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>\documentclass{article}
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>\documentclass{article}
 \begin{filecontents}[overwrite]{tmp.bib}
 @article{UseLanguage,
   title = {Title of UseLanguage},
@@ -371,9 +371,9 @@ Make sure the latter path is correct, as JabRef might continue finding files and
 \printbibliography
 \end{document}</code></pre></div>
 <p>If you just want the bib(la)tex <code>language</code> field to show whatever is in your Zotero <code>language</code> field, you can do it with this postscript:</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>if (Translator.BetterTeX) { tex.add({ name: &#39;language&#39;, value: zotero.language }) }</code></pre></div>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>if (Translator.BetterTeX) { tex.add({ name: &#39;language&#39;, value: zotero.language }) }</code></pre></div>
 <p>If you want the language field translated (to the best of BBTs abilities) to what would otherwise show up in <code>langid</code>, you can use:</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>if (Translator.BetterTeX) { tex.add({ name: &#39;language&#39;, value: tex.langid() }) }</code></pre></div>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>if (Translator.BetterTeX) { tex.add({ name: &#39;language&#39;, value: tex.langid() }) }</code></pre></div>
 
   <footer class="footline">
   </footer>
