@@ -840,7 +840,7 @@ use this if you have existing papers that rely on this behavior.</p></dd>
   <dt><b>clean</b></dt><dd><p>transliterates the citation key and removes unsafe characters</p></dd>
   
   <dt><b>condense</b>(sep: string = &#39;&#39;)</dt><dd><p>replaces spaces in the value passed in. You can specify what to replace it with by adding it as a
-parameter, e.g <code>.condense('\_')</code> will replace spaces with underscores. Equivalent to <code>.replace(/\s+/g, sep)</code>.</p></dd>
+parameter, e.g <code>.condense('_')</code> will replace spaces with underscores. Equivalent to <code>.replace(/\s+/g, sep)</code>.</p></dd>
   
   <dt><b>default</b>(text: string)</dt><dd><p>Returns the given text if no output was generated</p></dd>
   
@@ -872,10 +872,10 @@ parameter, e.g <code>.condense('\_')</code> will replace spaces with underscores
   
   <dt><b>pinyin</b></dt><dd><p>transliterates the citation key to pinyin</p></dd>
   
-  <dt><b>postfix</b>(postfix: string)</dt><dd><p>postfixes with its parameter, so <code>postfix('\_')</code> will add an underscore to the end if, and only if, the value
+  <dt><b>postfix</b>(postfix: string)</dt><dd><p>postfixes with its parameter, so <code>postfix('_')</code> will add an underscore to the end if, and only if, the value
 it is supposed to postfix isn't empty</p></dd>
   
-  <dt><b>prefix</b>(prefix: string)</dt><dd><p>prefixes with its parameter, so <code>.prefix('\_')</code> will add an underscore to the front if, and only if, the value
+  <dt><b>prefix</b>(prefix: string)</dt><dd><p>prefixes with its parameter, so <code>.prefix('_')</code> will add an underscore to the front if, and only if, the value
 it is supposed to prefix isn't empty.</p></dd>
   
   <dt><b>replace</b>(find: (string | RegExp), replace: string)</dt><dd><p>replaces text, for the text to match you can pass either:</p>
