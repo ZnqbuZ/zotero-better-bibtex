@@ -11712,39 +11712,39 @@ that yields a non-empty string. If all return a empty string, a random key will 
 <h4 id="functions">Functions</h4>
 <dl>
   
-    <dt>auth(n: number = 0, m: number = 1, creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false)</dt><dd><p>The first <code>n</code> (default: all) characters of the <code>m</code>th (default: first) author's last name.</p></dd>
+    <dt><b>auth</b>(n: number = 0, m: number = 1, creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false)</dt><dd><p>The first <code>n</code> (default: all) characters of the <code>m</code>th (default: first) author's last name.</p></dd>
   
-    <dt>authAuthEa(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39;.&#39;)</dt><dd><p>The last name of the first two authors, and ".ea" if there are more than two.</p></dd>
+    <dt><b>authAuthEa</b>(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39;.&#39;)</dt><dd><p>The last name of the first two authors, and ".ea" if there are more than two.</p></dd>
   
-    <dt>authEtAl(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39; &#39;)</dt><dd><p>The last name of the first author, and the last name of the
+    <dt><b>authEtAl</b>(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39; &#39;)</dt><dd><p>The last name of the first author, and the last name of the
 second author if there are two authors or "EtAl" if there are
 more than two. This is similar to <code>auth.etal</code>. The difference
 is that the authors are not separated by "." and in case of
 more than 2 authors "EtAl" instead of ".etal" is appended.</p></dd>
   
-    <dt>authEtal2(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39;.&#39;)</dt><dd><p>The last name of the first author, and the last name of the second author if there are two authors or ".etal" if there are more than two.</p></dd>
+    <dt><b>authEtal2</b>(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39;.&#39;)</dt><dd><p>The last name of the first author, and the last name of the second author if there are two authors or ".etal" if there are more than two.</p></dd>
   
-    <dt>authForeIni(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;)</dt><dd><p>The given-name initial of the first author.</p></dd>
+    <dt><b>authForeIni</b>(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;)</dt><dd><p>The given-name initial of the first author.</p></dd>
   
-    <dt>authIni(n: number = 0, creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39;.&#39;)</dt><dd><p>The beginning of each author's last name, using no more than <code>n</code> characters (0 = all).</p></dd>
+    <dt><b>authIni</b>(n: number = 0, creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39;.&#39;)</dt><dd><p>The beginning of each author's last name, using no more than <code>n</code> characters (0 = all).</p></dd>
   
-    <dt>authorIni(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39;.&#39;)</dt><dd><p>The first 5 characters of the first author's last name, and the last name initials of the remaining authors.</p></dd>
+    <dt><b>authorIni</b>(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39;.&#39;)</dt><dd><p>The first 5 characters of the first author's last name, and the last name initials of the remaining authors.</p></dd>
   
-    <dt>authorLast(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false)</dt><dd><p>The last name of the last author</p></dd>
+    <dt><b>authorLast</b>(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false)</dt><dd><p>The last name of the last author</p></dd>
   
-    <dt>authorLastForeIni(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;)</dt><dd><p>The given-name initial of the last author.</p></dd>
+    <dt><b>authorLastForeIni</b>(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;)</dt><dd><p>The given-name initial of the last author.</p></dd>
   
-    <dt>authorsAlpha(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39; &#39;)</dt><dd><p>Corresponds to the BibTeX style "alpha". One author: First three letters of the last name. Two to four authors: First letters of last names concatenated.
+    <dt><b>authorsAlpha</b>(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39; &#39;)</dt><dd><p>Corresponds to the BibTeX style "alpha". One author: First three letters of the last name. Two to four authors: First letters of last names concatenated.
 More than four authors: First letters of last names of first three authors concatenated. "+" at the end.</p></dd>
   
-    <dt>authorsn(n: number = 0, creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39; &#39;)</dt><dd><p>The last names of the first <code>n</code> (default: all) authors.</p></dd>
+    <dt><b>authorsn</b>(n: number = 0, creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39; &#39;)</dt><dd><p>The last names of the first <code>n</code> (default: all) authors.</p></dd>
   
-    <dt>authshort(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39;.&#39;)</dt><dd><p>The last name if one author/editor is given; the first character
+    <dt><b>authshort</b>(creator: (&quot;author&quot; | &quot;editor&quot; | &quot;translator&quot; | &quot;collaborator&quot; | &quot;*&quot;) = &#39;*&#39;, initials: boolean = false, sep: string = &#39;.&#39;)</dt><dd><p>The last name if one author/editor is given; the first character
 of up to three authors' last names if more than one author is
 given. A plus character is added, if there are more than three
 authors.</p></dd>
   
-    <dt>creators(n: (number | [ number, number ]) = 0, type: (&quot;*&quot; | Creator | Creator[] | (Creator | &quot;*&quot;)[][]) = [[&#39;primary&#39;, &#39;editor&#39;, &#39;translator&#39;, &#39;*&#39;]], name: &#96;sprintf-style format template&#96; = &#39;%(f)s&#39;, etal: string = &#39;&#39;, sep: string = &#39; &#39;, min: number = 0, max: number = 0)</dt><dd><p>Author/editor information.</p>
+    <dt><b>creators</b>(n: (number | [ number, number ]) = 0, type: (&quot;*&quot; | Creator | Creator[] | (Creator | &quot;*&quot;)[][]) = [[&#39;primary&#39;, &#39;editor&#39;, &#39;translator&#39;, &#39;*&#39;]], name: &#96;sprintf-style format template&#96; = &#39;%(f)s&#39;, etal: string = &#39;&#39;, sep: string = &#39; &#39;, min: number = 0, max: number = 0)</dt><dd><p>Author/editor information.</p>
 <p>creator type can be one of <code>artist</code>, <code>attorneyAgent</code>, <code>author</code>, <code>bookAuthor</code>, <code>cartographer</code>, <code>castMember</code>, <code>commenter</code>, <code>composer</code>, <code>contributor</code>, <code>cosponsor</code>, <code>counsel</code>, <code>director</code>, <code>editor</code>, <code>guest</code>, <code>interviewee</code>, <code>interviewer</code>, <code>inventor</code>, <code>performer</code>, <code>podcaster</code>, <code>presenter</code>, <code>producer</code>, <code>programmer</code>, <code>recipient</code>, <code>reviewedAuthor</code>, <code>scriptwriter</code>, <code>seriesEditor</code>, <code>sponsor</code>, <code>translator</code>, <code>wordsBy</code></p>
 <p>in the creator template, you can use:</p>
 <ul>
@@ -11753,59 +11753,59 @@ authors.</p></dd>
 <li><code>%(i)s</code>: given-name initials</li>
 </ul></dd>
   
-    <dt>creatortypes(match?: RegExp)</dt><dd><p>This will return a comma-separated list of creator type information for all creators on the item
+    <dt><b>creatortypes</b>(match?: RegExp)</dt><dd><p>This will return a comma-separated list of creator type information for all creators on the item
 in the form <code>&lt;1 or 2&gt;&lt;creator-type&gt;</code>, where <code>1</code> or <code>2</code> denotes a 1-part or 2-part creator, and <code>creator-type</code> is one of {{% citekey-formatters/creatortypes %}}, or <code>primary</code> for
 the primary creator-type of the Zotero item under consideration. The list is prefixed by the item type, so might look like <code>audioRecording:2performer,2performer,1composer</code>.</p></dd>
   
-    <dt>date(format: string = &#39;%Y-%m-%d&#39;)</dt><dd><p>The date of the publication</p></dd>
+    <dt><b>date</b>(format: string = &#39;%Y-%m-%d&#39;)</dt><dd><p>The date of the publication</p></dd>
   
-    <dt>extra(variable: string)</dt><dd><p>A pseudo-field from the extra field. eg if you have <code>Original date: 1970</code> in your <code>extra</code> field, you can get it as
+    <dt><b>extra</b>(variable: string)</dt><dd><p>A pseudo-field from the extra field. eg if you have <code>Original date: 1970</code> in your <code>extra</code> field, you can get it as
 <code>extra(originalDate)</code>, or <code>tex.shortauthor: APA</code> which you could
 get with <code>extra('tex.shortauthor')</code>. Any <code>tex.</code> field will be
 picked up, the other fields can be selected from <a href="https://retorque.re/zotero-better-bibtex/exporting/extra-fields/">this list</a>
 of key names.</p></dd>
   
-    <dt>field(name: string)</dt><dd><p>Gets the value of the item field</p>
+    <dt><b>field</b>(name: string)</dt><dd><p>Gets the value of the item field</p>
 <p>field can be one of <code>DOI</code>, <code>ISBN</code>, <code>ISSN</code>, <code>abstractNote</code>, <code>accessDate</code>, <code>applicationNumber</code>, <code>archive</code>, <code>archiveID</code>, <code>archiveLocation</code>, <code>artworkMedium</code>, <code>artworkSize</code>, <code>assignee</code>, <code>audioFileType</code>, <code>audioRecordingFormat</code>, <code>authority</code>, <code>billNumber</code>, <code>blogTitle</code>, <code>bookTitle</code>, <code>callNumber</code>, <code>caseName</code>, <code>citationKey</code>, <code>code</code>, <code>codeNumber</code>, <code>codePages</code>, <code>codeVolume</code>, <code>committee</code>, <code>company</code>, <code>conferenceName</code>, <code>country</code>, <code>court</code>, <code>date</code>, <code>dateDecided</code>, <code>dateEnacted</code>, <code>dictionaryTitle</code>, <code>distributor</code>, <code>docketNumber</code>, <code>documentNumber</code>, <code>edition</code>, <code>encyclopediaTitle</code>, <code>episodeNumber</code>, <code>extra</code>, <code>filingDate</code>, <code>firstPage</code>, <code>format</code>, <code>forumTitle</code>, <code>genre</code>, <code>history</code>, <code>identifier</code>, <code>institution</code>, <code>interviewMedium</code>, <code>issue</code>, <code>issueDate</code>, <code>issuingAuthority</code>, <code>journalAbbreviation</code>, <code>label</code>, <code>language</code>, <code>legalStatus</code>, <code>legislativeBody</code>, <code>letterType</code>, <code>libraryCatalog</code>, <code>manuscriptType</code>, <code>mapType</code>, <code>medium</code>, <code>meetingName</code>, <code>nameOfAct</code>, <code>network</code>, <code>numPages</code>, <code>number</code>, <code>numberOfVolumes</code>, <code>organization</code>, <code>pages</code>, <code>patentNumber</code>, <code>place</code>, <code>postType</code>, <code>presentationType</code>, <code>priorityNumbers</code>, <code>proceedingsTitle</code>, <code>programTitle</code>, <code>programmingLanguage</code>, <code>publicLawNumber</code>, <code>publicationTitle</code>, <code>publisher</code>, <code>references</code>, <code>reportNumber</code>, <code>reportType</code>, <code>reporter</code>, <code>reporterVolume</code>, <code>repository</code>, <code>repositoryLocation</code>, <code>rights</code>, <code>runningTime</code>, <code>scale</code>, <code>section</code>, <code>series</code>, <code>seriesNumber</code>, <code>seriesText</code>, <code>seriesTitle</code>, <code>session</code>, <code>shortTitle</code>, <code>status</code>, <code>studio</code>, <code>subject</code>, <code>system</code>, <code>thesisType</code>, <code>title</code>, <code>type</code>, <code>university</code>, <code>url</code>, <code>versionNumber</code>, <code>videoRecordingFormat</code>, <code>volume</code>, <code>websiteTitle</code>, <code>websiteType</code></p></dd>
   
-    <dt>firstpage</dt><dd><p>The number of the first page of the publication (Caution: this
+    <dt><b>firstpage</b></dt><dd><p>The number of the first page of the publication (Caution: this
 will return the lowest number found in the pages field, since
 BibTeX allows <code>7,41,73--97</code> or <code>43+</code>.)</p></dd>
   
-    <dt>group(name: string)</dt><dd><p>Tests whether the item is in the given group library</p></dd>
+    <dt><b>group</b>(name: string)</dt><dd><p>Tests whether the item is in the given group library</p></dd>
   
-    <dt>infix(format: string = &#39;%(a)s&#39;, start: number = 0)</dt><dd><p>a pseudo-function that sets the citekey disambiguation infix using an <a href="https://www.npmjs.com/package/sprintf-js">sprintf-js</a> format spec
+    <dt><b>infix</b>(format: string = &#39;%(a)s&#39;, start: number = 0)</dt><dd><p>a pseudo-function that sets the citekey disambiguation infix using an <a href="https://www.npmjs.com/package/sprintf-js">sprintf-js</a> format spec
 for when a key is generated that already exists. The infix charachter appears at the place of this function of the formula instead of at the and (as postfix does).
 You <em>must</em> include <em>exactly one</em> of the placeholders <code>%(n)s</code> (number), <code>%(a)s</code> (alpha, lowercase) or <code>%(A)s</code> (alpha, uppercase).
 For the rest of the disambiguator you can use things like padding and extra text as sprintf-js allows. With start set to <code>1</code> the disambiguator is always included,
 even if there is no need for it when no duplicates exist. The default  format is <code>%(a)s</code>.</p></dd>
   
-    <dt>inspireHep</dt><dd><p>Fetches the key from inspire-hep based on DOI or arXiv ID</p></dd>
+    <dt><b>inspireHep</b></dt><dd><p>Fetches the key from inspire-hep based on DOI or arXiv ID</p></dd>
   
-    <dt>item(id: (&quot;key&quot; | &quot;id&quot;) = &#39;key&#39;)</dt><dd><p>returns the internal item ID/key</p></dd>
+    <dt><b>item</b>(id: (&quot;key&quot; | &quot;id&quot;) = &#39;key&#39;)</dt><dd><p>returns the internal item ID/key</p></dd>
   
-    <dt>journal(abbrev: (&quot;off&quot; | &quot;abbrev&quot; | &quot;auto&quot; | &quot;abbrev+auto&quot; | &quot;full&quot;) = &#39;abbrev+auto&#39;)</dt><dd><p>returns the journal abbreviation, or, if not found, the journal title, If 'automatic journal abbreviation' is enabled in the BBT settings,
+    <dt><b>journal</b>(abbrev: (&quot;off&quot; | &quot;abbrev&quot; | &quot;auto&quot; | &quot;abbrev+auto&quot; | &quot;full&quot;) = &#39;abbrev+auto&#39;)</dt><dd><p>returns the journal abbreviation, or, if not found, the journal title, If 'automatic journal abbreviation' is enabled in the BBT settings,
 it will use the same abbreviation filter Zotero uses in the wordprocessor integration. You might want to use the <code>abbr</code> filter on this.
 Abbreviation behavior can be specified as <code>abbrev+auto</code> (the default) which uses the explicit journal abbreviation if present, and tries the automatic
 abbreviator if not (if auto-abbrev is enabled in the preferences), <code>auto</code> (skip explicit journal abbreviation even if present), <code>abbrev</code>
 (no auto-abbrev even if it is enabled in the preferences) or <code>full</code>/<code>off</code> (no abbrevation).</p></dd>
   
-    <dt>keyword(n: number)</dt><dd><p>Tag number <code>n</code>. Mostly for legacy compatibility</p></dd>
+    <dt><b>keyword</b>(n: number)</dt><dd><p>Tag number <code>n</code>. Mostly for legacy compatibility</p></dd>
   
-    <dt>language(...name: string[])</dt><dd><p>Tests whether the item has the given language set, and skips to the next pattern if not</p>
+    <dt><b>language</b>(...name: string[])</dt><dd><p>Tests whether the item has the given language set, and skips to the next pattern if not</p>
 <p>language can be one of <code>ame</code>, <code>american</code>, <code>american english</code>, <code>americanenglish</code>, <code>ar</code>, <code>ar-ar</code>, <code>ar-dz</code>, <code>ar-eg</code>, <code>ar-iq</code>, <code>ar-jo</code>, <code>ar-lb</code>, <code>ar-ma</code>, <code>ar-ps</code>, <code>ar-sa</code>, <code>ar-sy</code>, <code>ar-tn</code>, <code>ara</code>, <code>arabic</code>, <code>arabic-algeria</code>, <code>arabic-dz</code>, <code>arabic-eg</code>, <code>arabic-egypt</code>, <code>arabic-iq</code>, <code>arabic-iraq</code>, <code>arabic-jo</code>, <code>arabic-jordan</code>, <code>arabic-lb</code>, <code>arabic-lebanon</code>, <code>arabic-ma</code>, <code>arabic-morocco</code>, <code>arabic-palestinianterritories</code>, <code>arabic-ps</code>, <code>arabic-sa</code>, <code>arabic-saudiarabia</code>, <code>arabic-sy</code>, <code>arabic-syria</code>, <code>arabic-tn</code>, <code>arabic-tunisia</code>, <code>australian</code>, <code>australian english</code>, <code>australianenglish</code>, <code>austrian</code>, <code>austrian german</code>, <code>austrian-traditional</code>, <code>austriangerman</code>, <code>austriangerman-traditional</code>, <code>bri</code>, <code>british</code>, <code>british english</code>, <code>britishenglish</code>, <code>canadian</code>, <code>canadian english</code>, <code>canadianenglish</code>, <code>chinese</code>, <code>chinese-hans</code>, <code>chinese-hans-hk</code>, <code>chinese-hans-mo</code>, <code>chinese-hans-sg</code>, <code>chinese-hant</code>, <code>chinese-hant-hk</code>, <code>chinese-hant-mo</code>, <code>chinese-simplified</code>, <code>chinese-simplified-hongkongsarchina</code>, <code>chinese-simplified-macausarchina</code>, <code>chinese-simplified-singapore</code>, <code>chinese-traditional</code>, <code>chinese-traditional-hongkongsarchina</code>, <code>chinese-traditional-macausarchina</code>, <code>de</code>, <code>de-1901</code>, <code>de-1996</code>, <code>de-at</code>, <code>de-at-1901</code>, <code>de-at-1996</code>, <code>de-ch</code>, <code>de-ch-1901</code>, <code>de-ch-1996</code>, <code>de-de</code>, <code>deutsch</code>, <code>en</code>, <code>en-au</code>, <code>en-ca</code>, <code>en-en</code>, <code>en-gb</code>, <code>en-nz</code>, <code>en-us</code>, <code>eng</code>, <code>english</code>, <code>english-au</code>, <code>english-australia</code>, <code>english-ca</code>, <code>english-canada</code>, <code>english-gb</code>, <code>english-newzealand</code>, <code>english-nz</code>, <code>english-unitedkingdom</code>, <code>english-unitedstates</code>, <code>english-us</code>, <code>ger</code>, <code>german</code>, <code>german-at</code>, <code>german-at-traditional</code>, <code>german-austria</code>, <code>german-austria-traditional</code>, <code>german-ch</code>, <code>german-ch-traditional</code>, <code>german-switzerland</code>, <code>german-switzerland-traditional</code>, <code>german-traditional</code>, <code>ja</code>, <code>ja-ja</code>, <code>jap</code>, <code>japanese</code>, <code>nau</code>, <code>naustrian</code>, <code>newzealand</code>, <code>nge</code>, <code>ngerman</code>, <code>nsw</code>, <code>nswissgerman</code>, <code>schweizer hochdeutsch</code>, <code>simplified chinese</code>, <code>swiss high german</code>, <code>swisshighgerman</code>, <code>swisshighgerman-traditional</code>, <code>traditional chinese</code>, <code>tw</code>, <code>ukenglish</code>, <code>usenglish</code>, <code>zh</code>, <code>zh-hans</code>, <code>zh-hans-hk</code>, <code>zh-hans-mo</code>, <code>zh-hans-sg</code>, <code>zh-hant</code>, <code>zh-hant-hk</code>, <code>zh-hant-mo</code>, <code>zh-tw</code>, <code>zh-zh</code>, <code>österreichisches deutsch</code>, <code>العربية</code>, <code>中文</code>, <code>中文-中文</code>, <code>日本語</code>, <code>简体中文</code>, <code>繁體中文</code></p></dd>
   
-    <dt>lastpage</dt><dd><p>The number of the last page of the publication (See the remark on <code>firstpage</code>)</p></dd>
+    <dt><b>lastpage</b></dt><dd><p>The number of the last page of the publication (See the remark on <code>firstpage</code>)</p></dd>
   
-    <dt>library</dt><dd><p>Tests whether the item is in the user library</p></dd>
+    <dt><b>library</b></dt><dd><p>Tests whether the item is in the user library</p></dd>
   
-    <dt>month</dt><dd><p>the month of the publication</p></dd>
+    <dt><b>month</b></dt><dd><p>the month of the publication</p></dd>
   
-    <dt>origdate</dt><dd><p>the original date of the publication</p></dd>
+    <dt><b>origdate</b></dt><dd><p>the original date of the publication</p></dd>
   
-    <dt>origyear</dt><dd><p>the original year of the publication</p></dd>
+    <dt><b>origyear</b></dt><dd><p>the original year of the publication</p></dd>
   
-    <dt>postfix(format: &#96;sprintf-style format template&#96; = &#39;%(a)s&#39;, start: number = 0)</dt><dd><p>a pseudo-function that sets the citekey disambiguation postfix using an <a href="https://www.npmjs.com/package/sprintf-js">sprintf-js</a> format spec
+    <dt><b>postfix</b>(format: &#96;sprintf-style format template&#96; = &#39;%(a)s&#39;, start: number = 0)</dt><dd><p>a pseudo-function that sets the citekey disambiguation postfix using an <a href="https://www.npmjs.com/package/sprintf-js">sprintf-js</a> format spec
 for when a key is generated that already exists. Does not add any text to the citekey otherwise.
 You <em>must</em> include <em>exactly one</em> of the placeholders <code>%(n)s</code> (number), <code>%(a)s</code> (alpha, lowercase) or <code>%(A)s</code> (alpha, uppercase).
 For the rest of the disambiguator you can use things like padding and extra text as sprintf-js allows. With start set to <code>1</code> the disambiguator is always included,
@@ -11817,21 +11817,21 @@ even if there is no need for it when no duplicates exist. The default  format is
 <li><code>%(n)s</code>: numeric disambiguator</li>
 </ul></dd>
   
-    <dt>shorttitle(n: number = 3, m: number = 0)</dt><dd><p>The first <code>n</code> (default: 3) words of the title, apply capitalization to first <code>m</code> (default: 0) of those.</p></dd>
+    <dt><b>shorttitle</b>(n: number = 3, m: number = 0)</dt><dd><p>The first <code>n</code> (default: 3) words of the title, apply capitalization to first <code>m</code> (default: 0) of those.</p></dd>
   
-    <dt>shortyear</dt><dd><p>The last 2 digits of the publication year</p></dd>
+    <dt><b>shortyear</b></dt><dd><p>The last 2 digits of the publication year</p></dd>
   
-    <dt>title</dt><dd><p>Capitalize all the significant words of the title, and concatenate them. For example, <code>An awesome paper on JabRef</code> will become <code>AnAwesomePaperJabref</code></p></dd>
+    <dt><b>title</b></dt><dd><p>Capitalize all the significant words of the title, and concatenate them. For example, <code>An awesome paper on JabRef</code> will become <code>AnAwesomePaperJabref</code></p></dd>
   
-    <dt>type(...allowed: string[])</dt><dd><p>Without arguments, returns the item type.
+    <dt><b>type</b>(...allowed: string[])</dt><dd><p>Without arguments, returns the item type.
 When arguments as passed, tests whether the item is of any of the given types, and skips to the next pattern if not, eg <code>type(book) + veryshorttitle | auth + year</code>.</p>
 <p>creator type can be one of <code>annotation</code>, <code>artwork</code>, <code>attachment</code>, <code>audioRecording</code>, <code>bill</code>, <code>blogPost</code>, <code>book</code>, <code>bookSection</code>, <code>case</code>, <code>computerProgram</code>, <code>conferencePaper</code>, <code>dataset</code>, <code>dictionaryEntry</code>, <code>document</code>, <code>email</code>, <code>encyclopediaArticle</code>, <code>film</code>, <code>forumPost</code>, <code>hearing</code>, <code>instantMessage</code>, <code>interview</code>, <code>journalArticle</code>, <code>letter</code>, <code>magazineArticle</code>, <code>manuscript</code>, <code>map</code>, <code>newspaperArticle</code>, <code>note</code>, <code>patent</code>, <code>podcast</code>, <code>preprint</code>, <code>presentation</code>, <code>radioBroadcast</code>, <code>report</code>, <code>standard</code>, <code>statute</code>, <code>thesis</code>, <code>tvBroadcast</code>, <code>videoRecording</code>, <code>webpage</code></p></dd>
   
-    <dt>veryshorttitle(n: number = 1, m: number = 0)</dt><dd><p>The first <code>n</code> words of the title, apply capitalization to first <code>m</code> of those</p></dd>
+    <dt><b>veryshorttitle</b>(n: number = 1, m: number = 0)</dt><dd><p>The first <code>n</code> words of the title, apply capitalization to first <code>m</code> of those</p></dd>
   
-    <dt>year</dt><dd><p>The year of the publication</p></dd>
+    <dt><b>year</b></dt><dd><p>The year of the publication</p></dd>
   
-    <dt>zotero</dt><dd><p>Generates citation keys as the stock Zotero Bib(La)TeX export
+    <dt><b>zotero</b></dt><dd><p>Generates citation keys as the stock Zotero Bib(La)TeX export
 does. Note that this pattern inherits all the problems of the
 original Zotero citekey generation -- you should really only
 use this if you have existing papers that rely on this behavior.</p></dd>
@@ -12282,79 +12282,79 @@ use this if you have existing papers that rely on this behavior.</p></dd>
 <h4 id="filters">Filters</h4>
 <dl>
   
-  <dt>abbr(chars: number = 1)</dt><dd><p>Abbreviates the text. Only the first character and subsequent characters following white space will be included.</p></dd>
+  <dt><b>abbr</b>(chars: number = 1)</dt><dd><p>Abbreviates the text. Only the first character and subsequent characters following white space will be included.</p></dd>
   
-  <dt>acronym(list: string = &#39;acronyms&#39;, reload: boolean = false, passthrough: boolean = false)</dt><dd><p>Does an acronym lookup for the text.</p></dd>
+  <dt><b>acronym</b>(list: string = &#39;acronyms&#39;, reload: boolean = false, passthrough: boolean = false)</dt><dd><p>Does an acronym lookup for the text.</p></dd>
   
-  <dt>alphanum</dt><dd><p>clears out everything but unicode alphanumeric characters (unicode character classes <code>L</code> and <code>N</code>)</p></dd>
+  <dt><b>alphanum</b></dt><dd><p>clears out everything but unicode alphanumeric characters (unicode character classes <code>L</code> and <code>N</code>)</p></dd>
   
-  <dt>ascii</dt><dd><p>removes all non-ascii characters</p></dd>
+  <dt><b>ascii</b></dt><dd><p>removes all non-ascii characters</p></dd>
   
-  <dt>capitalize</dt><dd><p>uppercases the first letter of each word</p></dd>
+  <dt><b>capitalize</b></dt><dd><p>uppercases the first letter of each word</p></dd>
   
-  <dt>clean</dt><dd><p>transliterates the citation key and removes unsafe characters</p></dd>
+  <dt><b>clean</b></dt><dd><p>transliterates the citation key and removes unsafe characters</p></dd>
   
-  <dt>condense(sep: string = &#39;&#39;)</dt><dd><p>replaces spaces in the value passed in. You can specify what to replace it with by adding it as a
+  <dt><b>condense</b>(sep: string = &#39;&#39;)</dt><dd><p>replaces spaces in the value passed in. You can specify what to replace it with by adding it as a
 parameter, e.g <code>.condense('\_')</code> will replace spaces with underscores. Equivalent to <code>.replace(/\s+/g, sep)</code>.</p></dd>
   
-  <dt>default(text: string)</dt><dd><p>Returns the given text if no output was generated</p></dd>
+  <dt><b>default</b>(text: string)</dt><dd><p>Returns the given text if no output was generated</p></dd>
   
-  <dt>discard</dt><dd><p>discards the input</p></dd>
+  <dt><b>discard</b></dt><dd><p>discards the input</p></dd>
   
-  <dt>find(match: (string | RegExp), passthrough: boolean = false)</dt><dd><p>Finds a text in the string and returns it.</p></dd>
+  <dt><b>find</b>(match: (string | RegExp), passthrough: boolean = false)</dt><dd><p>Finds a text in the string and returns it.</p></dd>
   
-  <dt>formatDate(format: string = &#39;%Y-%m-%d&#39;)</dt><dd><p>formats date as by replacing y, m and d in the format</p></dd>
+  <dt><b>formatDate</b>(format: string = &#39;%Y-%m-%d&#39;)</dt><dd><p>formats date as by replacing y, m and d in the format</p></dd>
   
-  <dt>ideographs</dt><dd><p>Treat ideaographs as individual words</p></dd>
+  <dt><b>ideographs</b></dt><dd><p>Treat ideaographs as individual words</p></dd>
   
-  <dt>jieba(mode?: (&quot;cn&quot; | &quot;tw&quot; | &quot;hant&quot;))</dt><dd><p>word segmentation for Chinese items. Uses substantial memory, and adds about 7 seconds to BBTs startup time; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</p></dd>
+  <dt><b>jieba</b>(mode?: (&quot;cn&quot; | &quot;tw&quot; | &quot;hant&quot;))</dt><dd><p>word segmentation for Chinese items. Uses substantial memory, and adds about 7 seconds to BBTs startup time; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</p></dd>
   
-  <dt>kuromoji</dt><dd><p>word segmentation for Japanese items. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</p></dd>
+  <dt><b>kuromoji</b></dt><dd><p>word segmentation for Japanese items. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</p></dd>
   
-  <dt>len(relation: (&quot;&lt;&quot; | &quot;&gt;&quot; | &quot;&lt;=&quot; | &quot;==&quot; | &quot;!=&quot; | &quot;&gt;=&quot;) = &#39;&gt;&#39;, length: number = 0)</dt><dd><p>If the length of the output does not match the given number, skip to the next pattern.</p></dd>
+  <dt><b>len</b>(relation: (&quot;&lt;&quot; | &quot;&gt;&quot; | &quot;&lt;=&quot; | &quot;==&quot; | &quot;!=&quot; | &quot;&gt;=&quot;) = &#39;&gt;&#39;, length: number = 0)</dt><dd><p>If the length of the output does not match the given number, skip to the next pattern.</p></dd>
   
-  <dt>localTime</dt><dd><p>transforms date/time to local time. Mainly useful for dateAdded and dateModified as it requires an ISO-formatted input.</p></dd>
+  <dt><b>localTime</b></dt><dd><p>transforms date/time to local time. Mainly useful for dateAdded and dateModified as it requires an ISO-formatted input.</p></dd>
   
-  <dt>lower</dt><dd><p>Forces the text inserted by the field marker to be in lowercase. For example, <code>auth.lower</code> expands to the last name of the first author in lowercase.</p></dd>
+  <dt><b>lower</b></dt><dd><p>Forces the text inserted by the field marker to be in lowercase. For example, <code>auth.lower</code> expands to the last name of the first author in lowercase.</p></dd>
   
-  <dt>match(match: (string | RegExp), clean: boolean = false)</dt><dd><p>If the output does not match the given string/regex, skip to the next pattern.</p></dd>
+  <dt><b>match</b>(match: (string | RegExp), clean: boolean = false)</dt><dd><p>If the output does not match the given string/regex, skip to the next pattern.</p></dd>
   
-  <dt>nopunct(dash: string = &#39;-&#39;)</dt><dd><p>Removes punctuation</p></dd>
+  <dt><b>nopunct</b>(dash: string = &#39;-&#39;)</dt><dd><p>Removes punctuation</p></dd>
   
-  <dt>nopunctordash</dt><dd><p>Removes punctuation and word-connecting dashes. alias for <code>nopunct(dash='')</code></p></dd>
+  <dt><b>nopunctordash</b></dt><dd><p>Removes punctuation and word-connecting dashes. alias for <code>nopunct(dash='')</code></p></dd>
   
-  <dt>numeric</dt><dd><p>returns the value if it's an integer</p></dd>
+  <dt><b>numeric</b></dt><dd><p>returns the value if it's an integer</p></dd>
   
-  <dt>pinyin</dt><dd><p>transliterates the citation key to pinyin</p></dd>
+  <dt><b>pinyin</b></dt><dd><p>transliterates the citation key to pinyin</p></dd>
   
-  <dt>postfix(postfix: string)</dt><dd><p>postfixes with its parameter, so <code>postfix('\_')</code> will add an underscore to the end if, and only if, the value
+  <dt><b>postfix</b>(postfix: string)</dt><dd><p>postfixes with its parameter, so <code>postfix('\_')</code> will add an underscore to the end if, and only if, the value
 it is supposed to postfix isn't empty</p></dd>
   
-  <dt>prefix(prefix: string)</dt><dd><p>prefixes with its parameter, so <code>.prefix('\_')</code> will add an underscore to the front if, and only if, the value
+  <dt><b>prefix</b>(prefix: string)</dt><dd><p>prefixes with its parameter, so <code>.prefix('\_')</code> will add an underscore to the front if, and only if, the value
 it is supposed to prefix isn't empty.</p></dd>
   
-  <dt>replace(find: (string | RegExp), replace: string)</dt><dd><p>replaces text, for the text to match you can pass either:</p>
+  <dt><b>replace</b>(find: (string | RegExp), replace: string)</dt><dd><p>replaces text, for the text to match you can pass either:</p>
 <ul>
 <li>a string: <code>.replace('.etal','&amp;etal')</code> which will match case-insensitive, so will replace <code>.EtAl</code> with <code>&amp;etal</code>.</li>
 <li><a href="https://www.simplilearn.com/tutorials/javascript-tutorial/javascript-regex">javascript regular expression</a>: <code>.replace(/[.]etal/ig, '&amp;etal')</code></li>
 </ul></dd>
   
-  <dt>select(start: number = 1, n?: number)</dt><dd><p>selects words from the value passed in. The format is <code>select(start,number)</code> (1-based), so <code>select(1,4)</code> or <code>select(n=4)</code>
+  <dt><b>select</b>(start: number = 1, n?: number)</dt><dd><p>selects words from the value passed in. The format is <code>select(start,number)</code> (1-based), so <code>select(1,4)</code> or <code>select(n=4)</code>
 would select the first four words. If <code>n</code> is not given, all words from <code>start</code> to the end are
 selected.</p></dd>
   
-  <dt>skipwords(nopunct: boolean = false)</dt><dd><p>filters out common words like 'of', 'the', … the list of words can be seen and changed by going into
+  <dt><b>skipwords</b>(nopunct: boolean = false)</dt><dd><p>filters out common words like 'of', 'the', … the list of words can be seen and changed by going into
 <code>about:config</code> under the key <code>extensions.zotero.translators.better-bibtex.skipWords</code> as a comma-separated,
 case-insensitive list of words.</p>
 <p>If you want to strip words like 'Jr.' from names, you could use something like <code>Auth.nopunct.skipwords.fold</code>
 after adding <code>jr</code> to the skipWords list.
 Note that this filter is always applied with <code>nopunct</code> on if you use <code>title</code> (which is different from <code>Title</code>) or <code>shorttitle</code>.</p></dd>
   
-  <dt>substring(start: number = 1, n?: number)</dt><dd><p><code>substring(start,n)</code> selects <code>n</code> (default: all) characters starting at <code>start</code></p></dd>
+  <dt><b>substring</b>(start: number = 1, n?: number)</dt><dd><p><code>substring(start,n)</code> selects <code>n</code> (default: all) characters starting at <code>start</code></p></dd>
   
-  <dt>transliterate(mode?: (&quot;minimal&quot; | &quot;tw&quot; | &quot;mn&quot; | &quot;arabic&quot; | &quot;chinese&quot; | &quot;german&quot; | &quot;japanese&quot; | &quot;mongolian&quot; | &quot;russian&quot; | &quot;ru&quot; | &quot;uk&quot; | &quot;ar&quot; | &quot;de&quot; | &quot;ja&quot; | &quot;zh&quot; | &quot;zh-hant&quot; | &quot;ukranian&quot;))</dt><dd><p>transliterates the citation key. If you don't specify a mode, the mode is derived from the item language field</p></dd>
+  <dt><b>transliterate</b>(mode?: (&quot;minimal&quot; | &quot;tw&quot; | &quot;mn&quot; | &quot;arabic&quot; | &quot;chinese&quot; | &quot;german&quot; | &quot;japanese&quot; | &quot;mongolian&quot; | &quot;russian&quot; | &quot;ru&quot; | &quot;uk&quot; | &quot;ar&quot; | &quot;de&quot; | &quot;ja&quot; | &quot;zh&quot; | &quot;zh-hant&quot; | &quot;ukranian&quot;))</dt><dd><p>transliterates the citation key. If you don't specify a mode, the mode is derived from the item language field</p></dd>
   
-  <dt>upper</dt><dd><p>Forces the text inserted by the field marker to be in uppercase. For example, <code>auth.upper</code> expands the last name of the first author in uppercase.</p></dd>
+  <dt><b>upper</b></dt><dd><p>Forces the text inserted by the field marker to be in uppercase. For example, <code>auth.upper</code> expands the last name of the first author in uppercase.</p></dd>
   
 </dl>
 
@@ -13189,10 +13189,10 @@ means a lot) so I can save up for a replacement a year or so down
 the line, head on over to <a href="https://www.patreon.com/retorquere" rel="external" target="_blank">Patreon</a>,
 but mind that Patreon takes a fairly large cut of what you give.</p>
 <p>Many, many thanks, also to the existing contributors &ndash; thanks to you I&rsquo;ve hit my first target and have been able to replace my trusty macbook air with a newer macbook pro which has much more breathing room.</p>
-<p><a href="#R-image-9e84b397ebcf124581a6a34c9965eff1" class="lightbox-link"><img alt="My github stats" class="lazy lightbox figure-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9e84b397ebcf124581a6a34c9965eff1"><img alt="My github stats" class="lazy lightbox lightbox-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark"></a></p>
-<p><a href="#R-image-613e741734c149e39054f02def13bed6" class="lightbox-link"><img alt="Metrics" class="lazy lightbox figure-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-613e741734c149e39054f02def13bed6"><img alt="Metrics" class="lazy lightbox lightbox-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo"></a></p>
+<p><a href="#R-image-2723482229a97ef3140293f478e9bdfe" class="lightbox-link"><img alt="My github stats" class="lazy lightbox figure-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2723482229a97ef3140293f478e9bdfe"><img alt="My github stats" class="lazy lightbox lightbox-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark"></a></p>
+<p><a href="#R-image-c25f952587f7a49eff32c287f668b559" class="lightbox-link"><img alt="Metrics" class="lazy lightbox figure-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c25f952587f7a49eff32c287f668b559"><img alt="Metrics" class="lazy lightbox lightbox-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo"></a></p>
 
   <footer class="footline">
   </footer>
