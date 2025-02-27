@@ -108,187 +108,6 @@
   "items": [
     {
       "version": 0,
-      "itemType": "note",
-      "note": "Import errors found: <ul><li>Don&#39;t know what Zotero type to make of &#39;standard&#39; for @standard, importing as document</li></ul>",
-      "tags": [
-        {
-          "tag": "#Better BibTeX import error",
-          "type": 1
-        }
-      ],
-      "collections": [],
-      "relations": {},
-      "dateAdded": "2025-01-28T20:42:39Z",
-      "dateModified": "2025-01-28T20:42:39Z",
-      "uri": "http://zotero.org/users/8230813/items/K7F4UWWS",
-      "itemID": 109,
-      "itemKey": "K7F4UWWS",
-      "libraryID": 1,
-      "attachments": []
-    },
-    {
-      "version": 0,
-      "itemType": "dataset",
-      "date": "1995-01",
-      "extra": "Citation Key: dataset\nPages: 6",
-      "language": "english",
-      "title": "What a great report",
-      "creators": [
-        {
-          "name": "A very well-known and serious institution",
-          "creatorType": "author"
-        }
-      ],
-      "tags": [],
-      "relations": {},
-      "dateAdded": "2025-01-28T20:42:39Z",
-      "dateModified": "2025-01-28T20:42:39Z",
-      "uri": "http://zotero.org/users/8230813/items/SEZ7LRNI",
-      "attachments": [],
-      "notes": [],
-      "citationKey": "dataset",
-      "itemID": 105,
-      "itemKey": "SEZ7LRNI",
-      "libraryID": 1,
-      "number": "mypreciousreportnumber"
-    },
-    {
-      "version": 0,
-      "itemType": "case",
-      "extra": "Citation Key: jurisdiction",
-      "language": "english",
-      "creators": [
-        {
-          "name": "A very well-known and serious institution",
-          "creatorType": "author"
-        }
-      ],
-      "tags": [],
-      "relations": {},
-      "dateAdded": "2025-01-28T20:42:39Z",
-      "dateModified": "2025-01-28T20:42:39Z",
-      "uri": "http://zotero.org/users/8230813/items/87Z9IBXV",
-      "attachments": [],
-      "notes": [],
-      "citationKey": "jurisdiction",
-      "itemID": 104,
-      "itemKey": "87Z9IBXV",
-      "libraryID": 1,
-      "date": "1995-01",
-      "number": "mypreciousreportnumber",
-      "pages": "6",
-      "title": "What a great report"
-    },
-    {
-      "version": 0,
-      "itemType": "statute",
-      "pages": "6",
-      "extra": "Citation Key: legislation1",
-      "language": "english",
-      "creators": [
-        {
-          "name": "A very well-known and serious institution",
-          "creatorType": "author"
-        }
-      ],
-      "tags": [],
-      "relations": {},
-      "dateAdded": "2025-01-28T20:42:39Z",
-      "dateModified": "2025-01-28T20:42:39Z",
-      "uri": "http://zotero.org/users/8230813/items/LS8FATJA",
-      "attachments": [],
-      "notes": [],
-      "citationKey": "legislation1",
-      "itemID": 103,
-      "itemKey": "LS8FATJA",
-      "libraryID": 1,
-      "date": "1995-01",
-      "number": "mypreciousreportnumber",
-      "title": "What a great report"
-    },
-    {
-      "version": 0,
-      "itemType": "statute",
-      "pages": "6",
-      "extra": "Citation Key: legislation2",
-      "language": "english",
-      "creators": [
-        {
-          "name": "A very well-known and serious institution",
-          "creatorType": "author"
-        }
-      ],
-      "tags": [],
-      "relations": {},
-      "dateAdded": "2025-01-28T20:42:39Z",
-      "dateModified": "2025-01-28T20:42:39Z",
-      "uri": "http://zotero.org/users/8230813/items/QLN6ZECQ",
-      "attachments": [],
-      "notes": [],
-      "citationKey": "legislation2",
-      "itemID": 108,
-      "itemKey": "QLN6ZECQ",
-      "libraryID": 1,
-      "date": "1995-01",
-      "number": "mypreciousreportnumber",
-      "title": "What a great report"
-    },
-    {
-      "version": 0,
-      "itemType": "patent",
-      "pages": "6",
-      "extra": "Citation Key: patent",
-      "language": "english",
-      "title": "What a great report",
-      "creators": [
-        {
-          "name": "A very well-known and serious institution",
-          "creatorType": "inventor"
-        }
-      ],
-      "tags": [],
-      "relations": {},
-      "dateAdded": "2025-01-28T20:42:39Z",
-      "dateModified": "2025-01-28T20:42:39Z",
-      "uri": "http://zotero.org/users/8230813/items/DHDHFE4E",
-      "attachments": [],
-      "notes": [],
-      "citationKey": "patent",
-      "itemID": 106,
-      "itemKey": "DHDHFE4E",
-      "libraryID": 1,
-      "date": "1995-01",
-      "number": "mypreciousreportnumber"
-    },
-    {
-      "version": 0,
-      "itemType": "report",
-      "pages": "6",
-      "date": "1995-01",
-      "extra": "Citation Key: report",
-      "language": "english",
-      "title": "What a great report",
-      "creators": [
-        {
-          "name": "A very well-known and serious institution",
-          "creatorType": "author"
-        }
-      ],
-      "tags": [],
-      "relations": {},
-      "dateAdded": "2025-01-28T20:42:39Z",
-      "dateModified": "2025-01-28T20:42:39Z",
-      "uri": "http://zotero.org/users/8230813/items/QQN542ZL",
-      "attachments": [],
-      "notes": [],
-      "citationKey": "report",
-      "itemID": 107,
-      "itemKey": "QQN542ZL",
-      "libraryID": 1,
-      "number": "mypreciousreportnumber"
-    },
-    {
-      "version": 0,
       "itemType": "report",
       "pages": "6",
       "date": "1995-01",
@@ -303,14 +122,14 @@
       ],
       "tags": [],
       "relations": {},
-      "dateAdded": "2025-01-28T20:42:39Z",
-      "dateModified": "2025-01-28T20:42:39Z",
-      "uri": "http://zotero.org/users/8230813/items/E4ZK8XP6",
+      "dateAdded": "2025-01-29T17:47:23Z",
+      "dateModified": "2025-01-29T17:47:23Z",
+      "uri": "http://zotero.org/users/8230813/items/7CJKL3L8",
       "attachments": [],
       "notes": [],
       "citationKey": "techreport",
-      "itemID": 102,
-      "itemKey": "E4ZK8XP6",
+      "itemID": 112,
+      "itemKey": "7CJKL3L8",
       "libraryID": 1,
       "number": "my_precious_report_number"
     }

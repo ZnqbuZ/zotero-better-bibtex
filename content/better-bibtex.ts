@@ -18,7 +18,6 @@ declare const FileUtils: any
 import { MenuManager } from 'zotero-plugin-toolkit'
 const Menu = new MenuManager
 
-import type { XUL } from '../typings/xul'
 import { DebugLog } from 'zotero-plugin/debug-log'
 DebugLog.register('Better BibTeX', ['extensions.zotero.translators.better-bibtex.'])
 
@@ -135,7 +134,7 @@ monkey.patch(Zotero.Items, 'merge', original => async function Zotero_Items_merg
               extra.extraFields.kv[name] = value
             }
             else if (Array.isArray(existing) && Array.isArray(value)) {
-              for (const creator in value) {
+              for (const creator of value) {
                 if (!existing.includes(creator)) existing.push(creator)
               }
             }
@@ -239,7 +238,7 @@ monkey.patch(Zotero.Item.prototype, 'setField', original => function Zotero_Item
       Zotero.BetterBibTeX.KeyManager.update(this)
       return true
     }
-    else if (value !== citekey.citationKey) {
+    else if (value !== citekey.citationKey || !citekey.pinned) {
       this.setField('extra', Extra.set(this.getField('extra'), { citationKey: value }))
       // citekey.pinned = true
       // citekey.citekey = value
