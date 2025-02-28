@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.144.2">
-    <meta name="generator" content="Relearn 7.4.1+bd6eb3f5dec7ae5847af754434b19f8c9085f3cc">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 7.4.1+ec1b461d3886edd1383ec154518b970e72ca3f08">
     <meta name="description" content="You can call into BBT using JSON-RPC on the URL http://localhost:23119/better-bibtex/json-rpc . An example could look like:
 curl http://localhost:23119/better-bibtex/json-rpc -X POST -H &#34;Content-Type: application/json&#34; -H &#34;Accept: application/json&#34; --data-binary &#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;collection.scanAUX&#34;, &#34;params&#34;: [&#34;/My Library/thesis/article1&#34;, &#34;/Users/phantom/Downloads/output.aux&#34;] }&#39; The available methods are:
 api.ready(): { betterbibtex: string; zotero: string } Returns the Zotero and BetterBibTeX version to show the JSON-RPC API is ready.
@@ -34,21 +34,30 @@ autoexport.add(collection: string, translator: string, path: string, displayOpti
     <meta itemprop="wordCount" content="510">
     <title>JSON-RPC :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
-    <link href="/zotero-better-bibtex/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
-    <link href="/zotero-better-bibtex/css/auto-complete.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/css/auto-complete.css" rel="stylesheet"></noscript>
-    <link href="/zotero-better-bibtex/css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/zotero-better-bibtex/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="/zotero-better-bibtex/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
     <link href="/zotero-better-bibtex/css/theme.min.css" rel="stylesheet">
     <link href="/zotero-better-bibtex/css/format-html.min.css" rel="stylesheet" id="R-format-style">
+    <link href="/zotero-better-bibtex/css/auto-complete/auto-complete.min.css" rel="stylesheet">
+    <script src="/zotero-better-bibtex/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/lunr/lunr.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/lunr/lunr.stemmer.support.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/lunr/lunr.multi.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/lunr/lunr.en.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/search.min.js" defer></script>
     <script>
       window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = `.min`;
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='\/zotero-better-bibtex';
-      window.relearn.min = `.min`;
+      window.relearn.contentLangs=['en'];
+      window.relearn.index_js_url="/zotero-better-bibtex/searchindex.en.js";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
-      window.relearn.enableBlockCodeWrap=true;
       window.relearn.disableInlineCopyToClipboard=true;
+      window.relearn.enableBlockCodeWrap=true;
       // variant stuff
       window.relearn.themevariants = [ 'green' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -840,9 +849,6 @@ Better BibTeX for Zotero
 </a>
 
         </div>
-        <script>
-          window.index_js_url="/zotero-better-bibtex/searchindex.en.js";
-        </script>
         <search><form action="/zotero-better-bibtex/search/index.html" method="get">
           <div class="searchbox default-animation">
             <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
@@ -851,15 +857,6 @@ Better BibTeX for Zotero
             <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
           </div>
         </form></search>
-        <script>
-          var contentLangs=['en'];
-        </script>
-        <script src="/zotero-better-bibtex/js/auto-complete.js" defer></script>
-        <script src="/zotero-better-bibtex/js/lunr/lunr.min.js" defer></script>
-        <script src="/zotero-better-bibtex/js/lunr/lunr.stemmer.support.min.js" defer></script>
-        <script src="/zotero-better-bibtex/js/lunr/lunr.multi.min.js" defer></script>
-        <script src="/zotero-better-bibtex/js/lunr/lunr.en.min.js" defer></script>
-        <script src="/zotero-better-bibtex/js/search.js" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -1072,8 +1069,8 @@ Better BibTeX for Zotero
         </div>
       </div>
     </aside>
-    <script src="/zotero-better-bibtex/js/clipboard.min.js" defer></script>
-    <script src="/zotero-better-bibtex/js/perfect-scrollbar.min.js" defer></script>
-    <script src="/zotero-better-bibtex/js/theme.js" defer></script>
+    <script src="/zotero-better-bibtex/js/clipboard/clipboard.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/theme.min.js" defer></script>
   </body>
 </html>
