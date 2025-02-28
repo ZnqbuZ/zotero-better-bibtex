@@ -18,7 +18,6 @@ declare const FileUtils: any
 import { MenuManager } from 'zotero-plugin-toolkit'
 const Menu = new MenuManager
 
-import type { XUL } from '../typings/xul'
 import { DebugLog } from 'zotero-plugin/debug-log'
 DebugLog.register('Better BibTeX', ['extensions.zotero.translators.better-bibtex.'])
 
@@ -56,7 +55,7 @@ import { Translators } from './translators'
 import { fix as fixExportFormat } from './item-export-format'
 import { KeyManager } from './key-manager'
 import { TestSupport } from './test-support'
-import { localize } from './l10n'
+import * as l10n from './l10n'
 import * as CSL from 'citeproc'
 
 import { generateBibLaTeX } from '../translators/bibtex/biblatex'
@@ -135,7 +134,7 @@ monkey.patch(Zotero.Items, 'merge', original => async function Zotero_Items_merg
               extra.extraFields.kv[name] = value
             }
             else if (Array.isArray(existing) && Array.isArray(value)) {
-              for (const creator in value) {
+              for (const creator of value) {
                 if (!existing.includes(creator)) existing.push(creator)
               }
             }
@@ -239,7 +238,7 @@ monkey.patch(Zotero.Item.prototype, 'setField', original => function Zotero_Item
       Zotero.BetterBibTeX.KeyManager.update(this)
       return true
     }
-    else if (value !== citekey.citationKey) {
+    else if (value !== citekey.citationKey || !citekey.pinned) {
       this.setField('extra', Extra.set(this.getField('extra'), { citationKey: value }))
       // citekey.pinned = true
       // citekey.citekey = value
@@ -478,8 +477,8 @@ export class BetterBibTeX {
         name = name.lastIndexOf('.') > 0 ? name.substr(0, name.lastIndexOf('.')) : name
         // eslint-disable-next-line no-case-declarations
         const tag = prompt({
-          title: localize(`better-bibtex_aux-scan_title_${ aux.endsWith('.aux') ? 'aux' : 'md' }`),
-          text: localize('better-bibtex_aux-scan_prompt'),
+          title: l10n.localize(`better-bibtex_aux-scan_title_${ aux.endsWith('.aux') ? 'aux' : 'md' }`),
+          text: l10n.localize('better-bibtex_aux-scan_prompt'),
           value: name,
         })
         if (!tag) return
@@ -561,6 +560,8 @@ export class BetterBibTeX {
 
         // and this
         if ((await Translators.needsInstall()).length) await Zotero.Translators.init()
+
+        await l10n.initialize()
 
         this.dir = PathUtils.join(Zotero.DataDirectory.dir, 'better-bibtex')
         await IOUtils.makeDirectory(this.dir, { ignoreExisting: true, createAncestors: true })
@@ -671,7 +672,7 @@ export class BetterBibTeX {
         // don't know why this is not picked up from zotero-types
         const columnDataKey = await Zotero.ItemTreeManager.registerColumn({ // eslint-disable-line @typescript-eslint/await-thenable
           dataKey: 'citationKey',
-          label: localize('better-bibtex_zotero-pane_column_citekey'),
+          label: l10n.localize('better-bibtex_zotero-pane_column_citekey'),
           pluginID: 'better-bibtex@iris-advies.com',
           dataProvider: (item, _dataKey) => {
             const citekey = Zotero.BetterBibTeX.KeyManager.get(item.id)
@@ -756,13 +757,13 @@ export class BetterBibTeX {
 
         /*
         Events.on('items-changed', () => {
-          if (rowID) Zotero.ItemPaneManager.refreshInfoRow(rowID)
+          if (rowID) Zotero.debug('Zotero.ItemPaneManager.refreshInfoRow(rowID)')
           // eslint-disable-next-line no-underscore-dangle
           if (!columnDataKey) return
           const azp = Zotero.getActiveZoteroPane()
           if (!azp || !azp.itemPane) return
           // eslint-disable-next-line no-underscore-dangle
-          if (!azp.itemPane.itemsView._columnPrefs[columnDataKey].hidden) Zotero.ItemTreeManager.refreshColumns()
+          if (!azp.itemPane.itemsView._columnPrefs[columnDataKey].hidden) log.debug('3154: Zotero.ItemTreeManager.refreshColumns()')
         })
         */
 
@@ -801,8 +802,8 @@ export class BetterBibTeX {
         tag: 'menu',
         label: 'Better BibTeX',
         children: [
-          { tag: 'menuitem', label: localize('better-bibtex_aux-scanner'), oncommand: "Zotero.BetterBibTeX.scanAUX('tag')" },
-          { tag: 'menuitem', label: localize('better-bibtex_report-errors'), oncommand: 'Zotero.BetterBibTeX.ErrorReport.open()' },
+          { tag: 'menuitem', label: l10n.localize('better-bibtex_aux-scanner'), oncommand: "Zotero.BetterBibTeX.scanAUX('tag')" },
+          { tag: 'menuitem', label: l10n.localize('better-bibtex_report-errors'), oncommand: 'Zotero.BetterBibTeX.ErrorReport.open()' },
         ],
       })
     }
@@ -811,7 +812,7 @@ export class BetterBibTeX {
       Menu.register('menuHelp', {
         id: 'better-bibtex-menuHelp',
         tag: 'menuitem',
-        label: localize('better-bibtex_report-errors'),
+        label: l10n.localize('better-bibtex_report-errors'),
         oncommand: 'Zotero.BetterBibTeX.ErrorReport.open()',
       })
     }
@@ -823,28 +824,28 @@ export class BetterBibTeX {
         label: 'Better BibTeX',
         icon: 'chrome://zotero-better-bibtex/content/skin/bibtex-menu.svg',
         children: [
-          { tag: 'menuitem', label: localize('better-bibtex_citekey_set'), oncommand: 'Zotero.BetterBibTeX.KeyManager.set()' },
-          { tag: 'menuitem', label: localize('better-bibtex_citekey_pin'), oncommand: 'Zotero.BetterBibTeX.KeyManager.pin("selected")' },
-          { tag: 'menuitem', label: localize('better-bibtex_zotero-pane_citekey_pin_inspire-hep'), oncommand: 'Zotero.BetterBibTeX.KeyManager.pin("selected", true)' },
-          { tag: 'menuitem', label: localize('better-bibtex_zotero-pane_citekey_refresh'), oncommand: 'Zotero.BetterBibTeX.KeyManager.refresh("selected", true)' },
+          { tag: 'menuitem', label: l10n.localize('better-bibtex_citekey_set'), oncommand: 'Zotero.BetterBibTeX.KeyManager.set()' },
+          { tag: 'menuitem', label: l10n.localize('better-bibtex_citekey_pin'), oncommand: 'Zotero.BetterBibTeX.KeyManager.pin("selected")' },
+          { tag: 'menuitem', label: l10n.localize('better-bibtex_zotero-pane_citekey_pin_inspire-hep'), oncommand: 'Zotero.BetterBibTeX.KeyManager.pin("selected", true)' },
+          { tag: 'menuitem', label: l10n.localize('better-bibtex_zotero-pane_citekey_refresh'), oncommand: 'Zotero.BetterBibTeX.KeyManager.refresh("selected", true)' },
           {
             tag: 'menuitem',
-            label: localize('better-bibtex_zotero-pane_biblatex_to_clipboard-bibtex_zotero-pane_citekey_refresh'),
+            label: l10n.localize('better-bibtex_zotero-pane_biblatex_to_clipboard-bibtex_zotero-pane_citekey_refresh'),
             oncommand: `Zotero.BetterBibTeX.MenuHelper.clipSelected('${Translators.bySlug.BetterBibLaTeX.translatorID}')`,
           },
           {
             tag: 'menuitem',
-            label: localize('better-bibtex_zotero-pane_bibtex_to_clipboard-bibtex_zotero-pane_citekey_refresh'),
+            label: l10n.localize('better-bibtex_zotero-pane_bibtex_to_clipboard-bibtex_zotero-pane_citekey_refresh'),
             oncommand: `Zotero.BetterBibTeX.MenuHelper.clipSelected('${Translators.bySlug.BetterBibTeX.translatorID}')`,
           },
           { tag: 'menuseparator' },
-          { tag: 'menuitem', label: localize('better-bibtex_zotero-pane_patch-dates'), oncommand: 'Zotero.BetterBibTeX.MenuHelper.patchDates()' },
-          { tag: 'menuitem', label: localize('better-bibtex_zotero-pane_sentence-case'), oncommand: 'Zotero.BetterBibTeX.MenuHelper.sentenceCase()' },
-          { tag: 'menuitem', label: localize('better-bibtex_zotero-pane_add-citation-links'), oncommand: 'Zotero.BetterBibTeX.MenuHelper.addCitationLinks()' },
+          { tag: 'menuitem', label: l10n.localize('better-bibtex_zotero-pane_patch-dates'), oncommand: 'Zotero.BetterBibTeX.MenuHelper.patchDates()' },
+          { tag: 'menuitem', label: l10n.localize('better-bibtex_zotero-pane_sentence-case'), oncommand: 'Zotero.BetterBibTeX.MenuHelper.sentenceCase()' },
+          { tag: 'menuitem', label: l10n.localize('better-bibtex_zotero-pane_add-citation-links'), oncommand: 'Zotero.BetterBibTeX.MenuHelper.addCitationLinks()' },
           { tag: 'menuseparator', isHidden: () => !TeXstudio.enabled },
-          { tag: 'menuitem', label: localize('better-bibtex_zotero-pane_tex-studio'), oncommand: 'Zotero.BetterBibTeX.MenuHelper.toTeXstudio()', isHidden: () => !TeXstudio.enabled },
+          { tag: 'menuitem', label: l10n.localize('better-bibtex_zotero-pane_tex-studio'), oncommand: 'Zotero.BetterBibTeX.MenuHelper.toTeXstudio()', isHidden: () => !TeXstudio.enabled },
           { tag: 'menuseparator' },
-          { tag: 'menuitem', label: localize('better-bibtex_report-errors'), oncommand: 'Zotero.BetterBibTeX.ErrorReport.open("items")' },
+          { tag: 'menuitem', label: l10n.localize('better-bibtex_report-errors'), oncommand: 'Zotero.BetterBibTeX.ErrorReport.open("items")' },
         ],
       })
     }
@@ -859,7 +860,7 @@ export class BetterBibTeX {
           {
             tag: 'menu',
             isHidden: MenuHelper.AEisHidden,
-            label: localize('zotero-collectionmenu-bbt-autoexport'),
+            label: l10n.localize('zotero-collectionmenu-bbt-autoexport'),
             children: Array.from({length: 10}).map((_, i) => ({
               tag: 'menuitem',
               id: `better-bibtex-collection-menu-ae-${i}`,
@@ -868,10 +869,10 @@ export class BetterBibTeX {
               oncommand: 'Zotero.BetterBibTeX.AutoExport.run(this.getAttribute("label"))',
             })),
           },
-          { tag: 'menuitem', label: localize('better-bibtex_zotero-pane_show_collection-key'), oncommand: 'Zotero.BetterBibTeX.MenuHelper.pullExport()' },
-          { tag: 'menuitem', label: localize('better-bibtex_aux-scanner'), oncommand: 'Zotero.BetterBibTeX.scanAUX("collection")' },
-          // { tag: 'menuitem', label: localize('better-bibtex_zotero-pane_tag_duplicates'), oncommand: 'Zotero.BetterBibTeX.KeyManager.tagDuplicates("libraryID")' },
-          { tag: 'menuitem', label: localize('better-bibtex_report-errors'), oncommand: 'Zotero.BetterBibTeX.ErrorReport.open("collection")' },
+          { tag: 'menuitem', label: l10n.localize('better-bibtex_zotero-pane_show_collection-key'), oncommand: 'Zotero.BetterBibTeX.MenuHelper.pullExport()' },
+          { tag: 'menuitem', label: l10n.localize('better-bibtex_aux-scanner'), oncommand: 'Zotero.BetterBibTeX.scanAUX("collection")' },
+          // { tag: 'menuitem', label: l10n.localize('better-bibtex_zotero-pane_tag_duplicates'), oncommand: 'Zotero.BetterBibTeX.KeyManager.tagDuplicates("libraryID")' },
+          { tag: 'menuitem', label: l10n.localize('better-bibtex_report-errors'), oncommand: 'Zotero.BetterBibTeX.ErrorReport.open("collection")' },
         ],
       })
     }
