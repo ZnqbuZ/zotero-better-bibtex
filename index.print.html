@@ -11575,25 +11575,69 @@ convert to/from unicode and (un)escape where required but will pass whatever is 
 <h2 id="apiready--betterbibtex-string-zotero-string-">api.ready(): { betterbibtex: string; zotero: string }</h2>
 <p>Returns the Zotero and BetterBibTeX version to show the JSON-RPC API is ready.</p>
 <h2 id="autoexportaddcollection-string-translator-string-path-string-displayoptions-recordstring-boolean---replace-boolean--false--id-number-key-string-libraryid-number-">autoexport.add(collection: string, translator: string, path: string, displayOptions: Record&lt;string, boolean&gt; = {}, replace: boolean = false): { id: number; key: string; libraryID: number }</h2>
-<p>Add an auto-export for the given collection. The target collection will be created if it does not exist</p>
+<ul>
+<li>collection: The forward-slash separated path to the collection. The first part of the path must be the library name, or empty (<code>//</code>); empty is your personal library. Intermediate collections that do not exist will be created as needed.</li>
+<li>translator: The name or GUID of a BBT translator</li>
+<li>path: The absolute path to which the collection will be auto-exported</li>
+<li>displayOptions: Options which you would be able to select during an interactive export; <code>exportNotes</code>, default <code>false</code>, and <code>useJournalAbbreviation</code>, default <code>false</code></li>
+<li>replace: Replace the auto-export if it exists, default <code>false</code>
+Add an auto-export for the given collection. The target collection will be created if it does not exist</li>
+</ul>
 <h2 id="collectionscanauxcollection-string-aux-string--key-string-libraryid-number-">collection.scanAUX(collection: string, aux: string): { key: string; libraryID: number }</h2>
-<p>Scan an AUX file for citekeys and populate a Zotero collection from them. The target collection will be cleared if it exists.</p>
+<ul>
+<li>collection: The forward-slash separated path to the collection. The first part of the path must be the library name, or empty (<code>//</code>); empty is your personal library. Intermediate collections that do not exist will be created as needed.</li>
+<li>aux: The absolute path to the AUX file on disk
+Scan an AUX file for citekeys and populate a Zotero collection from them. The target collection will be cleared if it exists.</li>
+</ul>
 <h2 id="itemattachmentscitekey-string-library-string--number-any">item.attachments(citekey: string, library?: (string | number)): any</h2>
-<p>List attachments for an item with the given citekey</p>
+<ul>
+<li>citekey: The citekey to search for</li>
+<li>library: The libraryID to search in (optional). Pass <code>*</code> to search across your library and all groups.
+List attachments for an item with the given citekey</li>
+</ul>
 <h2 id="itembibliographycitekeys-string-format--contenttype-text--html-id-string-locale-string-quickcopy-boolean----library-string--number-string">item.bibliography(citekeys: string[], format: { contentType: (&ldquo;text&rdquo; | &ldquo;html&rdquo;); id: string; locale: string; quickCopy: boolean } = {}, library?: (string | number)): string</h2>
-<p>Generate a bibliography for the given citekeys</p>
+<ul>
+<li>citekeys: An array of citekeys</li>
+<li>format: A specification of how the bibliography should be formatted
+Generate a bibliography for the given citekeys</li>
+</ul>
 <h2 id="itemcitationkeyitem_keys-string-recordstring-string">item.citationkey(item_keys: string[]): Record&lt;string, string&gt;</h2>
-<p>Fetch citationkeys given item keys</p>
+<ul>
+<li>item_keys: A list of [libraryID]:[itemKey] strings. If [libraryID] is omitted, assume &lsquo;My Library&rsquo;
+Fetch citationkeys given item keys</li>
+</ul>
 <h2 id="itemcollectionscitekeys-string-includeparents-boolean-recordstring--key-string-name-string-">item.collections(citekeys: string[], includeParents?: boolean): Record&lt;string, { key: string; name: string }&gt;</h2>
-<p>Fetch the collections containing a range of citekeys</p>
+<ul>
+<li>citekeys: An array of citekeys</li>
+<li>includeParents: Include all parent collections back to the library root
+Fetch the collections containing a range of citekeys</li>
+</ul>
 <h2 id="itemexportcitekeys-string-translator-string-libraryid-string--number-string">item.export(citekeys: string[], translator: string, libraryID?: (string | number)): string</h2>
-<p>Generate an export for a list of citekeys</p>
+<ul>
+<li>citekeys: Array of citekeys</li>
+<li>translator: BBT translator name or GUID</li>
+<li>libraryID: ID of library to select the items from. When omitted, assume &lsquo;My Library&rsquo;
+Generate an export for a list of citekeys</li>
+</ul>
 <h2 id="itemnotescitekeys-string-recordstring--note-string-">item.notes(citekeys: string[]): Record&lt;string, { note: string }[]&gt;</h2>
-<p>Fetch the notes for a range of citekeys</p>
+<ul>
+<li>citekeys: An array of citekeys
+Fetch the notes for a range of citekeys</li>
+</ul>
 <h2 id="itempandoc_filtercitekeys-string-ascsl-boolean-libraryid-string--number--string-style-string-locale-string-any">item.pandoc_filter(citekeys: string[], asCSL: boolean, libraryID?: (string | number | string[]), style?: string, locale?: string): any</h2>
-<p>Generate an export for a list of citekeys, tailored for the pandoc zotero filter</p>
+<ul>
+<li>citekeys: Array of citekeys</li>
+<li>asCSL: Return the items as CSL</li>
+<li>libraryID: ID of library to select the items from. When omitted, assume &lsquo;My Library&rsquo;
+Generate an export for a list of citekeys, tailored for the pandoc zotero filter</li>
+</ul>
 <h2 id="itemsearchterms-string---string----string-string----string-string-string--number----string-string-string--number-boolean--library-string--number-any">item.search(terms: (string | ([ string ] | [ string, string ] | [ string, string, (string | number) ] | [ string, string, (string | number), boolean ])[]), library?: (string | number)): any</h2>
-<p>Search for items in Zotero.</p>
+<ul>
+<li>terms: Single string as typed into the search box in Zotero (search for Title Creator Year)
+Array of tuples similar as typed into the advanced search box in Zotero
+(<a href="https://github.com/zotero/zotero/blob/9971f15e617f19f1bc72f8b24bb00b72d2a4736f/chrome/content/zotero/xpcom/data/searchConditions.js#L72-L610" rel="external" target="_blank">https://github.com/zotero/zotero/blob/9971f15e617f19f1bc72f8b24bb00b72d2a4736f/chrome/content/zotero/xpcom/data/searchConditions.js#L72-L610</a>)
+Search for items in Zotero.</li>
+</ul>
 <p>Examples</p>
 <ul>
 <li>search(&rsquo;&rsquo;) or search([]): return every entries</li>
@@ -11608,10 +11652,17 @@ convert to/from unicode and (un)escape where required but will pass whatever is 
 <li>search([[&lsquo;joinMode&rsquo;, &lsquo;any&rsquo;], [&lsquo;creator&rsquo;, &lsquo;contains&rsquo;, &lsquo;Johnny&rsquo;], [&rsquo;title&rsquo;, &lsquo;contains&rsquo;, &lsquo;Zotero&rsquo;], [&lsquo;creator&rsquo;, &lsquo;contains&rsquo;, &lsquo;Smith&rsquo;, true]]): search for entries with (Creator &lsquo;Johnny&rsquo; OR Title &lsquo;Zotero&rsquo;) AND (Creator &lsquo;Smith&rsquo;)</li>
 </ul>
 <h2 id="usergroupsincludecollections-boolean--collections-any-id-number-name-string-">user.groups(includeCollections?: boolean): { collections: any[]; id: number; name: string }[]</h2>
-<p>List the libraries (also known as groups) the user has in Zotero</p>
+<ul>
+<li>includeCollections: Wether or not the result should inlcude a list of collection for each library (default is false)
+List the libraries (also known as groups) the user has in Zotero</li>
+</ul>
 <h2 id="viewerviewpdfid-string-page-number">viewer.viewPDF(id: string, page: number)</h2>
-<p>Open the PDF associated with an entry with a given id.
-the id can be retrieve with e.g. item.search(&ldquo;mypdf&rdquo;) -&gt; result[0].id</p>
+<ul>
+<li>id: id in the form of <a href="http://zotero.org/users/12345678/items/ABCDEFG0" rel="external" target="_blank">http://zotero.org/users/12345678/items/ABCDEFG0</a></li>
+<li>page: Page Number, counting from zero
+Open the PDF associated with an entry with a given id.
+the id can be retrieve with e.g. item.search(&ldquo;mypdf&rdquo;) -&gt; result[0].id</li>
+</ul>
 <p>mind that the <code>items.export</code> method had a bug where it would double-wrap the JSON-RPC response; the extra layer has been removed in 6.7.143, but if you were expecting the previous result you will have to update your code.</p>
 
   <footer class="footline">
@@ -13195,10 +13246,10 @@ means a lot) so I can save up for a replacement a year or so down
 the line, head on over to <a href="https://www.patreon.com/retorquere" rel="external" target="_blank">Patreon</a>,
 but mind that Patreon takes a fairly large cut of what you give.</p>
 <p>Many, many thanks, also to the existing contributors &ndash; thanks to you I&rsquo;ve hit my first target and have been able to replace my trusty macbook air with a newer macbook pro which has much more breathing room.</p>
-<p><a href="#R-image-00c597f52799c541c5a93f65f4781b9c" class="lightbox-link"><img alt="My github stats" class="lazy lightbox figure-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-00c597f52799c541c5a93f65f4781b9c"><img alt="My github stats" class="lazy lightbox lightbox-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark"></a></p>
-<p><a href="#R-image-2eef909449b077618b2593ed4067c939" class="lightbox-link"><img alt="Metrics" class="lazy lightbox figure-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2eef909449b077618b2593ed4067c939"><img alt="Metrics" class="lazy lightbox lightbox-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo"></a></p>
+<p><a href="#R-image-458bca6ad1e485bb24824def6b05e958" class="lightbox-link"><img alt="My github stats" class="lazy lightbox figure-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-458bca6ad1e485bb24824def6b05e958"><img alt="My github stats" class="lazy lightbox lightbox-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark"></a></p>
+<p><a href="#R-image-d706241162fd462cf7965bdbde38ac8c" class="lightbox-link"><img alt="Metrics" class="lazy lightbox figure-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d706241162fd462cf7965bdbde38ac8c"><img alt="Metrics" class="lazy lightbox lightbox-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo"></a></p>
 
   <footer class="footline">
   </footer>
