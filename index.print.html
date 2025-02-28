@@ -11572,9 +11572,9 @@ convert to/from unicode and (un)escape where required but will pass whatever is 
 <p>You can call into BBT using <a href="https://www.jsonrpc.org/" rel="external" target="_blank">JSON-RPC</a> on the URL http://localhost:23119/better-bibtex/json-rpc . An example could look like:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://localhost:23119/better-bibtex/json-rpc -X POST -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -H <span style="color:#e6db74">&#34;Accept: application/json&#34;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;collection.scanAUX&#34;, &#34;params&#34;: [&#34;/My Library/thesis/article1&#34;, &#34;/Users/phantom/Downloads/output.aux&#34;] }&#39;</span></span></span></code></pre></div>
 <p>The available methods are:</p>
-<h2 id="apiready--betterbibtex-string-zotero-string-">api.ready(): { betterbibtex: string; zotero: string }</h2>
+<p><strong>api.ready</strong>(): { betterbibtex: string; zotero: string }</p>
 <p>Returns the Zotero and BetterBibTeX version to show the JSON-RPC API is ready.</p>
-<h2 id="autoexportaddcollection-string-translator-string-path-string-displayoptions-recordstring-boolean---replace-boolean--false--id-number-key-string-libraryid-number-">autoexport.add(collection: string, translator: string, path: string, displayOptions: Record&lt;string, boolean&gt; = {}, replace: boolean = false): { id: number; key: string; libraryID: number }</h2>
+<p><strong>autoexport.add</strong>(collection: string, translator: string, path: string, displayOptions: Record&lt;string, boolean&gt; = {}, replace: boolean = false): { id: number; key: string; libraryID: number }</p>
 <ul>
 <li>collection: The forward-slash separated path to the collection. The first part of the path must be the library name, or empty (<code>//</code>); empty is your personal library. Intermediate collections that do not exist will be created as needed.</li>
 <li>translator: The name or GUID of a BBT translator</li>
@@ -11583,55 +11583,55 @@ convert to/from unicode and (un)escape where required but will pass whatever is 
 <li>replace: Replace the auto-export if it exists, default <code>false</code>
 Add an auto-export for the given collection. The target collection will be created if it does not exist</li>
 </ul>
-<h2 id="collectionscanauxcollection-string-aux-string--key-string-libraryid-number-">collection.scanAUX(collection: string, aux: string): { key: string; libraryID: number }</h2>
+<p><strong>collection.scanAUX</strong>(collection: string, aux: string): { key: string; libraryID: number }</p>
 <ul>
 <li>collection: The forward-slash separated path to the collection. The first part of the path must be the library name, or empty (<code>//</code>); empty is your personal library. Intermediate collections that do not exist will be created as needed.</li>
 <li>aux: The absolute path to the AUX file on disk
 Scan an AUX file for citekeys and populate a Zotero collection from them. The target collection will be cleared if it exists.</li>
 </ul>
-<h2 id="itemattachmentscitekey-string-library-string--number-any">item.attachments(citekey: string, library?: (string | number)): any</h2>
+<p><strong>item.attachments</strong>(citekey: string, library?: (string | number)): any</p>
 <ul>
 <li>citekey: The citekey to search for</li>
 <li>library: The libraryID to search in (optional). Pass <code>*</code> to search across your library and all groups.
 List attachments for an item with the given citekey</li>
 </ul>
-<h2 id="itembibliographycitekeys-string-format--contenttype-text--html-id-string-locale-string-quickcopy-boolean----library-string--number-string">item.bibliography(citekeys: string[], format: { contentType: (&ldquo;text&rdquo; | &ldquo;html&rdquo;); id: string; locale: string; quickCopy: boolean } = {}, library?: (string | number)): string</h2>
+<p><strong>item.bibliography</strong>(citekeys: string[], format: { contentType: (&ldquo;text&rdquo; | &ldquo;html&rdquo;); id: string; locale: string; quickCopy: boolean } = {}, library?: (string | number)): string</p>
 <ul>
 <li>citekeys: An array of citekeys</li>
 <li>format: A specification of how the bibliography should be formatted
 Generate a bibliography for the given citekeys</li>
 </ul>
-<h2 id="itemcitationkeyitem_keys-string-recordstring-string">item.citationkey(item_keys: string[]): Record&lt;string, string&gt;</h2>
+<p><strong>item.citationkey</strong>(item_keys: string[]): Record&lt;string, string&gt;</p>
 <ul>
 <li>item_keys: A list of [libraryID]:[itemKey] strings. If [libraryID] is omitted, assume &lsquo;My Library&rsquo;
 Fetch citationkeys given item keys</li>
 </ul>
-<h2 id="itemcollectionscitekeys-string-includeparents-boolean-recordstring--key-string-name-string-">item.collections(citekeys: string[], includeParents?: boolean): Record&lt;string, { key: string; name: string }&gt;</h2>
+<p><strong>item.collections</strong>(citekeys: string[], includeParents?: boolean): Record&lt;string, { key: string; name: string }&gt;</p>
 <ul>
 <li>citekeys: An array of citekeys</li>
 <li>includeParents: Include all parent collections back to the library root
 Fetch the collections containing a range of citekeys</li>
 </ul>
-<h2 id="itemexportcitekeys-string-translator-string-libraryid-string--number-string">item.export(citekeys: string[], translator: string, libraryID?: (string | number)): string</h2>
+<p><strong>item.export</strong>(citekeys: string[], translator: string, libraryID?: (string | number)): string</p>
 <ul>
 <li>citekeys: Array of citekeys</li>
 <li>translator: BBT translator name or GUID</li>
 <li>libraryID: ID of library to select the items from. When omitted, assume &lsquo;My Library&rsquo;
 Generate an export for a list of citekeys</li>
 </ul>
-<h2 id="itemnotescitekeys-string-recordstring--note-string-">item.notes(citekeys: string[]): Record&lt;string, { note: string }[]&gt;</h2>
+<p><strong>item.notes</strong>(citekeys: string[]): Record&lt;string, { note: string }[]&gt;</p>
 <ul>
 <li>citekeys: An array of citekeys
 Fetch the notes for a range of citekeys</li>
 </ul>
-<h2 id="itempandoc_filtercitekeys-string-ascsl-boolean-libraryid-string--number--string-style-string-locale-string-any">item.pandoc_filter(citekeys: string[], asCSL: boolean, libraryID?: (string | number | string[]), style?: string, locale?: string): any</h2>
+<p><strong>item.pandoc_filter</strong>(citekeys: string[], asCSL: boolean, libraryID?: (string | number | string[]), style?: string, locale?: string): any</p>
 <ul>
 <li>citekeys: Array of citekeys</li>
 <li>asCSL: Return the items as CSL</li>
 <li>libraryID: ID of library to select the items from. When omitted, assume &lsquo;My Library&rsquo;
 Generate an export for a list of citekeys, tailored for the pandoc zotero filter</li>
 </ul>
-<h2 id="itemsearchterms-string---string----string-string----string-string-string--number----string-string-string--number-boolean--library-string--number-any">item.search(terms: (string | ([ string ] | [ string, string ] | [ string, string, (string | number) ] | [ string, string, (string | number), boolean ])[]), library?: (string | number)): any</h2>
+<p><strong>item.search</strong>(terms: (string | ([ string ] | [ string, string ] | [ string, string, (string | number) ] | [ string, string, (string | number), boolean ])[]), library?: (string | number)): any</p>
 <ul>
 <li>terms: Single string as typed into the search box in Zotero (search for Title Creator Year)
 Array of tuples similar as typed into the advanced search box in Zotero
@@ -11651,12 +11651,12 @@ Search for items in Zotero.</li>
 <li>search([[&lsquo;joinMode&rsquo;, &lsquo;any&rsquo;], [&lsquo;creator&rsquo;, &lsquo;contains&rsquo;, &lsquo;Johnny&rsquo;], [&rsquo;title&rsquo;, &lsquo;contains&rsquo;, &lsquo;Zotero&rsquo;]]): search for entries with Creator &lsquo;Johnny&rsquo; OR Title &lsquo;Zotero&rsquo;</li>
 <li>search([[&lsquo;joinMode&rsquo;, &lsquo;any&rsquo;], [&lsquo;creator&rsquo;, &lsquo;contains&rsquo;, &lsquo;Johnny&rsquo;], [&rsquo;title&rsquo;, &lsquo;contains&rsquo;, &lsquo;Zotero&rsquo;], [&lsquo;creator&rsquo;, &lsquo;contains&rsquo;, &lsquo;Smith&rsquo;, true]]): search for entries with (Creator &lsquo;Johnny&rsquo; OR Title &lsquo;Zotero&rsquo;) AND (Creator &lsquo;Smith&rsquo;)</li>
 </ul>
-<h2 id="usergroupsincludecollections-boolean--collections-any-id-number-name-string-">user.groups(includeCollections?: boolean): { collections: any[]; id: number; name: string }[]</h2>
+<p><strong>user.groups</strong>(includeCollections?: boolean): { collections: any[]; id: number; name: string }[]</p>
 <ul>
 <li>includeCollections: Wether or not the result should inlcude a list of collection for each library (default is false)
 List the libraries (also known as groups) the user has in Zotero</li>
 </ul>
-<h2 id="viewerviewpdfid-string-page-number">viewer.viewPDF(id: string, page: number)</h2>
+<p><strong>viewer.viewPDF</strong>(id: string, page: number)</p>
 <ul>
 <li>id: id in the form of <a href="http://zotero.org/users/12345678/items/ABCDEFG0" rel="external" target="_blank">http://zotero.org/users/12345678/items/ABCDEFG0</a></li>
 <li>page: Page Number, counting from zero
@@ -13246,10 +13246,10 @@ means a lot) so I can save up for a replacement a year or so down
 the line, head on over to <a href="https://www.patreon.com/retorquere" rel="external" target="_blank">Patreon</a>,
 but mind that Patreon takes a fairly large cut of what you give.</p>
 <p>Many, many thanks, also to the existing contributors &ndash; thanks to you I&rsquo;ve hit my first target and have been able to replace my trusty macbook air with a newer macbook pro which has much more breathing room.</p>
-<p><a href="#R-image-458bca6ad1e485bb24824def6b05e958" class="lightbox-link"><img alt="My github stats" class="lazy lightbox figure-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-458bca6ad1e485bb24824def6b05e958"><img alt="My github stats" class="lazy lightbox lightbox-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark"></a></p>
-<p><a href="#R-image-d706241162fd462cf7965bdbde38ac8c" class="lightbox-link"><img alt="Metrics" class="lazy lightbox figure-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d706241162fd462cf7965bdbde38ac8c"><img alt="Metrics" class="lazy lightbox lightbox-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo"></a></p>
+<p><a href="#R-image-a241f07f957d849a2e1e111090ddc676" class="lightbox-link"><img alt="My github stats" class="lazy lightbox figure-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a241f07f957d849a2e1e111090ddc676"><img alt="My github stats" class="lazy lightbox lightbox-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark"></a></p>
+<p><a href="#R-image-e34e917f0fa52dec6d57603178298ffd" class="lightbox-link"><img alt="Metrics" class="lazy lightbox figure-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e34e917f0fa52dec6d57603178298ffd"><img alt="Metrics" class="lazy lightbox lightbox-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo"></a></p>
 
   <footer class="footline">
   </footer>
