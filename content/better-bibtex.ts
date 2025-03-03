@@ -1,12 +1,5 @@
 /* eslint-disable prefer-rest-params */
 
-// import flatMap from 'array.prototype.flatmap'
-// flatMap.shim()
-// import matchAll from 'string.prototype.matchall'
-// matchAll.shim()
-// import allSettled = require('promise.allsettled')
-// allSettled.shim()
-
 import type Bluebird from 'bluebird'
 const Ready = Zotero.Promise.defer()
 

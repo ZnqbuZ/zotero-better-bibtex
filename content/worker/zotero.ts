@@ -2,18 +2,18 @@
 
 // import registerPromiseWorker from '@kotorik/promise-worker/register'
 import registerPromiseWorker from '../../node_modules/@kotorik/promise-worker/dist/register.mjs'
-import allSettled = require('promise.allsettled')
-allSettled.shim()
+// import allSettled = require('promise.allsettled')
+// allSettled.shim()
 
 import type { Attachment, Item, Note } from '../../gen/typings/serialized-item'
 type Serialized = Attachment | Item | Note
 
 import { ExportedItemMetadata, Cache, exportContext } from '../db/cache'
 
-import flatMap from 'array.prototype.flatmap'
-flatMap.shim()
-import matchAll from 'string.prototype.matchall'
-matchAll.shim()
+// import flatMap from 'array.prototype.flatmap'
+// flatMap.shim()
+// import matchAll from 'string.prototype.matchall'
+// matchAll.shim()
 
 declare const IOUtils: any
 
