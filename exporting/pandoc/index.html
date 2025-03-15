@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 7.5.0+5797d81e8e09fdde6f433378d55f780e27684f56">
+    <meta name="generator" content="Relearn 7.5.0+9a020e7eadb7d8203f5b01b18756c72d94773ec9">
     <meta name="description" content="In addition to LaTeX, BBT plays very well with pandoc:
 you can drag and drop citations from Zotero into your markdown documents. you can cite as you write in your favorite editor with varying levels of comfort, mostly depending on how easy (VSCode, Sublime) or hard (looking at you Scrivener) it is to extend your editor. you can even convert your markdown document into a LibreOffice/Word document with actual live Zotero items as if you had entered them into Zotero all along (see below) Use CSL, not bibtex with pandoc Many tutorials on the use of pandoc to generate documents with citations seem to use bibtex as a bibliography format. I would encourage the use of CSL instead. Internally, both Zotero and pandoc-citeproc use CSL citation engines; the two options you have are:">
     <meta name="author" content="">
@@ -863,9 +863,11 @@ Better BibTeX for Zotero
         </form></search>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
-        <ul>
-          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
-        </ul>
+        <div id="R-shortcutmenu-R-homelinks" class="R-sidebarmenu">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/zotero-better-bibtex/index.html"><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
         <hr class="padding">
       </div>
       <div id="R-content-wrapper" class="highlightable">
@@ -905,8 +907,8 @@ Better BibTeX for Zotero
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
-                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/zotero-better-bibtex/exporting/pandoc/index.html" lang="en" selected>English</option>
+                    <select id="R-select-language" onchange="location = this.querySelector( `#R-select-language-${this.value}` ).dataset.url;">
+                      <option id="R-select-language-en" value="en" data-url="/zotero-better-bibtex/exporting/pandoc/index.html" lang="en" selected>English</option>
                     </select>
                   </div>
                   <div class="clear"></div>

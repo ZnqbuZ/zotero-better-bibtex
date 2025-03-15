@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 7.5.0+5797d81e8e09fdde6f433378d55f780e27684f56">
+    <meta name="generator" content="Relearn 7.5.0+9a020e7eadb7d8203f5b01b18756c72d94773ec9">
     <meta name="description" content="Install by downloading the latest release – if you use Firefox, make sure to right-click and save the XPI file, not just clicking it – and then in Zotero:
 In the main menu go to Tools &gt; Add-ons Select ‘Plugins’ Click on the gear in the top-right corner and choose ‘Install Add-on From File…’ Choose .xpi that you’ve just downloaded, click ‘Install’ If you’re using Zotero 6, restart Zotero. Installation in Zotero 7 requires no restart. After the initial installation, the plugin will auto-update to newer releases, so you should need to perform the process described here only once.">
     <meta name="author" content="">
@@ -800,9 +800,11 @@ Better BibTeX for Zotero
         </form></search>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
-        <ul>
-          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
-        </ul>
+        <div id="R-shortcutmenu-R-homelinks" class="R-sidebarmenu">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/zotero-better-bibtex/index.html"><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
         <hr class="padding">
       </div>
       <div id="R-content-wrapper" class="highlightable">
@@ -836,8 +838,8 @@ Better BibTeX for Zotero
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
-                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/zotero-better-bibtex/installation/index.html" lang="en" selected>English</option>
+                    <select id="R-select-language" onchange="location = this.querySelector( `#R-select-language-${this.value}` ).dataset.url;">
+                      <option id="R-select-language-en" value="en" data-url="/zotero-better-bibtex/installation/index.html" lang="en" selected>English</option>
                     </select>
                   </div>
                   <div class="clear"></div>
