@@ -1,7 +1,7 @@
 import * as client from './client'
 import { Path, File } from './file'
 
-import { Cache } from './db/cache'
+import { Cache } from './translators/worker'
 import { regex as escapeRE } from './escape'
 
 import { Preference } from './prefs'
@@ -14,10 +14,12 @@ import { log } from './logger'
 import { AutoExport } from './auto-export'
 import { KeyManager } from './key-manager'
 
-import { pick } from './file-picker'
+import { FilePickerHelper } from 'zotero-plugin-toolkit'
 import * as l10n from './l10n'
 
 import * as UZip from 'uzip'
+
+const ENV = Components.classes['@mozilla.org/process/environment;1'].getService(Components.interfaces.nsIEnvironment)
 
 import { alert } from './prompt'
 
@@ -36,6 +38,8 @@ type Wizard = HTMLElement & {
   advance: () => void
   rewind: () => void
 }
+
+import { version as running } from '../gen/version.json'
 
 type Report = {
   context: string
@@ -75,8 +79,6 @@ export class ErrorReport {
     wizard.getButton('cancel').disabled = true
     wizard.canRewind = false
 
-    const version = require('../gen/version.js')
-
     try {
       await Zotero.HTTP.request('PUT', `${ this.bucket }/${ this.zipfile() }`, {
         noCache: true,
@@ -93,8 +95,7 @@ export class ErrorReport {
 
       wizard.advance();
 
-      // eslint-disable-next-line no-magic-numbers
-      (<HTMLInputElement> this.document.getElementById('better-bibtex-report-id')).value = `${ this.name() }/${version}`
+      (<HTMLInputElement> this.document.getElementById('better-bibtex-report-id')).value = `${ this.name() }/${running}`
       this.document.getElementById('better-bibtex-report-result').hidden = false
     }
     catch (err) {
@@ -123,7 +124,7 @@ export class ErrorReport {
       Zotero.getString('zotero.debugOutputLogging.enabledAfterRestart', [Zotero.clientName]),
       buttonFlags,
       Zotero.getString('general.restartNow'),
-      null, Zotero.getString('general.restartLater'), null, {}
+      null, Zotero.getString('general.restartLater'), null, { value: false }
     )
 
     if (index !== 1) Zotero.Prefs.set('debug.store', true)
@@ -133,7 +134,6 @@ export class ErrorReport {
 
   private async latest(): Promise<string> {
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       const latest = JSON.parse((await Zotero.HTTP.request('GET', 'https://github.com/retorquere/zotero-better-bibtex/releases/download/release/updates.json', { noCache: true })).response)
       return latest.addons['better-bibtex@iris-advies.com'].updates[0].version as string
     }
@@ -161,7 +161,7 @@ export class ErrorReport {
   }
 
   public async save(): Promise<void> {
-    const filename = await pick('Logs', 'save', [[ 'Zip Archive (*.zip)', '*.zip' ]], `${ this.name() }.zip`)
+    const filename = await new FilePickerHelper('Logs', 'save', [[ 'Zip Archive (*.zip)', '*.zip' ]], `${this.name()}.zip`).open()
     if (filename) await IOUtils.write(filename, this.zip(), { tmpPath: filename + '.tmp' })
   }
 
@@ -197,13 +197,14 @@ export class ErrorReport {
       /pdftotext returned exit status/,
       /protocol is not allowed for attachments/,
     ].map(re => re.source).join('|'))
+
     return logging.filter(line => !line.match(ignore))
       .map(line => line.replace($home, '$HOME'))
       .join('\n')
   }
 
   private errors(): string {
-    return this.scrub(Zotero.getErrors(true) as string[])
+    return this.scrub(Zotero.getErrors(true))
   }
 
   private log(): string {
@@ -293,7 +294,6 @@ export class ErrorReport {
     if (!this.config.errors) delete this.report.errors
     if (!this.config.log) delete this.report.log
 
-    log.info(`cache: errorreport ${Cache.opened}`)
     this.setValue('better-bibtex-error-context', this.report.context)
     this.setValue('better-bibtex-error-errors', this.report.errors || '')
     this.setValue('better-bibtex-error-log', this.preview(this.report.log || ''))
@@ -352,18 +352,17 @@ export class ErrorReport {
       cache,
     }
     const acronyms = PathUtils.join(Zotero.BetterBibTeX.dir, 'acronyms.csv')
-    if (await File.exists(acronyms)) this.input.acronyms = await IOUtils.readUTF8(acronyms) as string
+    if (await File.exists(acronyms)) this.input.acronyms = await IOUtils.readUTF8(acronyms)
 
     await this.reload()
 
-    const current = require('../gen/version.js')
-    this.setValue('better-bibtex-report-current', l10n.localize('better-bibtex_error-report_better-bibtex_current', { version: current }))
+    this.setValue('better-bibtex-report-current', l10n.localize('better-bibtex_error-report_better-bibtex_current', { version: running }))
 
     try {
       const latest = await this.latest()
 
       const show_latest = <HTMLInputElement> this.document.getElementById('better-bibtex-report-latest')
-      if (current === latest) {
+      if (running === latest) {
         show_latest.hidden = true
       }
       else {
@@ -371,6 +370,7 @@ export class ErrorReport {
         show_latest.hidden = false
       }
 
+      // @ts-expect-error zotero-types does not export .any
       this.region = await Zotero.Promise.any(Object.keys(s3.region).map(this.ping.bind(this)))
       this.bucket = `https://${ s3.bucket }-${ this.region.short }.s3-${ this.region.region }.amazonaws.com${ this.region.tld || '' }`
       this.key = Zotero.Utilities.generateObjectKey()
@@ -411,7 +411,7 @@ export class ErrorReport {
 
     const appInfo = Components.classes['@mozilla.org/xre/app-info;1'].getService(Components.interfaces.nsIXULAppInfo)
     context += `Application: ${ appInfo.name } (${ Zotero.clientName }) ${ appInfo.version } ${ Zotero.locale }\n`
-    context += `Platform: ${ client.platform }\n`
+    context += `Platform: ${ client.platform }${(ENV.get('SNAP') && ' snap') || (ENV.get('FLATPAK_SANDBOX_DIR') && ' flatpak') || ''}\n`
 
     const addons = await Zotero.getInstalledExtensions()
     if (addons.length) {
@@ -447,9 +447,11 @@ export class ErrorReport {
           case 'collection':
             context += ` (${ Zotero.Collections.get(ae.id)?.name || '<collection>' })`
             break
-          case 'library':
-            context += ` (${ Zotero.Libraries.get(ae.id)?.name || '<library>' })`
+          case 'library': {
+            const lib = Zotero.Libraries.get(ae.id)
+            context += ` (${(lib ? lib.name : '') || '<library>'})`
             break
+          }
         }
         context += '\n'
         for (const [ k, v ] of Object.entries(ae)) {
@@ -465,5 +467,56 @@ export class ErrorReport {
     context += `Zotero.Debug.storing at start: ${ Zotero.BetterBibTeX.debugEnabledAtStart }\n`
 
     return context
+  }
+
+  public async open(items?: string): Promise<void> {
+    const selection = async () => {
+      let scope = null
+      const zp = Zotero.getActiveZoteroPane()
+      switch (items) {
+        case 'collection':
+        case 'library':
+          scope = { type: 'collection', collection: zp.getSelectedCollection() }
+          if (!scope.collection) scope = { type: 'library', id: zp.getSelectedLibraryID() }
+          break
+
+        case 'items':
+          try {
+            scope = { type: 'items', items: zp.getSelectedItems() }
+          }
+          catch (err) { // ZoteroPane.getSelectedItems() doesn't test whether there's a selection and errors out if not
+            log.error('Could not get selected items:', err)
+          }
+      }
+
+      if (!scope) return ''
+
+      try {
+        return await Zotero.BetterBibTeX.Translators.queueJob({
+          translatorID: Zotero.BetterBibTeX.Translators.bySlug.BetterBibTeXJSON.translatorID,
+          displayOptions: { worker: true, exportNotes: true, dropAttachments: true, Normalize: true },
+          scope,
+          timeout: 40,
+        })
+      }
+      catch (err) {
+        if (err.timeout) {
+          log.error('errorreport: items timed out after', err.timeout, 'seconds')
+          return 'Timeout retrieving items'
+        }
+        else {
+          log.error('errorreport: could not get items', err)
+          return `Error retrieving items: ${ err }`
+        }
+      }
+    }
+
+    items = items ? await selection() : ''
+
+    Zotero.getMainWindow().openDialog(
+      'chrome://zotero-better-bibtex/content/ErrorReport.xhtml',
+      'better-bibtex-error-report',
+      'chrome,centerscreen,modal',
+      { wrappedJSObject: { items }})
   }
 }

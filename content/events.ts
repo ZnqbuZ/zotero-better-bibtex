@@ -1,5 +1,3 @@
-/* eslint-disable prefer-rest-params */
-
 import Emittery from 'emittery'
 
 import { log } from './logger'
@@ -27,7 +25,7 @@ class Emitter extends Emittery<{
   'collections-changed': number[]
   'collections-removed': number[]
   'export-progress': { pct: number; message: string; ae?: string }
-  'items-changed': { items: ZoteroItem[]; action: Action; reason?: string }
+  'items-changed': { items: Zotero.Item[]; action: Action; reason?: string }
   'libraries-changed': number[]
   'libraries-removed': number[]
   'preference-changed': string
@@ -125,10 +123,14 @@ class WindowListener {
 
   onOpenWindow(xulWindow) {
     const win = xulWindow.QueryInterface(Components.interfaces.nsIInterfaceRequestor).getInterface(Components.interfaces.nsIDOMWindow)
-    win.addEventListener('load', function load() { // eslint-disable-line prefer-arrow/prefer-arrow-functions
+    win.addEventListener('load', function load() {
       win.removeEventListener('load', load)
       void Events.emit('window-loaded', { win, href: win.location.href })
     }, false)
+  }
+
+  onCloseWindow(_window: nsIAppWindow): void {
+    // pass
   }
 }
 
@@ -156,9 +158,11 @@ class IdleListener {
 abstract class ZoteroListener {
   private id: string
 
-  constructor(protected type: string) {
+  constructor(protected type) {
     this.id = Zotero.Notifier.registerObserver(this, [type], 'Better BibTeX', 1)
   }
+
+  abstract notify(action: ZoteroAction, type: string, ids: string[] | number[], extraData?: Record<number, { libraryID?: number }>): Promise<void>
 
   public unregister() {
     Zotero.Notifier.unregisterObserver(this.id)
@@ -212,7 +216,8 @@ class ItemListener extends ZoteroListener {
       const parentIDs: number[] = []
       // safe to use Zotero.Items.get(...) rather than Zotero.Items.getAsync here
       // https://groups.google.com/forum/#!topic/zotero-dev/99wkhAk-jm0
-      const items = Zotero.Items.get(ids).filter((item: ZoteroItem) => {
+
+      const items = Zotero.Items.get(ids).filter(item => {
         if (item.deleted) touch(item) // because trashing an item *does not* trigger collection-item?!?!
         if (action === 'delete') return false
         // check .deleted for #2401/#2676 -- we're getting *modify* (?!) notifications for trashed items which reinstates them into the BBT DB
@@ -220,17 +225,17 @@ class ItemListener extends ZoteroListener {
         if (item.isFeedItem) return false
 
         if (item.isAttachment() || item.isNote() || item.isAnnotation?.()) { // should I keep top-level notes/attachments for BBT-JSON?
-          if (typeof item.parentID === 'number' && ids.includes(item.parentID)) parentIDs.push(item.parentID)
+          if (typeof item.parentID === 'number' && !ids.includes(item.parentID)) parentIDs.push(item.parentID)
           return false
         }
 
         return true
-      }) as ZoteroItem[]
+      })
 
       await Events.itemsChanged(action, ids)
       if (items.length) await Events.emit('items-changed', { items, action })
 
-      let parents: ZoteroItem[] = []
+      let parents: Zotero.Item[] = []
       if (parentIDs.length) {
         parents = Zotero.Items.get(parentIDs)
         void Events.emit('items-changed', { items: parents, action: 'modify', reason: `parent-${ action }` })

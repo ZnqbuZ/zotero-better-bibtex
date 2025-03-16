@@ -9,7 +9,8 @@ import * as Extra from './extra'
 import { defaults } from '../gen/preferences/meta'
 import { Preference } from './prefs'
 import * as memory from './memory'
-import { Cache } from './db/cache'
+import { Cache } from './translators/worker'
+
 // import { Bench } from 'tinybench'
 
 const setatstart: string[] = [ 'testing', 'cache' ].filter(p => Preference[p] !== defaults[p])
@@ -111,13 +112,13 @@ export class TestSupport {
       await Zotero.Promise.delay(1500)
     }
     else {
-      await Zotero.getMainWindow().Zotero_File_Interface.importFile({ file: Zotero.File.pathToFile(path), createNewCollection: !!createNewCollection })
+      await (Zotero.getMainWindow() as unknown as any).Zotero_File_Interface.importFile({ file: Zotero.File.pathToFile(path), createNewCollection: !!createNewCollection })
     }
 
     items = await Zotero.Items.getAll(Zotero.Libraries.userLibraryID, true, false, true)
     const after = items.length
 
-    await Zotero.Promise.delay(Zotero.Prefs.get('translators.better-bibtex.itemObserverDelay') * 3)
+    await Zotero.Promise.delay(Zotero.Prefs.get('translators.better-bibtex.itemObserverDelay') as number * 3)
     return (after - before)
   }
 
@@ -185,7 +186,7 @@ export class TestSupport {
     const s = (new Zotero.Search)
     for (const [ mode, text ] of Object.entries(query)) {
       if (![ 'is', 'contains' ].includes(mode)) throw new Error(`unsupported search mode ${ mode }`)
-      s.addCondition('field', mode, text)
+      s.addCondition('field', mode as _ZoteroTypes.Search.Operator, text)
     }
     ids = ids.concat(await s.search())
     ids = Array.from(new Set(ids))
@@ -255,7 +256,7 @@ export class TestSupport {
   }
 
   public async resetCache(): Promise<void> {
-    await Cache.clear('*')
+    await Cache.drop()
   }
 
   public async merge(ids: number[]): Promise<void> {
@@ -270,7 +271,7 @@ export class TestSupport {
     Object.assign(json, keep)
 
     master.fromJSON(json)
-    Zotero.Items.merge(master, other)
+    await Zotero.Items.merge(master, other)
 
     await Zotero.Promise.delay(1500)
 
@@ -300,6 +301,10 @@ export class TestSupport {
       await collection.removeItems(itemIDs)
     })
     if (collection.getChildItems(true).length) throw new Error(`${ path } not empty`)
+  }
+
+  public citationKey(itemID: number): string {
+    return Zotero.BetterBibTeX.KeyManager.get(itemID).citationKey
   }
 
   public async quickCopy(itemIDs: number[], translator: string): Promise<string> {

@@ -6,7 +6,6 @@ import { Path, File } from './file'
 
 import * as client from './client'
 
-import { Cache } from './db/cache'
 import { Events } from './events'
 import { Translators, ExportJob } from './translators'
 import { Preference } from './prefs'
@@ -140,7 +139,7 @@ class Git {
         if (!(await File.exists(config)) || (await File.isDir(config))) return disabled()
 
         try {
-          const enabled = ini.parse(Zotero.File.getContents(config))['zotero "betterbibtex"']?.push
+          const enabled = ini.parse(await Zotero.File.getContentsAsync(config))['zotero "betterbibtex"']?.push
           if (enabled !== 'true' && enabled !== true) return disabled()
         }
         catch (err) {
@@ -193,7 +192,7 @@ class Git {
     }
   }
 
-  private async exec(exe: string, args?: string[]): Promise<boolean> { // eslint-disable-line @typescript-eslint/require-await
+  private async exec(exe: string, args?: string[]): Promise<void> {
     // args = ['/K', exe].concat(args || [])
     // exe = await findBinary('CMD')
 
@@ -210,18 +209,20 @@ class Git {
     proc.runwAsync(args, args.length, {
       observe: (subject, topic) => {
         if (topic !== 'process-finished') {
+          // @ts-expect-error zotero-types does not handle typed deferreds
           deferred.reject(new Error(`[ ${ command } ] failed: ${ topic }`))
         }
         else if (proc.exitValue > 0) {
+          // @ts-expect-error zotero-types does not handle typed deferreds
           deferred.reject(new Error(`[ ${ command } ] failed with exit status: ${ proc.exitValue }`))
         }
         else {
-          deferred.resolve(true)
+          deferred.resolve()
         }
       },
     })
 
-    return deferred.promise as Promise<boolean>
+    return deferred.promise
   }
 }
 const git = (new Git)
@@ -402,10 +403,10 @@ type Job = {
 export type JobSetting = keyof Job
 
 // export singleton: https://k94n.com/es6-modules-single-instance-pattern
-export const AutoExport = new class $AutoExport { // eslint-disable-line @typescript-eslint/naming-convention,no-underscore-dangle,id-blacklist,id-match
+export const AutoExport = new class $AutoExport {
   public progress: Map<string, number> = new Map
 
-  private db = createTable<Job>(createDB({ clone: true }), 'autoExports')({
+  public db = createTable<Job>(createDB({ clone: true }), 'autoExports')({
     primary: 'path',
     indexes: [ 'translatorID', 'type', 'id' ],
   })
@@ -465,7 +466,7 @@ export const AutoExport = new class $AutoExport { // eslint-disable-line @typesc
         // detect
         const $ae = 'autoexport'
         const $ae$setting = 'autoexport_setting'
-        const exists = async (table: string) => (await Zotero.DB.tableExists(table, 'betterbibtex')) as Promise<boolean>
+        const exists = async (table: string) => Zotero.DB.tableExists(table, 'betterbibtex')
         if (await exists($ae) && await exists($ae$setting)) {
           try {
             const migrate: Record<string, any> = {}
@@ -488,10 +489,10 @@ export const AutoExport = new class $AutoExport { // eslint-disable-line @typesc
               Zotero.Prefs.set(`translators.better-bibtex.autoExport.${this.key(path)}`, JSON.stringify(ae))
             }
 
-            Zotero.DB.queryAsync(`DELETE FROM betterbibtex.${$ae$setting}`)
-            Zotero.DB.queryAsync(`DELETE FROM betterbibtex.${$ae}`)
-            Zotero.DB.queryAsync(`DROP TABLE betterbibtex.${$ae$setting}`)
-            Zotero.DB.queryAsync(`DROP TABLE betterbibtex.${$ae}`)
+            await Zotero.DB.queryAsync(`DELETE FROM betterbibtex.${$ae$setting}`)
+            await Zotero.DB.queryAsync(`DELETE FROM betterbibtex.${$ae}`)
+            await Zotero.DB.queryAsync(`DROP TABLE betterbibtex.${$ae$setting}`)
+            await Zotero.DB.queryAsync(`DROP TABLE betterbibtex.${$ae}`)
           }
           catch (err) {
             log.error('auto-export migration failed', err)
@@ -499,10 +500,10 @@ export const AutoExport = new class $AutoExport { // eslint-disable-line @typesc
         }
         try {
           if (!(await exists($ae)) && await exists($ae$setting)) {
-            Zotero.DB.queryAsync(`DROP TABLE betterbibtex.${$ae$setting}`)
+            await Zotero.DB.queryAsync(`DROP TABLE betterbibtex.${$ae$setting}`)
           }
           if (await exists($ae) && !(await exists($ae$setting))) {
-            Zotero.DB.queryAsync(`DROP TABLE betterbibtex.${$ae}`)
+            await Zotero.DB.queryAsync(`DROP TABLE betterbibtex.${$ae}`)
           }
         }
         catch (err) {
@@ -511,7 +512,7 @@ export const AutoExport = new class $AutoExport { // eslint-disable-line @typesc
 
         for (const key of Services.prefs.getBranch('extensions.zotero.translators.better-bibtex.autoExport.').getChildList('', {})) {
           try {
-            const ae = JSON.parse(Zotero.Prefs.get(`translators.better-bibtex.autoExport.${key}`))
+            const ae = JSON.parse(Zotero.Prefs.get(`translators.better-bibtex.autoExport.${key}`) as string)
             blink.insert(this.db, ae)
             if (ae.status !== 'done') queue.add(ae.path)
           }
@@ -710,48 +711,10 @@ export const AutoExport = new class $AutoExport { // eslint-disable-line @typesc
     queue.run(path)
   }
 
-  public async cached(path: string) {
-    if (!Preference.cache) return 0
-
-    const ae = this.get(path)
-    if (!ae) {
-      log.error(`no auto-export found for ${path}`)
-      return 0
-    }
-
-    const itemTypeIDs: number[] = [ 'attachment', 'note', 'annotation' ].map(type => {
-      try {
-        return Zotero.ItemTypes.getID(type) as number
-      }
-      catch {
-        return undefined
-      }
+  forCollection(collectionID: number) {
+    return blink.many(this.db, {
+      where: { type: 'collection', id: collectionID },
+      sort: { key: 'path', order: 'asc' },
     })
-
-    const translator = Translators.byId[ae.translatorID]
-    const itemIDset: Set<number> = new Set
-    await this.itemIDs(ae, ae.id, itemTypeIDs, itemIDset)
-    if (itemIDset.size === 0) return 100
-
-    const cached = await Cache.cache(translator.label).count(path)
-    return Math.min(100 * (cached / itemIDset.size), 100)
-  }
-
-  private async itemIDs(ae: Job, id: number, itemTypeIDs: number[], itemIDs: Set<number>) {
-    let items
-    if (ae.type === 'collection') {
-      const coll = await Zotero.Collections.getAsync(id)
-      if (ae.recursive) {
-        for (const collID of coll.getChildren(true)) {
-          await this.itemIDs(ae, collID, itemTypeIDs, itemIDs)
-        }
-      }
-      items = coll.getChildItems()
-    }
-    else if (ae.type === 'library') {
-      items = await Zotero.Items.getAll(id)
-    }
-
-    items.filter(item => !itemTypeIDs.includes(item.itemTypeID)).forEach(item => itemIDs.add(item.id))
   }
 }
