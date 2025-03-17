@@ -35,7 +35,7 @@ curl http://localhost:23119/better-bibtex/json-rpc -X POST -H &#34;Content-Type:
 api.ready(): { betterbibtex: string; zotero: string }
 Returns the Zotero and BetterBibTeX version to show the JSON-RPC API is ready.
 autoexport.add(collection: string, translator: string, path: string, displayOptions: Record&lt;string, boolean&gt; = {}, replace: boolean = false): { id: number; key: string; libraryID: number }">
-    <meta itemprop="wordCount" content="825">
+    <meta itemprop="wordCount" content="827">
     <title>JSON-RPC :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
     <link href="/zotero-better-bibtex/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
@@ -202,7 +202,7 @@ List attachments for an item with the given citekey</li>
 <li>format: A specification of how the bibliography should be formatted
 Generate a bibliography for the given citekeys</li>
 </ul>
-<p><strong>item.citationkey</strong>(item_keys: string[]): Record&lt;string, string&gt;</p>
+<p><strong>item.citationkey</strong>(item_keys: (string[] | &ldquo;selected&rdquo;)): Record&lt;string, string&gt;</p>
 <ul>
 <li>item_keys: A list of [libraryID]:[itemKey] strings. If [libraryID] is omitted, assume &lsquo;My Library&rsquo;
 Fetch citationkeys given item keys</li>
