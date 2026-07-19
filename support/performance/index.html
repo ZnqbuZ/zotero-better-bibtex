@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+<html id="R-html" lang="en-US" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 7.5.0+e2a1704c3c230050d3777be3bae36285a7fa0d8e">
+    <meta name="generator" content="Hugo 0.164.0">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
     <meta name="description" content="The Better BibTeX exporters are a lot slower than the standard Zotero Bib(La)TeX exporters. If you have a small library, you will not likely notice this, but if you have several thousand items, and you are in the habit of exporting substantial parts of your library, this gets annoying really fast.
 To deal with this problem, Better BibTeX implements an extensive caching system. With a filled cache, Better BibTeX is substantially faster than the default Zotero exporters. Specifically for automatic background exports, a filled cache is a good thing to have.">
     <meta name="author" content="">
@@ -17,7 +17,7 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
     <meta property="og:title" content="Performance :: Better BibTeX for Zotero">
     <meta property="og:description" content="The Better BibTeX exporters are a lot slower than the standard Zotero Bib(La)TeX exporters. If you have a small library, you will not likely notice this, but if you have several thousand items, and you are in the habit of exporting substantial parts of your library, this gets annoying really fast.
 To deal with this problem, Better BibTeX implements an extensive caching system. With a filled cache, Better BibTeX is substantially faster than the default Zotero exporters. Specifically for automatic background exports, a filled cache is a good thing to have.">
-    <meta property="og:locale" content="en">
+    <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Support">
     <meta property="article:tag" content="Export">
@@ -29,17 +29,26 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
     <meta itemprop="keywords" content="Export,Cache">
     <title>Performance :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
-    <link href="/zotero-better-bibtex/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
-    <link href="/zotero-better-bibtex/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
-    <link href="/zotero-better-bibtex/css/theme.min.css" rel="stylesheet">
-    <link href="/zotero-better-bibtex/css/format-html.min.css" rel="stylesheet" id="R-format-style">
     <link href="/zotero-better-bibtex/css/auto-complete/auto-complete.min.css" rel="stylesheet">
     <script src="/zotero-better-bibtex/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/search-lunr.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/search.min.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/zotero-better-bibtex/searchindex.en.js";
+    </script>
     <script src="/zotero-better-bibtex/js/lunr/lunr.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/lunr/lunr.stemmer.support.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/lunr/lunr.multi.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/lunr/lunr.en.min.js" defer></script>
-    <script src="/zotero-better-bibtex/js/search.min.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/zotero-better-bibtex/fonts/fontawesome/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/fonts/fontawesome/css/all.min.css" rel="stylesheet"></noscript>
+    <link href="/zotero-better-bibtex/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/zotero-better-bibtex/css/theme.min.css" rel="stylesheet">
+    <link href="/zotero-better-bibtex/css/format-html.min.css" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -48,15 +57,20 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='\/zotero-better-bibtex';
-      window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/zotero-better-bibtex/searchindex.en.js";
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=true;
       window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'green' ];
-      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.customvariantprefix = "my-custom-";
       window.relearn.changeVariant = function(variant) {
         var oldVariant = document.documentElement.dataset.rThemeVariant;
         window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
@@ -72,8 +86,9 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
       }
       window.relearn.initVariant = function() {
         var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
-        if( variant == window.relearn.customvariantname ){
-        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
           variant = window.relearn.themevariants[0];
           window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
         }
@@ -81,15 +96,6 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
       }
       window.relearn.initVariant();
       window.relearn.markVariant();
-      // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
-      window.T_Reset_view = `Reset view`;
-      window.T_View_reset = `View reset!`;
-      window.T_No_results_found = `No results found for "{0}"`;
-      window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
 <!-- WARNING: this page is generated by https://gohugo.io/ from site/content/support/performance.md. DO NOT EDIT BY HAND -->
 <script type="text/javascript">
@@ -110,18 +116,19 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
    
 </style>
 
-
   </head>
-  <body class="mobile-support html" data-url="/zotero-better-bibtex/support/performance/index.html">
+  <body class="mobile-support html" data-origin="/zotero-better-bibtex/support/performance/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
-      <nav id="R-topbar">
-        <div class="topbar-wrapper">
-          <div class="topbar-sidebar-divider"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
-            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
-            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -144,19 +151,20 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/zotero-better-bibtex/support/index.html"><span itemprop="name">Support</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Performance</span><meta itemprop="position" content="3"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/zotero-better-bibtex/support/index.html"><span itemprop="name">Support</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Performance</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/retorquere/zotero-better-bibtex/edit/master/site/content/support/performance.md" rel="external" target="_blank" title="Edit (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a>
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/retorquere/zotero-better-bibtex/edit/master/site/content/support/performance.md" rel="external" title="Edit (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
             </div>
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/zotero-better-bibtex/support/faq/index.html" title="Frequently Asked Questions (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/zotero-better-bibtex/support/faq/index.html" title="Frequently Asked Questions (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/zotero-better-bibtex/support/translations/index.html" title="Translations (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/zotero-better-bibtex/support/translations/index.html" title="Translations (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
-            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -173,6 +181,7 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
 <article class="default">
   <header class="headline">
 <div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <i class="fa-fw fas fa-layer-group"></i>
   <ul>
     <li><a class="term-link" href="/zotero-better-bibtex/tags/cache/index.html">Cache</a></li>
     <li><a class="term-link" href="/zotero-better-bibtex/tags/export/index.html">Export</a></li>
@@ -190,62 +199,62 @@ substantially faster than the default Zotero exporters.  Specifically for <a hre
 a good thing to have.</p>
 <p>For technical reasons, if you export the file attachments as part of your export, the cache is skipped altogether, so
 this will always be slow. This is also why you cannot set up auto-exports with file exports.</p>
-<h3 id="tldr">TL;DR</h3>
+<h3 id="tldr">TL;DR<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>There&rsquo;s a more technical explanation below, but the TL;DR version is that you want to have a filled cache. If you want
 to get it over with, export your entire library (once, no need to tick &lsquo;Keep Updated&rsquo;) using the &lsquo;Better BibTeX&rsquo; format
 and go grab coffee (or lunch, depending on the size of your library). After that, things should be <em>much</em> better.</p>
 <p>Here are some numbers from a test with a library consisting of 86 items, exported 50 times in a row to middle out variances:</p>
 <p>(attachments are not exported for this test, but they still required serialization and handling):</p>
 <table>
-  <thead>
-      <tr>
-          <th>Exporter</th>
-          <th></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Zotero BibTeX</td>
-          <td>3s</td>
-      </tr>
-      <tr>
-          <td>Better BibTeX, empty cache</td>
-          <td>9s</td>
-      </tr>
-      <tr>
-          <td>Better BibTeX, filled cache</td>
-          <td>4s</td>
-      </tr>
-      <tr>
-          <td>Zotero BibLaTeX</td>
-          <td>4s</td>
-      </tr>
-      <tr>
-          <td>Better BibLaTeX, empty cache</td>
-          <td>9s</td>
-      </tr>
-      <tr>
-          <td>Better BibLaTeX, filled cache</td>
-          <td>3s</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Exporter</th>
+					<th></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Zotero BibTeX</td>
+					<td>3s</td>
+			</tr>
+			<tr>
+					<td>Better BibTeX, empty cache</td>
+					<td>9s</td>
+			</tr>
+			<tr>
+					<td>Better BibTeX, filled cache</td>
+					<td>4s</td>
+			</tr>
+			<tr>
+					<td>Zotero BibLaTeX</td>
+					<td>4s</td>
+			</tr>
+			<tr>
+					<td>Better BibLaTeX, empty cache</td>
+					<td>9s</td>
+			</tr>
+			<tr>
+					<td>Better BibLaTeX, filled cache</td>
+					<td>3s</td>
+			</tr>
+	</tbody>
 </table>
 <p><strong>note</strong>: if you have &lsquo;Export files&rsquo; enabled during export, or set the JabRef export format to <code>4</code>, the cache will not be active. If you do large (auto)exports, avoid these.</p>
-<h2 id="caching">Caching</h2>
-<h3 id="initial-state">Initial state</h3>
+<h2 id="caching">Caching<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="initial-state">Initial state<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Initially, your cache will be empty. The first export of any item using Better BibTeX will therefore be a little
 over twice as slow as subsequent exports. After that, it gets pretty zippy, as the process of exporting a item
 will also cache the output entry for that item <em>for the current export settings</em>. This means if you export once with, and once without
 notes (one of the options in the export popup), you will hit an empty cache twice. If you set up an automatic export,
 the export you do that registers it for auto-update will already be the first export, so if your items weren&rsquo;t
 cached already, they will be before subsequent auto-exports.</p>
-<h3 id="cache-refresh">Cache refresh</h3>
+<h3 id="cache-refresh">Cache refresh<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>The cache entry for a item is retained as long as you do not make any changes to that item. Any change you
 make will drop all cache entries for that item (so all variants you had for different export options). The cache
 for that item will be refreshed as soon as you export it again, either manually or
 <a href="/zotero-better-bibtex/exporting/">automatically</a>.</p>
-<h3 id="cache-drop">Cache drop</h3>
-<p><em>Any</em> change you make to the Better BibTeX <a href="/zotero-better-bibtex/installation/preferences/">preferences</a> will drop the whole cache. The behavior of
+<h3 id="cache-drop">Cache drop<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><em>Any</em> change you make to the Better BibTeX <a href="/zotero-better-bibtex/preferences/">preferences</a> will drop the whole cache. The behavior of
 the Better BibTeX exporters are highly configurable, and it is impossible for me to figure out which entries would be
 affected specifically. Keep this in mind for large libraries; if you want to make changes to your configuration, make them all at once.</p>
 <p>The same applies to upgrades. As the export behavior quite frequently changes between versions, Better BibTeX will drop
@@ -259,9 +268,7 @@ the cache during first startup of the newer version. This can be a nuisance if y
     </div>
     <aside id="R-sidebar" class="default-animation">
       <div id="R-header-topbar" class="default-animation"></div>
-      <div id="R-header-wrapper" class="default-animation">
-        <div id="R-header" class="default-animation">
-<a id="logo" href="/zotero-better-bibtex/">
+      <div id="R-header-wrapper" class="default-animation"><a id="logo" href="/zotero-better-bibtex/">
 <span style="vertical-align: text-top">
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -871,53 +878,68 @@ Better BibTeX for Zotero
 </span>
 </a>
 
-        </div>
         <search><form action="/zotero-better-bibtex/search/index.html" method="get">
           <div class="searchbox default-animation">
-            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
             <label class="a11y-only" for="R-search-by">Search</label>
             <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
           </div>
         </form></search>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <div class="R-menu-divider default-animation">
-          <hr class="padding">
+          <hr class="padding default-animation">
         </div>
-        <div id="R-shortcutmenu-homelinks" class="R-sidebarmenu">
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
           <ul class="space collapsible-menu">
             <li class="" data-nav-id="/zotero-better-bibtex/index.html"><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
           </ul>
         </div>
         <div class="R-menu-divider default-animation">
-          <hr class="padding">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
         </div>
       </div>
       <div id="R-content-wrapper" class="highlightable">
-        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
-            <li class="" data-nav-id="/zotero-better-bibtex/installation/index.html"><a class="padding" href="/zotero-better-bibtex/installation/index.html">Installation</a><ul id="R-subsections-ff749ccaab053548f690f97bcd6daed0" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/zotero-better-bibtex/exporting/index.html"><a class="padding" href="/zotero-better-bibtex/exporting/index.html">Exporting</a><ul id="R-subsections-1d584ca98d27013df6242b6c17171d5e" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/zotero-better-bibtex/citing/index.html"><a class="padding" href="/zotero-better-bibtex/citing/index.html">Citation Keys</a><ul id="R-subsections-21d11d1b73fd6487fde6cbf6c72fa642" class="collapsible-menu"></ul></li>
-            <li class="parent " data-nav-id="/zotero-better-bibtex/support/index.html"><a class="padding" href="/zotero-better-bibtex/support/index.html">Support</a><ul id="R-subsections-caa68563dfb61577c2c4699e1aa63010" class="collapsible-menu">
+            <li class="" data-nav-id="/zotero-better-bibtex/installation/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/installation/index.html">Installation</a><ul id="R-subsections-ff749ccaab053548f690f97bcd6daed0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/preferences/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/preferences/index.html">Preferences</a><ul id="R-subsections-1c1559add52e3008dc9a8d12492194cb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/exporting/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/exporting/index.html">Exporting</a><ul id="R-subsections-1d584ca98d27013df6242b6c17171d5e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/citing/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/citing/index.html">Citation Keys</a><ul id="R-subsections-21d11d1b73fd6487fde6cbf6c72fa642" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/zotero-better-bibtex/support/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/support/index.html">Support</a><ul id="R-subsections-caa68563dfb61577c2c4699e1aa63010" class="collapsible-menu">
             <li class="" data-nav-id="/zotero-better-bibtex/support/faq/index.html"><a class="padding" href="/zotero-better-bibtex/support/faq/index.html">FAQ</a></li>
             <li class="active " data-nav-id="/zotero-better-bibtex/support/performance/index.html"><a class="padding" href="/zotero-better-bibtex/support/performance/index.html">Performance</a></li>
             <li class="" data-nav-id="/zotero-better-bibtex/support/translations/index.html"><a class="padding" href="/zotero-better-bibtex/support/translations/index.html">Translations</a></li>
             <li class="" data-nav-id="/zotero-better-bibtex/support/tests/index.html"><a class="padding" href="/zotero-better-bibtex/support/tests/index.html">Testing</a></li></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/changelog/index.html"><a class="padding" href="/zotero-better-bibtex/changelog/index.html">Changelog</a></li>
             <li class="" data-nav-id="/zotero-better-bibtex/sponsoring/index.html"><a class="padding" href="/zotero-better-bibtex/sponsoring/index.html">Sponsoring BBT</a></li>
           </ul>
         </div>
-        <div id="R-shortcutmenu-shortcuts" class="R-sidebarmenu">
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
           <div class="nav-title padding">More</div>
           <ul class="space collapsible-menu">
-            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex/releases/latest"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex/releases/latest" rel="external" target="_blank"><i class='fas fa-fw fa-download'></i> Download</a></li>
+            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex/releases/latest"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex/releases/latest" rel="external"><i class='fas fa-fw fa-download'></i> Download</a></li>
             <li class="" data-nav-id="/zotero-better-bibtex/sponsoring"><a class="padding" href="/zotero-better-bibtex/sponsoring"><i class='fas fa-fw fa-heart'></i> Sponsorship</a></li>
-            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex" rel="external" target="_blank"><i class='fab fa-fw fa-github'></i> GitHub repo</a></li>
+            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex" rel="external"><i class='fab fa-fw fa-github'></i> GitHub repo</a></li>
           </ul>
         </div>
-        <div id="R-footer-margin"></div>
-<div id="R-footer">
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation">
     
     
     
@@ -935,7 +957,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/automatic-export" style="font-size:1.1666666666666667em"><i class="fas fa-tag"></i>automatic export</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/automatic-export" style="font-size:1em"><i class="fas fa-tag"></i>automatic export</a></span>
         
             
             
@@ -943,7 +965,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/cache" style="font-size:1.1666666666666667em"><i class="fas fa-tag"></i>cache</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/cache" style="font-size:1em"><i class="fas fa-tag"></i>cache</a></span>
         
             
             
@@ -951,7 +973,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/citation-keys" style="font-size:1.3869880158145604em"><i class="fas fa-tag"></i>citation keys</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/citation-keys" style="font-size:1.413543737673458em"><i class="fas fa-tag"></i>citation keys</a></span>
         
             
             
@@ -967,15 +989,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/configuration" style="font-size:1.4308270834535262em"><i class="fas fa-tag"></i>configuration</a></span>
-        
-            
-            
-            
-            
-            
-            
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/export" style="font-size:1.4678924870096006em"><i class="fas fa-tag"></i>export</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/export" style="font-size:1.460391110580801em"><i class="fas fa-tag"></i>export</a></span>
         
             
             
@@ -1007,7 +1021,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/overleaf" style="font-size:1.1666666666666667em"><i class="fas fa-tag"></i>overleaf</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/overleaf" style="font-size:1.1781035935540112em"><i class="fas fa-tag"></i>overleaf</a></span>
         
             
             
@@ -1015,15 +1029,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/preferences" style="font-size:1.3869880158145604em"><i class="fas fa-tag"></i>preferences</a></span>
-        
-            
-            
-            
-            
-            
-            
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/scripting" style="font-size:1.1666666666666667em"><i class="fas fa-tag"></i>scripting</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/scripting" style="font-size:1.1781035935540112em"><i class="fas fa-tag"></i>scripting</a></span>
         
             
             
@@ -1050,8 +1056,8 @@ Better BibTeX for Zotero
 </div>
       </div>
     </aside>
-    <script src="/zotero-better-bibtex/js/clipboard/clipboard.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/theme.min.js" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

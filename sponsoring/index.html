@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+<html id="R-html" lang="en-US" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 7.5.0+e2a1704c3c230050d3777be3bae36285a7fa0d8e">
+    <meta name="generator" content="Hugo 0.164.0">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
     <meta name="description" content="While the development needs of BBT are to a large extent covered by the generosity towards open-source developers of services such as github, my development system does require the occasional upgrade; also, I enjoy getting the occasional frivolous tech-toy that I wouldn’t otherwise grant myself. While you should feel in no way obligated to pay for BBT, anything you can spare is very much appreciated. If you’d rather contribute a little bit each month (and a little means a lot) so I can save up for a replacement a year or so down the line, head on over to Patreon, but mind that Patreon takes a fairly large cut of what you give.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
@@ -14,25 +14,34 @@
     <meta property="og:site_name" content="Better BibTeX for Zotero">
     <meta property="og:title" content="Sponsoring BBT :: Better BibTeX for Zotero">
     <meta property="og:description" content="While the development needs of BBT are to a large extent covered by the generosity towards open-source developers of services such as github, my development system does require the occasional upgrade; also, I enjoy getting the occasional frivolous tech-toy that I wouldn’t otherwise grant myself. While you should feel in no way obligated to pay for BBT, anything you can spare is very much appreciated. If you’d rather contribute a little bit each month (and a little means a lot) so I can save up for a replacement a year or so down the line, head on over to Patreon, but mind that Patreon takes a fairly large cut of what you give.">
-    <meta property="og:locale" content="en">
+    <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Better BibTeX for Zotero">
     <meta itemprop="name" content="Sponsoring BBT :: Better BibTeX for Zotero">
     <meta itemprop="description" content="While the development needs of BBT are to a large extent covered by the generosity towards open-source developers of services such as github, my development system does require the occasional upgrade; also, I enjoy getting the occasional frivolous tech-toy that I wouldn’t otherwise grant myself. While you should feel in no way obligated to pay for BBT, anything you can spare is very much appreciated. If you’d rather contribute a little bit each month (and a little means a lot) so I can save up for a replacement a year or so down the line, head on over to Patreon, but mind that Patreon takes a fairly large cut of what you give.">
-    <meta itemprop="wordCount" content="151">
+    <meta itemprop="wordCount" content="167">
     <title>Sponsoring BBT :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
-    <link href="/zotero-better-bibtex/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
-    <link href="/zotero-better-bibtex/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
-    <link href="/zotero-better-bibtex/css/theme.min.css" rel="stylesheet">
-    <link href="/zotero-better-bibtex/css/format-html.min.css" rel="stylesheet" id="R-format-style">
     <link href="/zotero-better-bibtex/css/auto-complete/auto-complete.min.css" rel="stylesheet">
     <script src="/zotero-better-bibtex/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/search-lunr.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/search.min.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/zotero-better-bibtex/searchindex.en.js";
+    </script>
     <script src="/zotero-better-bibtex/js/lunr/lunr.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/lunr/lunr.stemmer.support.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/lunr/lunr.multi.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/lunr/lunr.en.min.js" defer></script>
-    <script src="/zotero-better-bibtex/js/search.min.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/zotero-better-bibtex/fonts/fontawesome/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/fonts/fontawesome/css/all.min.css" rel="stylesheet"></noscript>
+    <link href="/zotero-better-bibtex/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/zotero-better-bibtex/css/theme.min.css" rel="stylesheet">
+    <link href="/zotero-better-bibtex/css/format-html.min.css" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -41,15 +50,20 @@
       window.relearn.relBasePath='..';
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='\/zotero-better-bibtex';
-      window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/zotero-better-bibtex/searchindex.en.js";
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=true;
       window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'green' ];
-      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.customvariantprefix = "my-custom-";
       window.relearn.changeVariant = function(variant) {
         var oldVariant = document.documentElement.dataset.rThemeVariant;
         window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
@@ -65,8 +79,9 @@
       }
       window.relearn.initVariant = function() {
         var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
-        if( variant == window.relearn.customvariantname ){
-        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
           variant = window.relearn.themevariants[0];
           window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
         }
@@ -74,15 +89,6 @@
       }
       window.relearn.initVariant();
       window.relearn.markVariant();
-      // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
-      window.T_Reset_view = `Reset view`;
-      window.T_View_reset = `View reset!`;
-      window.T_No_results_found = `No results found for "{0}"`;
-      window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
 <!-- WARNING: this page is generated by https://gohugo.io/ from site/content/sponsoring.md. DO NOT EDIT BY HAND -->
 <script type="text/javascript">
@@ -103,36 +109,39 @@
    
 </style>
 
-
   </head>
-  <body class="mobile-support html" data-url="/zotero-better-bibtex/sponsoring/index.html">
+  <body class="mobile-support html" data-origin="/zotero-better-bibtex/sponsoring/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
-      <nav id="R-topbar">
-        <div class="topbar-wrapper">
-          <div class="topbar-sidebar-divider"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
-            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
-            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper"> 
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Sponsoring BBT</span><meta itemprop="position" content="2"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Sponsoring BBT</span><meta itemprop="position" content="2"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/retorquere/zotero-better-bibtex/edit/master/site/content/sponsoring.md" rel="external" target="_blank" title="Edit (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a>
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/retorquere/zotero-better-bibtex/edit/master/site/content/sponsoring.md" rel="external" title="Edit (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
             </div>
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/zotero-better-bibtex/support/tests/index.html" title="Running the BBT test suite (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/zotero-better-bibtex/changelog/index.html" title="Changelog (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle"><span><i class="fa-fw fas fa-chevron-right"></i></span></span>
             </div>
-            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -158,16 +167,15 @@ by the generosity towards open-source developers of services such
 as github, my development system does require the
 occasional upgrade; also, I enjoy getting the occasional frivolous
 tech-toy that I wouldn&rsquo;t otherwise grant myself. While you should
-feel in no way obligated to pay for BBT, <a href="https://www.paypal.me/retorquere" rel="external" target="_blank">anything you can spare</a> is very much appreciated.
+feel in no way obligated to pay for BBT, <a href="https://www.paypal.me/retorquere" rel="external">anything you can spare</a> is very much appreciated.
 If you&rsquo;d rather contribute a little bit each month (and a little
 means a lot) so I can save up for a replacement a year or so down
-the line, head on over to <a href="https://www.patreon.com/retorquere" rel="external" target="_blank">Patreon</a>,
+the line, head on over to <a href="https://www.patreon.com/retorquere" rel="external">Patreon</a>,
 but mind that Patreon takes a fairly large cut of what you give.</p>
 <p>Many, many thanks, also to the existing contributors &ndash; thanks to you I&rsquo;ve hit my first target and have been able to replace my trusty macbook air with a newer macbook pro which has much more breathing room.</p>
-<p><a href="#R-image-c0a3f32f53313527ac6b253018472015" class="lightbox-link"><img alt="My github stats" class="lazy lightbox figure-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c0a3f32f53313527ac6b253018472015"><img alt="My github stats" class="lazy lightbox lightbox-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark"></a></p>
-<p><a href="#R-image-1f5f8edb45e5dff0b670942db180f4d2" class="lightbox-link"><img alt="Metrics" class="lazy lightbox figure-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1f5f8edb45e5dff0b670942db180f4d2"><img alt="Metrics" class="lazy lightbox lightbox-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo"></a></p>
+<p><a href="#R-image-ae71684d6f9842870e338ff3c4b94a89" class="lightbox-link"><img alt="My github stats" class="lazy lightbox figure-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ae71684d6f9842870e338ff3c4b94a89"><img alt="My github stats" class="lazy lightbox lightbox-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark"></a></p>
+<p>I prefer communicating via github issues, but for private information you can reach me on <a href="https://matrix.to/#/@retorquere:utwente.io" rel="external">matrix</a></p>
 
   <footer class="footline">
   </footer>
@@ -177,9 +185,7 @@ but mind that Patreon takes a fairly large cut of what you give.</p>
     </div>
     <aside id="R-sidebar" class="default-animation">
       <div id="R-header-topbar" class="default-animation"></div>
-      <div id="R-header-wrapper" class="default-animation">
-        <div id="R-header" class="default-animation">
-<a id="logo" href="/zotero-better-bibtex/">
+      <div id="R-header-wrapper" class="default-animation"><a id="logo" href="/zotero-better-bibtex/">
 <span style="vertical-align: text-top">
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -789,49 +795,64 @@ Better BibTeX for Zotero
 </span>
 </a>
 
-        </div>
         <search><form action="/zotero-better-bibtex/search/index.html" method="get">
           <div class="searchbox default-animation">
-            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
             <label class="a11y-only" for="R-search-by">Search</label>
             <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
           </div>
         </form></search>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <div class="R-menu-divider default-animation">
-          <hr class="padding">
+          <hr class="padding default-animation">
         </div>
-        <div id="R-shortcutmenu-homelinks" class="R-sidebarmenu">
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
           <ul class="space collapsible-menu">
             <li class="" data-nav-id="/zotero-better-bibtex/index.html"><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
           </ul>
         </div>
         <div class="R-menu-divider default-animation">
-          <hr class="padding">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
         </div>
       </div>
       <div id="R-content-wrapper" class="highlightable">
-        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
-            <li class="" data-nav-id="/zotero-better-bibtex/installation/index.html"><a class="padding" href="/zotero-better-bibtex/installation/index.html">Installation</a><ul id="R-subsections-ff749ccaab053548f690f97bcd6daed0" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/zotero-better-bibtex/exporting/index.html"><a class="padding" href="/zotero-better-bibtex/exporting/index.html">Exporting</a><ul id="R-subsections-1d584ca98d27013df6242b6c17171d5e" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/zotero-better-bibtex/citing/index.html"><a class="padding" href="/zotero-better-bibtex/citing/index.html">Citation Keys</a><ul id="R-subsections-21d11d1b73fd6487fde6cbf6c72fa642" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/zotero-better-bibtex/support/index.html"><a class="padding" href="/zotero-better-bibtex/support/index.html">Support</a><ul id="R-subsections-caa68563dfb61577c2c4699e1aa63010" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/installation/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/installation/index.html">Installation</a><ul id="R-subsections-ff749ccaab053548f690f97bcd6daed0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/preferences/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/preferences/index.html">Preferences</a><ul id="R-subsections-1c1559add52e3008dc9a8d12492194cb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/exporting/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/exporting/index.html">Exporting</a><ul id="R-subsections-1d584ca98d27013df6242b6c17171d5e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/citing/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/citing/index.html">Citation Keys</a><ul id="R-subsections-21d11d1b73fd6487fde6cbf6c72fa642" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/support/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/support/index.html">Support</a><ul id="R-subsections-caa68563dfb61577c2c4699e1aa63010" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/changelog/index.html"><a class="padding" href="/zotero-better-bibtex/changelog/index.html">Changelog</a></li>
             <li class="active " data-nav-id="/zotero-better-bibtex/sponsoring/index.html"><a class="padding" href="/zotero-better-bibtex/sponsoring/index.html">Sponsoring BBT</a></li>
           </ul>
         </div>
-        <div id="R-shortcutmenu-shortcuts" class="R-sidebarmenu">
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
           <div class="nav-title padding">More</div>
           <ul class="space collapsible-menu">
-            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex/releases/latest"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex/releases/latest" rel="external" target="_blank"><i class='fas fa-fw fa-download'></i> Download</a></li>
+            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex/releases/latest"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex/releases/latest" rel="external"><i class='fas fa-fw fa-download'></i> Download</a></li>
             <li class="" data-nav-id="/zotero-better-bibtex/sponsoring"><a class="padding" href="/zotero-better-bibtex/sponsoring"><i class='fas fa-fw fa-heart'></i> Sponsorship</a></li>
-            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex" rel="external" target="_blank"><i class='fab fa-fw fa-github'></i> GitHub repo</a></li>
+            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex" rel="external"><i class='fab fa-fw fa-github'></i> GitHub repo</a></li>
           </ul>
         </div>
-        <div id="R-footer-margin"></div>
-<div id="R-footer">
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation">
     
     
     
@@ -849,7 +870,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/automatic-export" style="font-size:1.1666666666666667em"><i class="fas fa-tag"></i>automatic export</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/automatic-export" style="font-size:1em"><i class="fas fa-tag"></i>automatic export</a></span>
         
             
             
@@ -857,7 +878,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/cache" style="font-size:1.1666666666666667em"><i class="fas fa-tag"></i>cache</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/cache" style="font-size:1em"><i class="fas fa-tag"></i>cache</a></span>
         
             
             
@@ -865,7 +886,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/citation-keys" style="font-size:1.3869880158145604em"><i class="fas fa-tag"></i>citation keys</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/citation-keys" style="font-size:1.413543737673458em"><i class="fas fa-tag"></i>citation keys</a></span>
         
             
             
@@ -881,15 +902,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/configuration" style="font-size:1.4308270834535262em"><i class="fas fa-tag"></i>configuration</a></span>
-        
-            
-            
-            
-            
-            
-            
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/export" style="font-size:1.4678924870096006em"><i class="fas fa-tag"></i>export</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/export" style="font-size:1.460391110580801em"><i class="fas fa-tag"></i>export</a></span>
         
             
             
@@ -921,7 +934,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/overleaf" style="font-size:1.1666666666666667em"><i class="fas fa-tag"></i>overleaf</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/overleaf" style="font-size:1.1781035935540112em"><i class="fas fa-tag"></i>overleaf</a></span>
         
             
             
@@ -929,15 +942,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/preferences" style="font-size:1.3869880158145604em"><i class="fas fa-tag"></i>preferences</a></span>
-        
-            
-            
-            
-            
-            
-            
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/scripting" style="font-size:1.1666666666666667em"><i class="fas fa-tag"></i>scripting</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/scripting" style="font-size:1.1781035935540112em"><i class="fas fa-tag"></i>scripting</a></span>
         
             
             
@@ -964,8 +969,8 @@ Better BibTeX for Zotero
 </div>
       </div>
     </aside>
-    <script src="/zotero-better-bibtex/js/clipboard/clipboard.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/theme.min.js" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

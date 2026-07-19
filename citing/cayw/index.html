@@ -1,29 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+<html id="R-html" lang="en-US" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 7.5.0+e2a1704c3c230050d3777be3bae36285a7fa0d8e">
+    <meta name="generator" content="Hugo 0.164.0">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
     <meta name="description" content="PSA: as of Zotero 5.0.71, access to the CAYW URL will no longer work from the browser for security reasons; curl and other programmatic access such as from editors access will work.
 Good news for TeXnicians and those down with Mark (aka Markdown, RST, whatnot): this is the time to go pester the author of your favorite editor for Zotero integration!
-Editor integration vim Graciously supplied by David Lukes:
-paste it in your .vimrc (and modify to your liking):">
+Editor integration vim Graciously supplied by David Lukes:">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Cite as you Write :: Better BibTeX for Zotero">
     <meta name="twitter:description" content="PSA: as of Zotero 5.0.71, access to the CAYW URL will no longer work from the browser for security reasons; curl and other programmatic access such as from editors access will work.
 Good news for TeXnicians and those down with Mark (aka Markdown, RST, whatnot): this is the time to go pester the author of your favorite editor for Zotero integration!
-Editor integration vim Graciously supplied by David Lukes:
-paste it in your .vimrc (and modify to your liking):">
+Editor integration vim Graciously supplied by David Lukes:">
     <meta property="og:url" content="/zotero-better-bibtex/citing/cayw/index.html">
     <meta property="og:site_name" content="Better BibTeX for Zotero">
     <meta property="og:title" content="Cite as you Write :: Better BibTeX for Zotero">
     <meta property="og:description" content="PSA: as of Zotero 5.0.71, access to the CAYW URL will no longer work from the browser for security reasons; curl and other programmatic access such as from editors access will work.
 Good news for TeXnicians and those down with Mark (aka Markdown, RST, whatnot): this is the time to go pester the author of your favorite editor for Zotero integration!
-Editor integration vim Graciously supplied by David Lukes:
-paste it in your .vimrc (and modify to your liking):">
-    <meta property="og:locale" content="en">
+Editor integration vim Graciously supplied by David Lukes:">
+    <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Citation Keys">
     <meta property="article:tag" content="Citation Keys">
@@ -32,23 +29,31 @@ paste it in your .vimrc (and modify to your liking):">
     <meta itemprop="name" content="Cite as you Write :: Better BibTeX for Zotero">
     <meta itemprop="description" content="PSA: as of Zotero 5.0.71, access to the CAYW URL will no longer work from the browser for security reasons; curl and other programmatic access such as from editors access will work.
 Good news for TeXnicians and those down with Mark (aka Markdown, RST, whatnot): this is the time to go pester the author of your favorite editor for Zotero integration!
-Editor integration vim Graciously supplied by David Lukes:
-paste it in your .vimrc (and modify to your liking):">
+Editor integration vim Graciously supplied by David Lukes:">
     <meta itemprop="wordCount" content="1438">
     <meta itemprop="keywords" content="Citation Keys,Overleaf,Cite as You Write">
     <title>Cite as you Write :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
-    <link href="/zotero-better-bibtex/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
-    <link href="/zotero-better-bibtex/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
-    <link href="/zotero-better-bibtex/css/theme.min.css" rel="stylesheet">
-    <link href="/zotero-better-bibtex/css/format-html.min.css" rel="stylesheet" id="R-format-style">
     <link href="/zotero-better-bibtex/css/auto-complete/auto-complete.min.css" rel="stylesheet">
     <script src="/zotero-better-bibtex/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/search-lunr.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/search.min.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/zotero-better-bibtex/searchindex.en.js";
+    </script>
     <script src="/zotero-better-bibtex/js/lunr/lunr.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/lunr/lunr.stemmer.support.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/lunr/lunr.multi.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/lunr/lunr.en.min.js" defer></script>
-    <script src="/zotero-better-bibtex/js/search.min.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/zotero-better-bibtex/fonts/fontawesome/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/fonts/fontawesome/css/all.min.css" rel="stylesheet"></noscript>
+    <link href="/zotero-better-bibtex/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/zotero-better-bibtex/css/theme.min.css" rel="stylesheet">
+    <link href="/zotero-better-bibtex/css/format-html.min.css" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -57,15 +62,20 @@ paste it in your .vimrc (and modify to your liking):">
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='\/zotero-better-bibtex';
-      window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/zotero-better-bibtex/searchindex.en.js";
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=true;
       window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'green' ];
-      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.customvariantprefix = "my-custom-";
       window.relearn.changeVariant = function(variant) {
         var oldVariant = document.documentElement.dataset.rThemeVariant;
         window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
@@ -81,8 +91,9 @@ paste it in your .vimrc (and modify to your liking):">
       }
       window.relearn.initVariant = function() {
         var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
-        if( variant == window.relearn.customvariantname ){
-        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
           variant = window.relearn.themevariants[0];
           window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
         }
@@ -90,15 +101,6 @@ paste it in your .vimrc (and modify to your liking):">
       }
       window.relearn.initVariant();
       window.relearn.markVariant();
-      // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
-      window.T_Reset_view = `Reset view`;
-      window.T_View_reset = `View reset!`;
-      window.T_No_results_found = `No results found for "{0}"`;
-      window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
 <!-- WARNING: this page is generated by https://gohugo.io/ from site/content/citing/cayw.md. DO NOT EDIT BY HAND -->
 <script type="text/javascript">
@@ -119,18 +121,19 @@ paste it in your .vimrc (and modify to your liking):">
    
 </style>
 
-
   </head>
-  <body class="mobile-support html" data-url="/zotero-better-bibtex/citing/cayw/index.html">
+  <body class="mobile-support html" data-origin="/zotero-better-bibtex/citing/cayw/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
-      <nav id="R-topbar">
-        <div class="topbar-wrapper">
-          <div class="topbar-sidebar-divider"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
-            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
-            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -154,19 +157,20 @@ paste it in your .vimrc (and modify to your liking):">
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/zotero-better-bibtex/citing/index.html"><span itemprop="name">Citation Keys</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Cite as you Write</span><meta itemprop="position" content="3"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/zotero-better-bibtex/citing/index.html"><span itemprop="name">Citation Keys</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Cite as you Write</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/retorquere/zotero-better-bibtex/edit/master/site/content/citing/cayw.md" rel="external" target="_blank" title="Edit (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a>
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/retorquere/zotero-better-bibtex/edit/master/site/content/citing/cayw.md" rel="external" title="Edit (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
             </div>
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/zotero-better-bibtex/citing/index.html" title="Citation Keys (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/zotero-better-bibtex/citing/index.html" title="Citation Keys (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/zotero-better-bibtex/citing/migrating/index.html" title="Migrating from Word/Libreoffice (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/zotero-better-bibtex/citing/migrating/index.html" title="Migrating from Word/Libreoffice (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
-            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -183,6 +187,7 @@ paste it in your .vimrc (and modify to your liking):">
 <article class="default">
   <header class="headline">
 <div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <i class="fa-fw fas fa-layer-group"></i>
   <ul>
     <li><a class="term-link" href="/zotero-better-bibtex/tags/citation-keys/index.html">Citation Keys</a></li>
     <li><a class="term-link" href="/zotero-better-bibtex/tags/cite-as-you-write/index.html">Cite as You Write</a></li>
@@ -195,11 +200,11 @@ paste it in your .vimrc (and modify to your liking):">
 
 <p><strong>PSA: as of Zotero 5.0.71, access to the CAYW URL will no longer work from the browser for security reasons; <code>curl</code> and other programmatic access such as from editors access will work.</strong></p>
 <p>Good news for TeXnicians and those down with Mark (aka Markdown, RST, whatnot): this is the time to go pester the author of your favorite editor for Zotero integration!</p>
-<h2 id="editor-integration">Editor integration</h2>
-<h3 id="vim">vim</h3>
+<h2 id="editor-integration">Editor integration<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="vim">vim<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Graciously supplied by David Lukes:</p>
 <p>paste it in your .vimrc (and modify to your liking):</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#66d9ef">function</span>! <span style="color:#a6e22e">ZoteroCite</span>()
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#66d9ef">function</span>! <span style="color:#a6e22e">ZoteroCite</span>()
 </span></span><span style="display:flex;"><span><span style="color:#75715e">  &#34; pick a format based on the filetype (customize at will)</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">format</span> = &amp;<span style="color:#66d9ef">filetype</span> =~ <span style="color:#e6db74">&#39;.*tex&#39;</span> ? <span style="color:#e6db74">&#39;citep&#39;</span> : <span style="color:#e6db74">&#39;pandoc&#39;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">api_call</span> = <span style="color:#e6db74">&#39;http://127.0.0.1:23119/better-bibtex/cayw?format=&#39;</span>.<span style="color:#a6e22e">format</span>.<span style="color:#e6db74">&#39;&amp;brackets=1&#39;</span>
@@ -211,7 +216,7 @@ paste it in your .vimrc (and modify to your liking):">
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">inoremap</span> &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">z</span>&gt; &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">r</span>&gt;=<span style="color:#a6e22e">ZoteroCite</span>()&lt;<span style="color:#a6e22e">CR</span>&gt;</span></span></code></pre></div>
 <p>This inserts the citation at the cursor using the shortcut ctrl-z (in insert mode) or <code>&lt;leader&gt;</code>z (in normal, visual etc. modes, <code>&lt;leader&gt;</code> being backslash by default).</p>
 <p>Alternatively, if you use a recent version of Vim (not Neovim) and have written your config file in <code>vim9script</code>, you may be interested in a <code>vim9script</code> version of the above solution to take advantage of JIT compilation:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#a6e22e">def</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">ZoteroCite</span>(): <span style="color:#a6e22e">string</span>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#a6e22e">def</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">ZoteroCite</span>(): <span style="color:#a6e22e">string</span>
 </span></span><span style="display:flex;"><span>    # <span style="color:#a6e22e">Pick</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">citation</span> <span style="color:#a6e22e">format</span> <span style="color:#a6e22e">based</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">the</span> <span style="color:#66d9ef">filetype</span> (<span style="color:#a6e22e">feel</span> <span style="color:#a6e22e">free</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">customize</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">var</span> <span style="color:#a6e22e">format</span>: <span style="color:#a6e22e">string</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> &amp;<span style="color:#66d9ef">filetype</span> =~ <span style="color:#e6db74">&#39;.*tex&#39;</span>
@@ -228,80 +233,80 @@ paste it in your .vimrc (and modify to your liking):">
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">inoremap</span> &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">x</span>&gt;&lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">z</span>&gt; &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">r</span>&gt;=<span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">ZoteroCite</span>()&lt;<span style="color:#a6e22e">cr</span>&gt;</span></span></code></pre></div>
 <p>In this case, the keybinding Ctrl-X Ctrl-Z in insert mode inserts a Zotero citation. You can add a normal-mode keybinding in the same way as for the legacy VimScript version provided above.</p>
-<h3 id="emacs">emacs</h3>
+<h3 id="emacs">emacs<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>@newhallroad wrote a function in elisp, which brings up the CAYW input, adds the chosen items as pandoc citations to the buffer, and moves the point to after the citations. This is for markdown-mode. Emacs users who use org-mode may (or may not) need something different.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>(defun alk/bbt-zotero-insert-key ()
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0"><code>(defun alk/bbt-zotero-insert-key ()
   &#34;Run shell command to bring up better bibtex cayw input and insert pandoc citation at point&#34;
   (interactive)
   (shell-command &#34;curl -s http://127.0.0.1:23119/better-bibtex/cayw?format=pandoc^&amp;brackets=true&#34; t nil) ; caret escapes ampersand 
   (search-forward &#34;]&#34;) ; place cursor after inserted citation
   )</code></pre></div>
-<h3 id="zotero-citations-for-atom">Zotero Citations for Atom</h3>
-<p>A sample implementation of real integration (rather than the working-but-clunky workarounds using paste) can be found in the <a href="https://atom.io/packages/zotero-citations" rel="external" target="_blank">Zotero Citations</a> package for the <a href="http://atom.io" rel="external" target="_blank">Atom</a> editor.</p>
-<h3 id="vs-code-citation-picker-for-zotero">VS Code Citation Picker for Zotero</h3>
-<p>If you don&rsquo;t feel like typing citations out (and let&rsquo;s be honest, you don&rsquo;t), executing <a href="https://marketplace.visualstudio.com/items?itemName=mblode.zotero" rel="external" target="_blank">VS Code Citation Picker for Zotero</a> extension for the <a href="https://code.visualstudio.com/" rel="external" target="_blank">VS Code</a> editor will call up a graphical picker which will insert these for you, formatted and all.</p>
-<h3 id="scrivener-20marked-2-for-mac">Scrivener 2.0/Marked 2 for Mac</h3>
-<p>Dave Smith has gracefully written <a href="http://davepwsmith.github.io/academic-scrivener-howto/" rel="external" target="_blank">instructions</a> on how to set up Scrivener 2.0 and Marked 2 for OSX to use the CAYW picker, including ready-to-run apps</p>
-<h3 id="scrivener-10-for-windows">Scrivener 1.0 for Windows</h3>
-<p>Emilie has writen <a href="https://github.com/AmomentOfMusic/Zotero_scrivener_picker_windows" rel="external" target="_blank">instructions</a> for using the CAYW picker for Scrivener 1.0 in Windows 10, with the necessary files</p>
-<h3 id="linux">Linux</h3>
+<h3 id="zotero-citations-for-atom">Zotero Citations for Atom<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>A sample implementation of real integration (rather than the working-but-clunky workarounds using paste) can be found in the <a href="https://atom.io/packages/zotero-citations" rel="external">Zotero Citations</a> package for the <a href="http://atom.io" rel="external">Atom</a> editor.</p>
+<h3 id="vs-code-citation-picker-for-zotero">VS Code Citation Picker for Zotero<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>If you don&rsquo;t feel like typing citations out (and let&rsquo;s be honest, you don&rsquo;t), executing <a href="https://marketplace.visualstudio.com/items?itemName=mblode.zotero" rel="external">VS Code Citation Picker for Zotero</a> extension for the <a href="https://code.visualstudio.com/" rel="external">VS Code</a> editor will call up a graphical picker which will insert these for you, formatted and all.</p>
+<h3 id="scrivener-20marked-2-for-mac">Scrivener 2.0/Marked 2 for Mac<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Dave Smith has gracefully written <a href="http://davepwsmith.github.io/academic-scrivener-howto/" rel="external">instructions</a> on how to set up Scrivener 2.0 and Marked 2 for OSX to use the CAYW picker, including ready-to-run apps</p>
+<h3 id="scrivener-10-for-windows">Scrivener 1.0 for Windows<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Emilie has writen <a href="https://github.com/AmomentOfMusic/Zotero_scrivener_picker_windows" rel="external">instructions</a> for using the CAYW picker for Scrivener 1.0 in Windows 10, with the necessary files</p>
+<h3 id="linux">Linux<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <ul>
-<li>Emma Reisz has gracefully written <a href="https://emmareisz.github.io/zotpicknix/" rel="external" target="_blank">instructions and scripts</a> for setting up CAYW on Linux.</li>
-<li>ConorIA has more versatile solution called <a href="https://gitlab.com/ConorIA/shell-scripts/tree/master/zotero4overleaf" rel="external" target="_blank">zotero4overleaf</a>, which was inspired by Emma&rsquo;s scripts. This should allow use with Overleaf, which is pretty insane that it&rsquo;s possible if you think about it.</li>
+<li>Emma Reisz has gracefully written <a href="https://emmareisz.github.io/zotpicknix/" rel="external">instructions and scripts</a> for setting up CAYW on Linux.</li>
+<li>ConorIA has more versatile solution called <a href="https://gitlab.com/ConorIA/shell-scripts/tree/master/zotero4overleaf" rel="external">zotero4overleaf</a>, which was inspired by Emma&rsquo;s scripts. This should allow use with Overleaf, which is pretty insane that it&rsquo;s possible if you think about it.</li>
 </ul>
-<h3 id="overleaf">Overleaf</h3>
-<p>David Lukes takes Overleaf integration one step further with a GreaseMonkey/TamperMonkey <a href="https://github.com/dlukes/zotero-sharelatex-cayw" rel="external" target="_blank">userscript</a> which not only allows popping up the CAYW picker straight from your browser, no other tools required, but adds a hotkey to refresh your bib file on Overleaf. This should work with the free subscription, no fiddling with git or dropbox required.</p>
-<h2 id="diy">DIY</h2>
+<h3 id="overleaf">Overleaf<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>David Lukes takes Overleaf integration one step further with a GreaseMonkey/TamperMonkey <a href="https://github.com/dlukes/zotero-sharelatex-cayw" rel="external">userscript</a> which not only allows popping up the CAYW picker straight from your browser, no other tools required, but adds a hotkey to refresh your bib file on Overleaf. This should work with the free subscription, no fiddling with git or dropbox required.</p>
+<h2 id="diy">DIY<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>BBT exposes an URL at http://127.0.0.1:23119/better-bibtex/cayw <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. The url accepts
 the following URL parameters:</p>
 <table>
-  <thead>
-      <tr>
-          <th>parameter</th>
-          <th></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>probe</code></td>
-          <td>If set to any non-empty value, returns <code>ready</code>. You can use this to test whether BBT CAYW picking is live; it will not pop up the picker</td>
-      </tr>
-      <tr>
-          <td><code>format</code></td>
-          <td>Set the output format</td>
-      </tr>
-      <tr>
-          <td><code>clipboard</code></td>
-          <td>Any non-empty value will copy the results to the clipboard</td>
-      </tr>
-      <tr>
-          <td><code>minimize</code></td>
-          <td>Any non-empty value will minimize Zotero windows after a pick</td>
-      </tr>
-      <tr>
-          <td><code>texstudio</code></td>
-          <td>Any non-empty value will try to push the pick to TeXstudio</td>
-      </tr>
-      <tr>
-          <td><code>selected</code></td>
-          <td>Any non-empty value will use the current selection in Zotero rather than popping up the pick window</td>
-      </tr>
-      <tr>
-          <td><code>select</code></td>
-          <td>More of a gimmick than anything else, but if you add select=true, BBT will select the picked items in Zotero.</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>parameter</th>
+					<th></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>probe</code></td>
+					<td>If set to any non-empty value, returns <code>ready</code>. You can use this to test whether BBT CAYW picking is live; it will not pop up the picker</td>
+			</tr>
+			<tr>
+					<td><code>format</code></td>
+					<td>Set the output format</td>
+			</tr>
+			<tr>
+					<td><code>clipboard</code></td>
+					<td>Any non-empty value will copy the results to the clipboard</td>
+			</tr>
+			<tr>
+					<td><code>minimize</code></td>
+					<td>Any non-empty value will minimize Zotero windows after a pick</td>
+			</tr>
+			<tr>
+					<td><code>texstudio</code></td>
+					<td>Any non-empty value will try to push the pick to TeXstudio</td>
+			</tr>
+			<tr>
+					<td><code>selected</code></td>
+					<td>Any non-empty value will use the current selection in Zotero rather than popping up the pick window</td>
+			</tr>
+			<tr>
+					<td><code>select</code></td>
+					<td>More of a gimmick than anything else, but if you add select=true, BBT will select the picked items in Zotero.</td>
+			</tr>
+	</tbody>
 </table>
 <p>The following formats are available:</p>
 <ul>
-<li><code>natbib</code>. Generates <a href="https://ctan.org/pkg/natbib" rel="external" target="_blank">natbib</a> citation commands. Extra URL parameters allowed:
+<li><code>natbib</code>. Generates <a href="https://ctan.org/pkg/natbib" rel="external">natbib</a> citation commands. Extra URL parameters allowed:
 <ul>
 <li><code>command</code>: the citation command to use (if unspecified, defaults to <code>cite</code>)</li>
 </ul>
 </li>
 <li><code>latex</code> and <code>cite</code> are aliases for <code>natbib</code> with the assumption you want the cite command to be <code>cite</code></li>
 <li><code>citep</code> and <code>citet</code> are aliases for <code>natbib</code> with the assumption you want the cite command to be <code>citep</code> or <code>citet</code>, respectively.</li>
-<li><code>biblatex</code>. Generates <a href="https://ctan.org/pkg/biblatex" rel="external" target="_blank">biblatex</a> citation commands. Extra URL parameters allowed:
+<li><code>biblatex</code>. Generates <a href="https://ctan.org/pkg/biblatex" rel="external">biblatex</a> citation commands. Extra URL parameters allowed:
 <ul>
 <li><code>command</code>: the citation command to use (if unspecified, defaults to <code>autocite</code>)</li>
 </ul>
@@ -309,9 +314,9 @@ the following URL parameters:</p>
 <li><code>mmd</code>: MultiMarkdown</li>
 <li><code>pandoc</code>. Accepts additional URL parameter <code>brackets</code>; any non-empty value surrounds the citation with brackets</li>
 <li><code>asciidoctor-bibtex</code></li>
-<li><code>typst</code> Generates <a href="https://typst.app/docs/reference/model/cite/" rel="external" target="_blank">typst</a> citation commands</li>
+<li><code>typst</code> Generates <a href="https://typst.app/docs/reference/model/cite/" rel="external">typst</a> citation commands</li>
 <li><code>jupyter</code></li>
-<li><code>scannable-cite</code> for the <a href="https://zotero-odf-scan.github.io/zotero-odf-scan/" rel="external" target="_blank">ODF scanner</a></li>
+<li><code>scannable-cite</code> for the <a href="https://zotero-odf-scan.github.io/zotero-odf-scan/" rel="external">ODF scanner</a></li>
 <li><code>formatted-citation</code>: output formatted citation as per the current Zotero quick-export setting, if it is set to a citation style, and not an export format</li>
 <li><code>formatted-bibliography</code>: output formatted bibliography as per the current Zotero quick-export setting, if it is set to a citation style, and not an export format</li>
 <li><code>translate</code> invokes a Zotero export translator. Extra URL parameters allowed:
@@ -322,7 +327,7 @@ the following URL parameters:</p>
 </ul>
 </li>
 <li><code>json</code>: the full pick information Zotero provides.</li>
-<li><code>eta</code>: formats the pick using <a href="https://eta.js.org/" rel="external" target="_blank">Eta</a>, with the picks exposed as <code>it.items</code>. To see what the items look like, use the <code>json</code> formatter. URL parameter required:
+<li><code>eta</code>: formats the pick using <a href="https://eta.js.org/" rel="external">Eta</a>, with the picks exposed as <code>it.items</code>. To see what the items look like, use the <code>json</code> formatter. URL parameter required:
 <ul>
 <li><code>template</code>: the Eta template to render</li>
 </ul>
@@ -331,148 +336,148 @@ the following URL parameters:</p>
 <p>The <code>eta</code> formatter is great for experimentation, but if you need a format for a common target application, feel free to request a change to have that added to this list.</p>
 <p>The picker passes the following data along with your picked items if you filled them out:</p>
 <table>
-  <thead>
-      <tr>
-          <th>field</th>
-          <th></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>locator</code></td>
-          <td>the place within the work (e.g. page number)</td>
-      </tr>
-      <tr>
-          <td><code>prefix</code></td>
-          <td>for stuff like &ldquo;see &hellip;&rdquo;</td>
-      </tr>
-      <tr>
-          <td><code>suffix</code></td>
-          <td>for stuff after the citations</td>
-      </tr>
-      <tr>
-          <td><code>suppress author</code></td>
-          <td>if you only want the year</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>field</th>
+					<th></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>locator</code></td>
+					<td>the place within the work (e.g. page number)</td>
+			</tr>
+			<tr>
+					<td><code>prefix</code></td>
+					<td>for stuff like &ldquo;see &hellip;&rdquo;</td>
+			</tr>
+			<tr>
+					<td><code>suffix</code></td>
+					<td>for stuff after the citations</td>
+			</tr>
+			<tr>
+					<td><code>suppress author</code></td>
+					<td>if you only want the year</td>
+			</tr>
+	</tbody>
 </table>
 <p>However not all output formats support these. Pandoc and scannable cite are the richest ones, supporting all 4. MultiMarkdown supports
 none. The <code>formatted-</code> formats will ignore these. LaTeX supports all 4, in a way:</p>
 <ul>
-<li>in the <code>latex</code> (<a href="https://ctan.org/pkg/natbib" rel="external" target="_blank"><code>natbib</code></a>) format: if you choose <code>suppress author</code> for none or all of your items in a pick, you
+<li>in the <code>latex</code> (<a href="https://ctan.org/pkg/natbib" rel="external"><code>natbib</code></a>) format: if you choose <code>suppress author</code> for none or all of your items in a pick, you
 will get the citation as you would normally enter it, such as <code>\cite{author1,author2}</code>, or
 <code>\citeyear{author1,author2}</code>. If you use <code>locator</code>, <code>prefix</code>, <code>suffix</code> in any one of them, or you use <code>suppress author</code>
 for some but not for others, the picker will write them out all separate, like <code>\cite[p. 1]{author1}\citeyear{author2}</code>,
 as natbib doesn&rsquo;t seem to have a good mechanism for combined citations that mix different prefixes/suffixes/locators.</li>
-<li>in the <a href="https://ctan.org/pkg/biblatex" rel="external" target="_blank"><code>biblatex</code></a> format: <code>suppress author</code> is ignored unless the command is one of <code>\cite</code>, <code>\autocite</code>
+<li>in the <a href="https://ctan.org/pkg/biblatex" rel="external"><code>biblatex</code></a> format: <code>suppress author</code> is ignored unless the command is one of <code>\cite</code>, <code>\autocite</code>
 or <code>\parencite</code> <strong>and</strong> there is one items only, in which case the starred variant of the command is returned, which
 hides the author; for multiple items with <code>locator</code>s, <code>prefix</code>es or <code>suffix</code>es, the <code>s</code>-affixed variant of the
 command is generated</li>
 </ul>
 <p>Some of the formatters use abbreviated labels for the results if you include a locator. The defaults are:</p>
 <table>
-  <thead>
-      <tr>
-          <th>locator label</th>
-          <th>abbreviation</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>article</td>
-          <td>art.</td>
-      </tr>
-      <tr>
-          <td>chapter</td>
-          <td>ch.</td>
-      </tr>
-      <tr>
-          <td>subchapter</td>
-          <td>subch.</td>
-      </tr>
-      <tr>
-          <td>column</td>
-          <td>col.</td>
-      </tr>
-      <tr>
-          <td>figure</td>
-          <td>fig.</td>
-      </tr>
-      <tr>
-          <td>line</td>
-          <td>l.</td>
-      </tr>
-      <tr>
-          <td>note</td>
-          <td>n.</td>
-      </tr>
-      <tr>
-          <td>issue</td>
-          <td>no.</td>
-      </tr>
-      <tr>
-          <td>opus</td>
-          <td>op.</td>
-      </tr>
-      <tr>
-          <td>page</td>
-          <td>p.</td>
-      </tr>
-      <tr>
-          <td>paragraph</td>
-          <td>para.</td>
-      </tr>
-      <tr>
-          <td>subparagraph</td>
-          <td>subpara.</td>
-      </tr>
-      <tr>
-          <td>part</td>
-          <td>pt.</td>
-      </tr>
-      <tr>
-          <td>rule</td>
-          <td>r.</td>
-      </tr>
-      <tr>
-          <td>section</td>
-          <td>sec.</td>
-      </tr>
-      <tr>
-          <td>subsection</td>
-          <td>subsec.</td>
-      </tr>
-      <tr>
-          <td>Section</td>
-          <td>Sec.</td>
-      </tr>
-      <tr>
-          <td>sub verbo</td>
-          <td>sv.</td>
-      </tr>
-      <tr>
-          <td>schedule</td>
-          <td>sch.</td>
-      </tr>
-      <tr>
-          <td>title</td>
-          <td>tit.</td>
-      </tr>
-      <tr>
-          <td>verse</td>
-          <td>vrs.</td>
-      </tr>
-      <tr>
-          <td>volume</td>
-          <td>vol.</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>locator label</th>
+					<th>abbreviation</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>article</td>
+					<td>art.</td>
+			</tr>
+			<tr>
+					<td>chapter</td>
+					<td>ch.</td>
+			</tr>
+			<tr>
+					<td>subchapter</td>
+					<td>subch.</td>
+			</tr>
+			<tr>
+					<td>column</td>
+					<td>col.</td>
+			</tr>
+			<tr>
+					<td>figure</td>
+					<td>fig.</td>
+			</tr>
+			<tr>
+					<td>line</td>
+					<td>l.</td>
+			</tr>
+			<tr>
+					<td>note</td>
+					<td>n.</td>
+			</tr>
+			<tr>
+					<td>issue</td>
+					<td>no.</td>
+			</tr>
+			<tr>
+					<td>opus</td>
+					<td>op.</td>
+			</tr>
+			<tr>
+					<td>page</td>
+					<td>p.</td>
+			</tr>
+			<tr>
+					<td>paragraph</td>
+					<td>para.</td>
+			</tr>
+			<tr>
+					<td>subparagraph</td>
+					<td>subpara.</td>
+			</tr>
+			<tr>
+					<td>part</td>
+					<td>pt.</td>
+			</tr>
+			<tr>
+					<td>rule</td>
+					<td>r.</td>
+			</tr>
+			<tr>
+					<td>section</td>
+					<td>sec.</td>
+			</tr>
+			<tr>
+					<td>subsection</td>
+					<td>subsec.</td>
+			</tr>
+			<tr>
+					<td>Section</td>
+					<td>Sec.</td>
+			</tr>
+			<tr>
+					<td>sub verbo</td>
+					<td>sv.</td>
+			</tr>
+			<tr>
+					<td>schedule</td>
+					<td>sch.</td>
+			</tr>
+			<tr>
+					<td>title</td>
+					<td>tit.</td>
+			</tr>
+			<tr>
+					<td>verse</td>
+					<td>vrs.</td>
+			</tr>
+			<tr>
+					<td>volume</td>
+					<td>vol.</td>
+			</tr>
+	</tbody>
 </table>
 <p>In your call to the CAYW URL, you can override the abbreviations by adding them to the query, e.g. http://127.0.0.1:23119/better-bibtex/cayw?format=mmd&amp;page=&amp;Section=sec., page-picks will have no label, and Section-picks will get <code>sec.</code> rather than <code>Sec.</code>.</p>
 <p>The <code>clipboard</code> option can be used as a workaround for editors that haven&rsquo;t gotten around to integrating this yet. If
 you use this option you will probably want to bind to a hotkey, either system-wide (which is going to be platform-dependent, I know
-<a href="http://www.autohotkey.com" rel="external" target="_blank">AutoHotKey</a> works for windows, for OSX <a href="https://pqrs.org/osx/karabiner/" rel="external" target="_blank">Karabiner</a> ought to
-do the job, and for Linux <a href="https://unix.stackexchange.com/questions/44672/assign-shortcut-key-to-run-a-script" rel="external" target="_blank">xbindkeys</a> could do the job.</p>
+<a href="http://www.autohotkey.com" rel="external">AutoHotKey</a> works for windows, for OSX <a href="https://pqrs.org/osx/karabiner/" rel="external">Karabiner</a> ought to
+do the job, and for Linux <a href="https://unix.stackexchange.com/questions/44672/assign-shortcut-key-to-run-a-script" rel="external">xbindkeys</a> could do the job.</p>
 <p>For example, if you call up http://127.0.0.1:23119/better-bibtex/cayw?format=mmd&amp;clipboard=yes, the Zotero citation picker will pop up. If you then select two items that happen to have cite keys <code>adams2001</code> and <code>brigge2002</code>, then</p>
 <ul>
 <li>the response body will be <code>[#adams2001][][#brigge2002][]</code>, and</li>
@@ -495,9 +500,7 @@ do the job, and for Linux <a href="https://unix.stackexchange.com/questions/4467
     </div>
     <aside id="R-sidebar" class="default-animation">
       <div id="R-header-topbar" class="default-animation"></div>
-      <div id="R-header-wrapper" class="default-animation">
-        <div id="R-header" class="default-animation">
-<a id="logo" href="/zotero-better-bibtex/">
+      <div id="R-header-wrapper" class="default-animation"><a id="logo" href="/zotero-better-bibtex/">
 <span style="vertical-align: text-top">
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -1107,52 +1110,68 @@ Better BibTeX for Zotero
 </span>
 </a>
 
-        </div>
         <search><form action="/zotero-better-bibtex/search/index.html" method="get">
           <div class="searchbox default-animation">
-            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
             <label class="a11y-only" for="R-search-by">Search</label>
             <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
           </div>
         </form></search>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <div class="R-menu-divider default-animation">
-          <hr class="padding">
+          <hr class="padding default-animation">
         </div>
-        <div id="R-shortcutmenu-homelinks" class="R-sidebarmenu">
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
           <ul class="space collapsible-menu">
             <li class="" data-nav-id="/zotero-better-bibtex/index.html"><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
           </ul>
         </div>
         <div class="R-menu-divider default-animation">
-          <hr class="padding">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
         </div>
       </div>
       <div id="R-content-wrapper" class="highlightable">
-        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
-            <li class="" data-nav-id="/zotero-better-bibtex/installation/index.html"><a class="padding" href="/zotero-better-bibtex/installation/index.html">Installation</a><ul id="R-subsections-ff749ccaab053548f690f97bcd6daed0" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/zotero-better-bibtex/exporting/index.html"><a class="padding" href="/zotero-better-bibtex/exporting/index.html">Exporting</a><ul id="R-subsections-1d584ca98d27013df6242b6c17171d5e" class="collapsible-menu"></ul></li>
-            <li class="parent " data-nav-id="/zotero-better-bibtex/citing/index.html"><a class="padding" href="/zotero-better-bibtex/citing/index.html">Citation Keys</a><ul id="R-subsections-21d11d1b73fd6487fde6cbf6c72fa642" class="collapsible-menu">
+            <li class="" data-nav-id="/zotero-better-bibtex/installation/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/installation/index.html">Installation</a><ul id="R-subsections-ff749ccaab053548f690f97bcd6daed0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/preferences/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/preferences/index.html">Preferences</a><ul id="R-subsections-1c1559add52e3008dc9a8d12492194cb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/exporting/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/exporting/index.html">Exporting</a><ul id="R-subsections-1d584ca98d27013df6242b6c17171d5e" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/zotero-better-bibtex/citing/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/citing/index.html">Citation Keys</a><ul id="R-subsections-21d11d1b73fd6487fde6cbf6c72fa642" class="collapsible-menu">
             <li class="active " data-nav-id="/zotero-better-bibtex/citing/cayw/index.html"><a class="padding" href="/zotero-better-bibtex/citing/cayw/index.html">Cite as you Write</a></li>
             <li class="" data-nav-id="/zotero-better-bibtex/citing/migrating/index.html"><a class="padding" href="/zotero-better-bibtex/citing/migrating/index.html">Migrating from Word/Libreoffice</a></li>
-            <li class="" data-nav-id="/zotero-better-bibtex/citing/aux-scanner/index.html"><a class="padding" href="/zotero-better-bibtex/citing/aux-scanner/index.html">AUX Scanner</a></li></ul></li>
-            <li class="" data-nav-id="/zotero-better-bibtex/support/index.html"><a class="padding" href="/zotero-better-bibtex/support/index.html">Support</a><ul id="R-subsections-caa68563dfb61577c2c4699e1aa63010" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/citing/aux-scanner/index.html"><a class="padding" href="/zotero-better-bibtex/citing/aux-scanner/index.html">AUX Scanner</a></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/citing/formulas/index.html"><a class="padding" href="/zotero-better-bibtex/citing/formulas/index.html">Formulas</a></li></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/support/index.html"><a class="padding default-animation" href="/zotero-better-bibtex/support/index.html">Support</a><ul id="R-subsections-caa68563dfb61577c2c4699e1aa63010" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/zotero-better-bibtex/changelog/index.html"><a class="padding" href="/zotero-better-bibtex/changelog/index.html">Changelog</a></li>
             <li class="" data-nav-id="/zotero-better-bibtex/sponsoring/index.html"><a class="padding" href="/zotero-better-bibtex/sponsoring/index.html">Sponsoring BBT</a></li>
           </ul>
         </div>
-        <div id="R-shortcutmenu-shortcuts" class="R-sidebarmenu">
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
           <div class="nav-title padding">More</div>
           <ul class="space collapsible-menu">
-            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex/releases/latest"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex/releases/latest" rel="external" target="_blank"><i class='fas fa-fw fa-download'></i> Download</a></li>
+            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex/releases/latest"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex/releases/latest" rel="external"><i class='fas fa-fw fa-download'></i> Download</a></li>
             <li class="" data-nav-id="/zotero-better-bibtex/sponsoring"><a class="padding" href="/zotero-better-bibtex/sponsoring"><i class='fas fa-fw fa-heart'></i> Sponsorship</a></li>
-            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex" rel="external" target="_blank"><i class='fab fa-fw fa-github'></i> GitHub repo</a></li>
+            <li class="" data-nav-id="https://github.com/retorquere/zotero-better-bibtex"><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex" rel="external"><i class='fab fa-fw fa-github'></i> GitHub repo</a></li>
           </ul>
         </div>
-        <div id="R-footer-margin"></div>
-<div id="R-footer">
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation">
     
     
     
@@ -1170,7 +1189,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/automatic-export" style="font-size:1.1666666666666667em"><i class="fas fa-tag"></i>automatic export</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/automatic-export" style="font-size:1em"><i class="fas fa-tag"></i>automatic export</a></span>
         
             
             
@@ -1178,7 +1197,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/cache" style="font-size:1.1666666666666667em"><i class="fas fa-tag"></i>cache</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/cache" style="font-size:1em"><i class="fas fa-tag"></i>cache</a></span>
         
             
             
@@ -1186,7 +1205,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/citation-keys" style="font-size:1.3869880158145604em"><i class="fas fa-tag"></i>citation keys</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/citation-keys" style="font-size:1.413543737673458em"><i class="fas fa-tag"></i>citation keys</a></span>
         
             
             
@@ -1202,15 +1221,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/configuration" style="font-size:1.4308270834535262em"><i class="fas fa-tag"></i>configuration</a></span>
-        
-            
-            
-            
-            
-            
-            
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/export" style="font-size:1.4678924870096006em"><i class="fas fa-tag"></i>export</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/export" style="font-size:1.460391110580801em"><i class="fas fa-tag"></i>export</a></span>
         
             
             
@@ -1242,7 +1253,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/overleaf" style="font-size:1.1666666666666667em"><i class="fas fa-tag"></i>overleaf</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/overleaf" style="font-size:1.1781035935540112em"><i class="fas fa-tag"></i>overleaf</a></span>
         
             
             
@@ -1250,15 +1261,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/preferences" style="font-size:1.3869880158145604em"><i class="fas fa-tag"></i>preferences</a></span>
-        
-            
-            
-            
-            
-            
-            
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/scripting" style="font-size:1.1666666666666667em"><i class="fas fa-tag"></i>scripting</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/scripting" style="font-size:1.1781035935540112em"><i class="fas fa-tag"></i>scripting</a></span>
         
             
             
@@ -1285,8 +1288,8 @@ Better BibTeX for Zotero
 </div>
       </div>
     </aside>
-    <script src="/zotero-better-bibtex/js/clipboard/clipboard.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
     <script src="/zotero-better-bibtex/js/theme.min.js" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
